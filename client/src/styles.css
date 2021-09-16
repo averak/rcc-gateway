@@ -18,13 +18,25 @@
   background-color: #255794;
 }
 
+.project-bg-blue3 {
+  background-color: #4d7dc5;
+}
+
 /* foreground colors */
 .project-fg-white1 {
   color: #ffffff;
+}
+
+.project-fg-black1 {
+  color: #364862;
 }
 
 /* other settings */
 body {
   margin: 0;
   overflow: hidden;
+}
+
+.project-top-border {
+  border-top: 1px solid #d0d7e3;
 }

@@ -28,9 +28,10 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // components
 import { HeaderComponent } from './components/header/header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, NavbarComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -100,6 +101,7 @@ import { HeaderComponent } from './components/header/header.component';
 
     // components
     HeaderComponent,
+    NavbarComponent,
   ],
 })
 export class SharedModule {}

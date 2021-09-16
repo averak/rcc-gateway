@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" class="side-menu" opened>
+    <!-- サービスの説明 -->
+    <div
+      class="project-bg-blue3 project-fg-white1 service-detail-box"
+      fxLayout="column"
+      fxLayoutAlign="center start"
+    >
+      <h2 class="service-title">RCC Gateway</h2>
+      <div class="service-description">
+        RCC Gatewayは、averakが開発したRCC向けサービスを一元管理するアプリケーションです。
+      </div>
+    </div>
+
+    <mat-nav-list>
+      <a mat-list-item>
+        <mat-icon class="project-fg-black1">description</mat-icon>
+        <p class="column-text project-fg-black1">リファレンス</p>
+        <mat-icon class="project-fg-black1 launch-icon">launch</mat-icon>
+      </a>
+      <a mat-list-item>
+        <mat-icon class="project-fg-black1">help</mat-icon>
+        <p class="column-text project-fg-black1">FAQ</p>
+        <mat-icon class="project-fg-black1 launch-icon">launch</mat-icon>
+      </a>
+
+      <!-- HOMEへ戻るボタン -->
+      <a mat-list-item class="go-home-button project-top-border">
+        <mat-icon class="project-fg-black1">arrow_back_ios</mat-icon>
+        <p class="column-text project-fg-black1">HOME</p>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <ng-content></ng-content>
+</mat-sidenav-container>
