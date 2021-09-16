@@ -9,9 +9,10 @@ import { SharedModule } from './shared/shared.module';
 
 // components
 import { TopComponent } from './components/page/top/top.component';
+import { ServiceCardComponent } from './components/presentational/service-card/service-card.component';
 
 @NgModule({
-  declarations: [AppComponent, TopComponent],
+  declarations: [AppComponent, TopComponent, ServiceCardComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -29,9 +29,10 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 // components
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { TopicPathComponent } from './components/topic-path/topic-path.component';
 
 @NgModule({
-  declarations: [HeaderComponent, NavbarComponent],
+  declarations: [HeaderComponent, NavbarComponent, TopicPathComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -102,6 +103,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     // components
     HeaderComponent,
     NavbarComponent,
+    TopicPathComponent,
   ],
 })
 export class SharedModule {}
