@@ -1,0 +1,32 @@
+.header-content {
+  width: 100vw;
+  height: 60px;
+  background: linear-gradient(to right, #1e4e9e, #46a2e8);
+}
+
+.header-title {
+  font-size: 20px;
+}
+
+.service-search-button {
+  height: 40px;
+}
+
+.service-search-input {
+  height: 30px;
+  width: 400px;
+  border: 0px;
+  padding-left: 10px;
+}
+
+input::placeholder {
+  color: #cddcf2;
+}
+
+input:focus {
+  outline: none;
+}
+
+.user-name {
+  margin-left: 3px;
+}

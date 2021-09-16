@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '../node_modules/angular-calendar/css/angular-calendar.css';
+
+/* background colors */
+.project-bg-white1 {
+  background-color: #ffffff;
+}
+
+.project-bg-white2 {
+  background-color: #e5e5e5;
+}
+
+.project-bg-blue1 {
+  background-color: #3b74ca;
+}
+
+.project-bg-blue2 {
+  background-color: #255794;
+}
+
+/* foreground colors */
+.project-fg-white1 {
+  color: #ffffff;
+}
+
+/* other settings */
+body {
+  margin: 0;
+  overflow: hidden;
+}

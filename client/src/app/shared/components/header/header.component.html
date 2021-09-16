@@ -1,0 +1,46 @@
+<div class="header-content" fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <div class="header-title" fxLayout="row" fxLayoutAlign="start center" fxFlexOffset="20px">
+      <mat-icon>dashboard</mat-icon>
+      <span fxFlexOffset="5px">RCC Gateway</span>
+    </div>
+
+    <!-- サービス検索 -->
+    <button
+      mat-flat-button
+      fxFlexOffset="30px"
+      class="project-bg-blue1 project-fg-white1 service-search-button"
+      style="border-radius: 0px"
+    >
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <span>サービス</span>
+        <mat-icon fxFlexOffset="10px">arrow_drop_down</mat-icon>
+      </div>
+    </button>
+
+    <input
+      fxFlexOffset="15px"
+      type="text"
+      class="project-bg-blue2 project-fg-white1 service-search-input"
+      placeholder="サービス名を検索"
+    />
+  </div>
+
+  <!-- ユーザ情報 -->
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <button mat-button [matMenuTriggerFor]="menu" fxLayout="row">
+      <mat-icon>account_circle</mat-icon>
+      <span class="user-name">阿部 健太朗</span>
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <div class="crms-fg-black2">
+          <mat-icon>logout</mat-icon>
+          <span>ログアウト</span>
+        </div>
+      </button>
+    </mat-menu>
+  </div>
+</div>
