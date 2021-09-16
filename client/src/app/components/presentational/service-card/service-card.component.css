@@ -1,0 +1,17 @@
+mat-card {
+  width: 380px;
+}
+
+mat-card-content {
+  padding: 5px;
+}
+
+.service-title {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.service-description {
+  height: 50px;
+  overflow-y: scroll;
+}

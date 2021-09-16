@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '../node_modules/angular-calendar/css/angular-calendar.css';
+
+/* background colors */
+.project-bg-white1 {
+  background-color: #ffffff;
+}
+
+.project-bg-white2 {
+  background-color: #e5e5e5;
+}
+
+.project-bg-blue1 {
+  background-color: #3b74ca;
+}
+
+.project-bg-blue2 {
+  background-color: #255794;
+}
+
+.project-bg-blue3 {
+  background-color: #4d7dc5;
+}
+
+/* foreground colors */
+.project-fg-white1 {
+  color: #ffffff;
+}
+
+.project-fg-black1 {
+  color: #364862;
+}
+
+.project-fg-blue1 {
+  color: #347cc6;
+}
+
+/* other settings */
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.project-top-border {
+  border-top: 1px solid #d0d7e3;
+}
+
+.project-bottom-border {
+  border-bottom: 1px solid #d0d7e3;
+}
+
+.main-content {
+  min-height: calc(100vh - 60px - 50px);
+}
+
+h1 {
+  font-size: 20pt;
+}
+
+.scroll-content {
+  max-height: calc(100vh - 60px - 50px - 60px - 30px - 10px);
+  overflow: auto;
+  overflow-y: scroll;
+}

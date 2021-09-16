@@ -1,0 +1,35 @@
+.side-menu {
+  width: 270px;
+  height: 100%;
+}
+
+.column-text {
+  margin-left: 5%;
+}
+
+.service-detail-box {
+  height: 150px;
+}
+
+.service-title {
+  padding: 0px 15px 0px 15px;
+  font-weight: bold;
+  font-size: 16pt;
+}
+
+.service-description {
+  padding: 0px 15px 15px 15px;
+  font-size: 10pt;
+}
+
+.launch-icon {
+  margin-left: auto;
+}
+
+.go-home-button {
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
