@@ -20,6 +20,11 @@
   padding-left: 10px;
 }
 
+.version-chip {
+  color: #364862;
+  background-color: #eef1f4;
+}
+
 input::placeholder {
   color: #cddcf2;
 }

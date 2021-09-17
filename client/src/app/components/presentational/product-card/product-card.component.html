@@ -1,0 +1,11 @@
+<mat-card class="mat-elevation-z2">
+  <mat-card-content fxLayout="column" fxLayoutAlign="start">
+    <a class="product-card-title project-fg-blue1" [routerLink]="product.link">{{
+      product.title
+    }}</a>
+
+    <div class="product-card-description project-fg-black1" fxFlexOffset="20px">
+      {{ product.description }}
+    </div>
+  </mat-card-content>
+</mat-card>

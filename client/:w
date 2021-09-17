@@ -28,8 +28,8 @@
 
   <div fxLayout="row" fxLayoutAlign="end center">
     <!-- バージョン情報 -->
-    <mat-chip-list>
-      <mat-chip class="version-chip project-fg-black1">β版</mat-chip>
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip class="version-chip project-bg-blue2" [selectable]="false">Primary fish</mat-chip>
     </mat-chip-list>
 
     <!-- ユーザ情報 -->

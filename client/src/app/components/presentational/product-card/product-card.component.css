@@ -1,17 +1,18 @@
-mat-card {
+.mat-card {
   width: 380px;
+  border-radius: 0px;
 }
 
-mat-card-content {
+.mat-card-content {
   padding: 5px;
 }
 
-.service-title {
+.product-card-title {
   font-size: 20px;
   text-decoration: none;
 }
 
-.service-description {
+.product-card-description {
   height: 50px;
   overflow-y: scroll;
 }
