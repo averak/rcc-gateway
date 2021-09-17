@@ -1,11 +1,7 @@
-<div>
-  <h1 class="project-fg-black1" fxFlexOffset="30px">プロダクト一覧</h1>
-</div>
-
-<div>
-  <div fxLayout="row wrap" fxLayoutAlign="start wrap" fxLayoutGap="20px" fxFlexOffset="30px">
-    <div *ngFor="let product of products">
-      <app-product-card [product]="product"></app-product-card>
-    </div>
+<div fxLayout="column" fxLayoutAlign="start start">
+  <div>
+    <h1 class="project-fg-black1" fxFlexOffset="30px">プロダクト一覧</h1>
   </div>
+
+  <app-product-list-contents></app-product-list-contents>
 </div>
