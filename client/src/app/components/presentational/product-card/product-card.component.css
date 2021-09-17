@@ -1,5 +1,5 @@
-.mat-card {
-  width: 380px;
+.product-card {
+  width: calc((100vw - 270px) / 3 - 66px);
   border-radius: 0px;
 }
 
@@ -15,4 +15,10 @@
 .product-card-description {
   height: 50px;
   overflow-y: scroll;
+}
+
+.version-chip {
+  color: #364862;
+  background-color: #eef1f4;
+  white-space: nowrap;
 }

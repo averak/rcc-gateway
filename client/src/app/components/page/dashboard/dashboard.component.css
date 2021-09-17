@@ -1,4 +1,5 @@
 app-product-card {
+  width: calc((100vw - 270px) / 3 - 65px);
   margin: 10px 10px 10px 0px;
   z-index: 1;
 }

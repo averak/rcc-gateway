@@ -50,7 +50,8 @@ body {
 }
 
 .main-content {
-  min-height: calc(100vh - 60px - 50px);
+  min-width: auto;
+  min-height: calc(100vh - 60px);
 }
 
 h1 {
@@ -60,5 +61,4 @@ h1 {
 .scroll-content {
   max-height: calc(100vh - 60px);
   overflow: auto;
-  overflow-y: scroll;
 }

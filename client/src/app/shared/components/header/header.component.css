@@ -5,6 +5,7 @@
 }
 
 .header-title {
+  white-space: nowrap;
   font-weight: bold;
   font-size: 16pt;
 }
@@ -16,13 +17,9 @@
 .service-search-input {
   height: 30px;
   width: 400px;
+  min-width: calc(100vw / 4);
   border: 0px;
   padding-left: 10px;
-}
-
-.version-chip {
-  color: #364862;
-  background-color: #eef1f4;
 }
 
 input::placeholder {
