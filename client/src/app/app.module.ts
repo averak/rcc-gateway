@@ -8,11 +8,19 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 
 // components
-import { TopComponent } from './components/page/top/top.component';
-import { ServiceCardComponent } from './components/presentational/service-card/service-card.component';
+import { ProductCardComponent } from './components/presentational/product-card/product-card.component';
+import { DashboardComponent } from './components/page/dashboard/dashboard.component';
+import { ClusterComponent } from './components/page/cluster/cluster.component';
+import { ProductListContentsComponent } from './components/container/product-list-contents/product-list-contents.component';
 
 @NgModule({
-  declarations: [AppComponent, TopComponent, ServiceCardComponent],
+  declarations: [
+    AppComponent,
+    ProductCardComponent,
+    DashboardComponent,
+    ClusterComponent,
+    ProductListContentsComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],

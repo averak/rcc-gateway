@@ -27,6 +27,11 @@
   </div>
 
   <div fxLayout="row" fxLayoutAlign="end center">
+    <!-- バージョン情報 -->
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip class="version-chip project-bg-blue2" [selectable]="false">Primary fish</mat-chip>
+    </mat-chip-list>
+
     <!-- ユーザ情報 -->
     <div fxLayout="row" fxLayoutAlign="start center">
       <button mat-button [matMenuTriggerFor]="menu" fxLayout="row">

@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
@@ -50,6 +51,7 @@ import { TopicPathComponent } from './components/topic-path/topic-path.component
     MatCardModule,
     MatMenuModule,
     MatIconModule,
+    MatChipsModule,
     MatToolbarModule,
     MatButtonModule,
     MatTableModule,
@@ -83,6 +85,7 @@ import { TopicPathComponent } from './components/topic-path/topic-path.component
     MatCardModule,
     MatMenuModule,
     MatIconModule,
+    MatChipsModule,
     MatToolbarModule,
     MatButtonModule,
     MatTableModule,

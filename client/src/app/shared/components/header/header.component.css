@@ -1,10 +1,11 @@
 .header-content {
   width: 100vw;
   height: 60px;
-  background: linear-gradient(to right, #1e4e9e, #46a2e8);
+  background: linear-gradient(to right, #2c4d98, #5ea0e3);
 }
 
 .header-title {
+  white-space: nowrap;
   font-weight: bold;
   font-size: 16pt;
 }
@@ -16,6 +17,7 @@
 .service-search-input {
   height: 30px;
   width: 400px;
+  min-width: calc(100vw / 4);
   border: 0px;
   padding-left: 10px;
 }

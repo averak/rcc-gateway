@@ -1,0 +1,18 @@
+<mat-card class="mat-elevation-z2 product-card">
+  <mat-card-content fxLayout="column" fxLayoutAlign="start">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <a class="product-card-title project-fg-blue1" [routerLink]="product.link">
+        <mat-icon>token</mat-icon>
+        <span fxFlexOffset="5px">{{ product.title }}</span>
+      </a>
+
+      <mat-chip-list>
+        <mat-chip class="version-chip">{{ product.version }}</mat-chip>
+      </mat-chip-list>
+    </div>
+
+    <div class="product-card-description project-fg-black1" fxFlexOffset="20px">
+      {{ product.description }}
+    </div>
+  </mat-card-content>
+</mat-card>

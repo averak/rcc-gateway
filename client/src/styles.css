@@ -7,19 +7,23 @@
 }
 
 .project-bg-white2 {
-  background-color: #e5e5e5;
+  background-color: #eef1f4;
 }
 
 .project-bg-blue1 {
-  background-color: #3b74ca;
+  background-color: #4873c4;
 }
 
 .project-bg-blue2 {
-  background-color: #255794;
+  background-color: #33558e;
 }
 
 .project-bg-blue3 {
-  background-color: #4d7dc5;
+  background-color: #597cbf;
+}
+
+.project-bg-blue4 {
+  background-color: #3a7aca;
 }
 
 /* foreground colors */
@@ -32,7 +36,7 @@
 }
 
 .project-fg-blue1 {
-  color: #347cc6;
+  color: #4873c4;
 }
 
 /* other settings */
@@ -50,7 +54,8 @@ body {
 }
 
 .main-content {
-  min-height: calc(100vh - 60px - 50px);
+  min-width: auto;
+  min-height: calc(100vh - 60px);
 }
 
 h1 {
@@ -58,7 +63,13 @@ h1 {
 }
 
 .scroll-content {
-  max-height: calc(100vh - 60px - 50px - 60px - 30px - 10px);
+  max-height: calc(100vh - 60px);
   overflow: auto;
-  overflow-y: scroll;
+}
+
+.main-contents-card {
+  margin: 0px 30px 30px 30px;
+  width: calc(100vw - 360px);
+  background-color: #ffffff;
+  border-radius: 0px;
 }
