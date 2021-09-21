@@ -7,21 +7,37 @@ import { AppComponent } from './app.component';
 // shared module
 import { SharedModule } from './shared/shared.module';
 
-// components
-import { ProductCardComponent } from './components/presentational/product-card/product-card.component';
-import { DashboardComponent } from './components/page/dashboard/dashboard.component';
-import { ClusterComponent } from './components/page/cluster/cluster.component';
-import { ProductListContentsComponent } from './components/container/product-list-contents/product-list-contents.component';
-import { ProductVersionChipComponent } from './components/pnresentational/product-version-chip/product-version-chip.component';
+// dashboard components
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { ProductCardComponent } from './component/dashboard/product-card/product-card.component';
+import { ProductVersionChipComponent } from './component/dashboard/product-version-chip/product-version-chip.component';
+import { ProductListContentsComponent } from './component/dashboard/product-list-contents/product-list-contents.component';
+
+// cluster components
+import { ClusterComponent } from './component/cluster/cluster.component';
+
+// common components
+import { HeaderComponent } from './component/common/header/header.component';
+import { SidenavComponent } from './component/common/sidenav/sidenav.component';
+import { TopicPathComponent } from './component/common/topic-path/topic-path.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductCardComponent,
+
+    // dashboard components
     DashboardComponent,
-    ClusterComponent,
-    ProductListContentsComponent,
+    ProductCardComponent,
     ProductVersionChipComponent,
+    ProductListContentsComponent,
+
+    // cluster components
+    ClusterComponent,
+
+    // common components
+    HeaderComponent,
+    SidenavComponent,
+    TopicPathComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],

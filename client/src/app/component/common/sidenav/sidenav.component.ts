@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ProductModel } from 'src/app/model/product-model';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
+  selector: 'app-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.css'],
 })
-export class NavbarComponent implements OnInit {
+export class SidenavComponent implements OnInit {
   @Input() product!: ProductModel;
 
   constructor() {}
