@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { ProductModel } from 'src/app/model/product-model';
+import { ProductResolverService } from 'src/app/shared/service/product-resolver.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +8,11 @@ import { ProductModel } from 'src/app/model/product-model';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  product: ProductModel = environment.products.filter((prod) => prod.link == '/dashboard')[0];
+  product!: ProductModel;
 
-  constructor() {}
+  constructor(private productResolverService: ProductResolverService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.product = this.productResolverService.getProductInfo('/dashboard');
+  }
 }
