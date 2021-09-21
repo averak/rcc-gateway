@@ -1860,6 +1860,13 @@ angular-resizable-element@^3.3.5:
   dependencies:
     tslib "^1.9.0"
 
+angularx-flatpickr@^6.6.0:
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/angularx-flatpickr/-/angularx-flatpickr-6.6.0.tgz#3bb4b9f7c606d546486ecd35159ec60fce27df86"
+  integrity sha512-n/csZmAwfL32P7pUv52FXihSbPjVAjiKglbY8WO9hsBKvAk7mw8PKNjiovln4+fuscJwKo0wSsw+s7A+JpetQg==
+  dependencies:
+    tslib "^1.9.0"
+
 ansi-colors@4.1.1, ansi-colors@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"
