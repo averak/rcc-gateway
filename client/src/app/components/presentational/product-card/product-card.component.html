@@ -6,9 +6,7 @@
         <span fxFlexOffset="5px">{{ product.title }}</span>
       </a>
 
-      <mat-chip-list>
-        <mat-chip class="version-chip">{{ product.version }}</mat-chip>
-      </mat-chip-list>
+      <app-product-version-chip [version]="product.version"></app-product-version-chip>
     </div>
 
     <div class="product-card-description project-fg-black1" fxFlexOffset="20px">

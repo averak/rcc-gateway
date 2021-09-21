@@ -12,6 +12,7 @@ import { ProductCardComponent } from './components/presentational/product-card/p
 import { DashboardComponent } from './components/page/dashboard/dashboard.component';
 import { ClusterComponent } from './components/page/cluster/cluster.component';
 import { ProductListContentsComponent } from './components/container/product-list-contents/product-list-contents.component';
+import { ProductVersionChipComponent } from './components/pnresentational/product-version-chip/product-version-chip.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ProductListContentsComponent } from './components/container/product-lis
     DashboardComponent,
     ClusterComponent,
     ProductListContentsComponent,
+    ProductVersionChipComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],
