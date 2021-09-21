@@ -1,5 +1,6 @@
 .side-menu {
-  width: 270px;
+  max-width: 270px;
+  width: 30%;
   height: 100%;
 }
 
@@ -8,7 +9,7 @@
 }
 
 .service-detail-box {
-  height: 150px;
+  min-height: 150px;
 }
 
 .service-title {
