@@ -3,4 +3,5 @@ export type ProductModel = {
   description: string;
   link: string;
   version: string;
+  display: boolean;
 };

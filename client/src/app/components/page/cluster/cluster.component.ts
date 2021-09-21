@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { ProductModel } from 'src/app/model/product-model';
+import { ProductResolverService } from 'src/app/shared/service/product-resolver.service';
 
 @Component({
   selector: 'app-cluster',
@@ -6,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cluster.component.css'],
 })
 export class ClusterComponent implements OnInit {
-  constructor() {}
+  product!: ProductModel;
 
-  ngOnInit(): void {}
+  constructor(private productResolverService: ProductResolverService) {}
+
+  ngOnInit(): void {
+    this.product = this.productResolverService.getProductInfo('/cluster');
+  }
 }

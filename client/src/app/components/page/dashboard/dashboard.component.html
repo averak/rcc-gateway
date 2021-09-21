@@ -1,7 +1,18 @@
-<div fxLayout="column" fxLayoutAlign="start start">
-  <div>
-    <h1 class="project-fg-black1" fxFlexOffset="30px">プロダクト一覧</h1>
-  </div>
+<div>
+  <app-header></app-header>
+  <app-navbar [product]="product">
+    <div class="scroll-content">
+      <app-topic-path></app-topic-path>
 
-  <app-product-list-contents></app-product-list-contents>
+      <div class="page-main-content" fxLayout="column" fxLayoutAlign="start start">
+        <div>
+          <h1 class="project-fg-black1">プロダクト一覧</h1>
+        </div>
+
+        <div>
+          <app-product-list-contents></app-product-list-contents>
+        </div>
+      </div>
+    </div>
+  </app-navbar>
 </div>

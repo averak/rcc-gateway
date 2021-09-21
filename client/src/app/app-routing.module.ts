@@ -7,6 +7,7 @@ import { ClusterComponent } from './components/page/cluster/cluster.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'cluster', component: ClusterComponent },
 ];
 
