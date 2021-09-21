@@ -1,9 +1,5 @@
-<div fxLayout="row wrap" fxLayoutAlign="start wrap" fxLayoutGap="20px" fxFlexOffset="10px">
+<div fxLayout="row wrap" fxLayoutAlign="start wrap">
   <div *ngFor="let product of products">
-    <app-product-card
-      *ngIf="product.display"
-      class="product-card"
-      [product]="product"
-    ></app-product-card>
+    <app-product-card *ngIf="product.display" [product]="product"></app-product-card>
   </div>
 </div>

@@ -4,12 +4,14 @@
     <div class="scroll-content">
       <app-topic-path></app-topic-path>
 
-      <div fxLayout="column" fxLayoutAlign="start start">
+      <div class="page-main-content" fxLayout="column" fxLayoutAlign="start start">
         <div>
-          <h1 class="project-fg-black1" fxFlexOffset="30px">プロダクト一覧</h1>
+          <h1 class="project-fg-black1">プロダクト一覧</h1>
         </div>
 
-        <app-product-list-contents></app-product-list-contents>
+        <div>
+          <app-product-list-contents></app-product-list-contents>
+        </div>
       </div>
     </div>
   </app-navbar>

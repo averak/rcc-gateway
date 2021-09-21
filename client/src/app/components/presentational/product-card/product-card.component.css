@@ -1,5 +1,5 @@
 .product-card {
-  margin: 0px 0px 20px 0px;
+  margin: 0px 20px 20px 0px;
   width: calc((100vw - 270px) / 3 - 66px);
   border-radius: 0px;
   z-index: 1;
