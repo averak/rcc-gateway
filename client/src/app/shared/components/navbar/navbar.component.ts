@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProductModel } from 'src/app/model/product-model';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  @Input() product!: ProductModel;
+
   constructor() {}
 
   ngOnInit(): void {}
