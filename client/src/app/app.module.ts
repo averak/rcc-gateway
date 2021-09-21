@@ -41,6 +41,7 @@ import { ClusterComponent } from './component/cluster/cluster.component';
 import { HeaderComponent } from './component/common/header/header.component';
 import { SidenavComponent } from './component/common/sidenav/sidenav.component';
 import { TopicPathComponent } from './component/common/topic-path/topic-path.component';
+import { ReservationsCalendarComponent } from './component/cluster/reservations-calendar/reservations-calendar.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { TopicPathComponent } from './component/common/topic-path/topic-path.com
     HeaderComponent,
     SidenavComponent,
     TopicPathComponent,
+    ReservationsCalendarComponent,
   ],
   imports: [
     BrowserModule,

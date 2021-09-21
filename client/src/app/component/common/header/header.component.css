@@ -10,26 +10,6 @@
   font-size: 16pt;
 }
 
-.service-search-button {
-  height: 40px;
-}
-
-.service-search-input {
-  height: 30px;
-  width: 400px;
-  min-width: calc(100vw / 4);
-  border: 0px;
-  padding-left: 10px;
-}
-
-input::placeholder {
-  color: #cddcf2;
-}
-
-input:focus {
-  outline: none;
-}
-
 .user-name {
   margin-left: 3px;
 }

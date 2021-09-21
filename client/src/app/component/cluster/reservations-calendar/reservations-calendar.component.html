@@ -1,0 +1,39 @@
+<div fxLayout="column" fxLayoutAlign="start">
+  <div class="control-menu" fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-flat-button class="project-bg-blue4 project-fg-white1" style="border-radius: 0px">
+      <mat-icon>add</mat-icon>
+      <span>新規作成</span>
+    </button>
+
+    <div>
+      <button
+        mat-icon-button
+        class="project-fg-black1"
+        mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="viewDate"
+      >
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="project-fg-black1"
+        mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="viewDate"
+      >
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="calendar-container project-fg-black1 scroll-content" fxFlexOffset="20px">
+    <mwl-calendar-week-view
+      [viewDate]="viewDate"
+      [refresh]="refresh"
+      [dayStartHour]="8"
+      [dayEndHour]="20"
+    >
+    </mwl-calendar-week-view>
+  </div>
+</div>
