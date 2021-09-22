@@ -45,6 +45,7 @@ import { ReservationsCalendarComponent } from './component/cluster/reservations-
 
 // login components
 import { LoginComponent } from './component/login/login.component';
+import { LoginCardComponent } from './component/login/login-card/login-card.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { LoginComponent } from './component/login/login.component';
 
     // login components
     LoginComponent,
+    LoginCardComponent,
   ],
   imports: [
     BrowserModule,

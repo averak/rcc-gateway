@@ -1,4 +1,5 @@
 .login-header {
+  position: absolute;
   height: 37vh;
   width: 100vw;
   background-color: #4054b2;
@@ -14,4 +15,8 @@
   margin: 0px;
   font-size: 10pt;
   font-weight: lighter;
+}
+
+.login-card {
+  margin-top: 30px;
 }
