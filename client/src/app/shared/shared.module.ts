@@ -28,8 +28,11 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
+// pipes
+import { UsernamePipe } from './pipe/username.pipe';
+
 @NgModule({
-  declarations: [],
+  declarations: [UsernamePipe],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -100,6 +103,9 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     ScrollingModule,
     FlexLayoutModule,
     NgbModalModule,
+
+    // pipes
+    UsernamePipe,
   ],
 })
 export class SharedModule {}
