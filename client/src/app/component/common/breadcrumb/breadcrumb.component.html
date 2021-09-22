@@ -4,10 +4,14 @@
   fxLayoutAlign="start center"
   fxLayoutGap="10px"
 >
-  <mat-icon fxFlexOffset="30px">home</mat-icon>
+  <a class="project-fg-black1" [routerLink]="'/'">
+    <mat-icon fxFlexOffset="30px">home</mat-icon>
+  </a>
 
   <div *ngFor="let breadcrumb of breadcrumbs | async" fxLayout="row" fxLayoutAlign="start center">
     <mat-icon>navigate_next</mat-icon>
-    <span class="breadcrumb-label" [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</span>
+    <a class="breadcrumb-label project-fg-black1" [routerLink]="breadcrumb.url">{{
+      breadcrumb.label
+    }}</a>
   </div>
 </div>

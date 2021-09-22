@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .breadcrumb-content {
   height: 50px;
 }
@@ -5,5 +9,4 @@
 .breadcrumb-label {
   margin-left: 10px;
   font-size: 10pt;
-  text-decoration: none;
 }
