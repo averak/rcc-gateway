@@ -72,8 +72,8 @@ import { LoginCardComponent } from './component/login/login-card/login-card.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     SharedModule,
+    AppRoutingModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot(
       {
