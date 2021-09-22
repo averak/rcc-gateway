@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { ProductModel } from 'src/app/model/product-model';
+import { ProductModel } from 'src/app/model/product.model';
 import { ProductResolverService } from 'src/app/shared/service/product-resolver.service';
 
 @Component({

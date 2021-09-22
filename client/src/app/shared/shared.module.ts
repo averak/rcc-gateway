@@ -28,8 +28,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
-// components
-
 @NgModule({
   declarations: [],
   imports: [
