@@ -16,6 +16,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -55,6 +56,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     MatDividerModule,
     MatSlideToggleModule,
     MatSelectModule,
+    MatCheckboxModule,
     MatSnackBarModule,
     MatSidenavModule,
     MatListModule,
@@ -89,6 +91,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     MatDividerModule,
     MatSlideToggleModule,
     MatSelectModule,
+    MatCheckboxModule,
     MatSnackBarModule,
     MatSidenavModule,
     MatListModule,
