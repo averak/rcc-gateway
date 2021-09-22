@@ -43,6 +43,9 @@ import { SidenavComponent } from './component/common/sidenav/sidenav.component';
 import { TopicPathComponent } from './component/common/topic-path/topic-path.component';
 import { ReservationsCalendarComponent } from './component/cluster/reservations-calendar/reservations-calendar.component';
 
+// login components
+import { LoginComponent } from './component/login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +64,9 @@ import { ReservationsCalendarComponent } from './component/cluster/reservations-
     SidenavComponent,
     TopicPathComponent,
     ReservationsCalendarComponent,
+
+    // login components
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
