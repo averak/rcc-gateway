@@ -41,7 +41,7 @@ import { ReservationsCalendarComponent } from './component/cluster/reservations-
 // common components
 import { HeaderComponent } from './component/common/header/header.component';
 import { SidenavComponent } from './component/common/sidenav/sidenav.component';
-import { BreadCrumbComponent } from './component/common/bread-crumb/bread-crumb.component';
+import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.component';
 
 // login components
 import { LoginComponent } from './component/login/login.component';
@@ -64,7 +64,7 @@ import { LoginCardComponent } from './component/login/login-card/login-card.comp
     // common components
     HeaderComponent,
     SidenavComponent,
-    BreadCrumbComponent,
+    BreadcrumbComponent,
 
     // login components
     LoginComponent,

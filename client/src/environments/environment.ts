@@ -1,4 +1,4 @@
-import { ProductModel } from 'src/app/model/product-model';
+import { ProductModel } from 'src/app/model/product.model';
 
 export const environment = {
   production: false,
