@@ -1,20 +1,5 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  Output,
-  OnChanges,
-  SimpleChanges,
-  EventEmitter,
-  ChangeDetectionStrategy,
-  ViewChild,
-  TemplateRef,
-} from '@angular/core';
-import {
-  CalendarEventAction,
-  CalendarView,
-  CalendarEventTimesChangedEvent,
-} from 'angular-calendar';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { CalendarView } from 'angular-calendar';
 import { Subject } from 'rxjs';
 
 @Component({

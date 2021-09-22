@@ -36,12 +36,12 @@ import { ProductListContentsComponent } from './component/dashboard/product-list
 
 // cluster components
 import { ClusterComponent } from './component/cluster/cluster.component';
+import { ReservationsCalendarComponent } from './component/cluster/reservations-calendar/reservations-calendar.component';
 
 // common components
 import { HeaderComponent } from './component/common/header/header.component';
 import { SidenavComponent } from './component/common/sidenav/sidenav.component';
-import { TopicPathComponent } from './component/common/topic-path/topic-path.component';
-import { ReservationsCalendarComponent } from './component/cluster/reservations-calendar/reservations-calendar.component';
+import { BreadCrumbComponent } from './component/common/bread-crumb/bread-crumb.component';
 
 // login components
 import { LoginComponent } from './component/login/login.component';
@@ -59,12 +59,12 @@ import { LoginCardComponent } from './component/login/login-card/login-card.comp
 
     // cluster components
     ClusterComponent,
+    ReservationsCalendarComponent,
 
     // common components
     HeaderComponent,
     SidenavComponent,
-    TopicPathComponent,
-    ReservationsCalendarComponent,
+    BreadCrumbComponent,
 
     // login components
     LoginComponent,

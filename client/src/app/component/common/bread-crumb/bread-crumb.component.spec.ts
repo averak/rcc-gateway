@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopicPathComponent } from './topic-path.component';
+import { BreadCrumbComponent } from './bread-crumb.component';
 
-describe('TopicPathComponent', () => {
-  let component: TopicPathComponent;
-  let fixture: ComponentFixture<TopicPathComponent>;
+describe('BreadCrumbComponent', () => {
+  let component: BreadCrumbComponent;
+  let fixture: ComponentFixture<BreadCrumbComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TopicPathComponent],
+      declarations: [BreadCrumbComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TopicPathComponent);
+    fixture = TestBed.createComponent(BreadCrumbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
