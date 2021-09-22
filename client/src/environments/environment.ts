@@ -1,7 +1,11 @@
-import { ProductModel } from 'src/app/model/product.model';
-
 export const environment = {
   production: false,
+
+  // API
+  API_BASE_URL: 'http://localhost:8080',
+
+  // ログイン情報
+  CREDENTIALS_KEY: 'Authorization',
 
   // プロダクト一覧
   products: [
