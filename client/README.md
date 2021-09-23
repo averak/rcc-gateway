@@ -22,7 +22,11 @@ $ yarn
 ### How to build
 
 ```sh
+# local build
 $ yarn build
+
+# production build
+$ yarn run build --configuration production
 ```
 
 ### How to run dev-server
