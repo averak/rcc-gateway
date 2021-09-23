@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import * as moment from 'moment-timezone';
 import { AlertService } from 'src/app/shared/service/alert.service';
 import { ReservationService } from 'src/app/shared/service/reservation.service';
+import { ReservationModel } from 'src/app/model/reservation.model';
 import { ReservationCreateRequest } from 'src/app/request/reservation.request';
 
 @Component({
@@ -11,7 +12,7 @@ import { ReservationCreateRequest } from 'src/app/request/reservation.request';
   styleUrls: ['./reservations-new.component.css'],
 })
 export class ReservationsNewComponent implements OnInit {
-  reservation: ReservationCreateRequest = {} as ReservationCreateRequest;
+  reservation: ReservationModel = {} as ReservationModel;
 
   constructor(
     private router: Router,
