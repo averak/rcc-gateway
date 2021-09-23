@@ -16,6 +16,7 @@ export const environment = {
       link: '/dashboard',
       version: 'v1.0',
       display: false,
+      navs: [],
     },
     {
       title: 'Cluster',
@@ -24,6 +25,20 @@ export const environment = {
       link: '/cluster',
       version: 'v1.0',
       display: true,
+      navs: [
+        {
+          label: '予約一覧',
+          url: '/cluster/reservations',
+          icon: 'date_range',
+          selected: false,
+        },
+        {
+          label: '活動実績',
+          url: '/cluster/activities',
+          icon: 'insert_chart_outlined',
+          selected: false,
+        },
+      ],
     },
     {
       title: 'RDID',
@@ -32,6 +47,7 @@ export const environment = {
       link: '/rdid',
       version: '開発中',
       display: true,
+      navs: [],
     },
     {
       title: 'IAM',
@@ -40,6 +56,7 @@ export const environment = {
       link: '/iam',
       version: '開発中',
       display: true,
+      navs: [],
     },
   ],
 };
