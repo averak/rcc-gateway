@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpBaseService } from 'src/app/shared/service/http-base.service';
 import { UserModel } from 'src/app/model/user.model';
+import { UserRoleEnum } from 'src/app/enums/user-role.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -29,5 +30,9 @@ export class UserService {
         },
         (error) => this.loginUser.error(error)
       );
+  }
+
+  checkAdmin(user: UserModel): boolean {
+    return user.roleId == UserRoleEnum.ADMIN;
   }
 }

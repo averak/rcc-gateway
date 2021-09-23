@@ -6,3 +6,7 @@ export type ReservationModel = {
   finishAt: Date;
   user: UserModel;
 };
+
+export type ReservationsModel = {
+  reservations: ReservationModel[];
+};

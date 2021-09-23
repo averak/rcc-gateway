@@ -4,9 +4,12 @@
 
 .form-input {
   margin-left: 150px;
-  width: 300px;
 }
 
 .input-label {
   margin-left: 10px;
+}
+
+.form-date-input {
+  width: 300px;
 }

@@ -9,7 +9,7 @@
     <div fxLayout="column" fxLayoutAlign="start start">
       <div fxLayout="row" fxLayoutAlign="start center">
         <span class="input-label">開始時刻</span>
-        <mat-form-field class="form-input">
+        <mat-form-field class="form-input form-date-input">
           <input
             matInput
             [(ngModel)]="reservation.startAt"
@@ -23,7 +23,7 @@
 
       <div fxLayout="row" fxLayoutAlign="start center">
         <span class="input-label">開始時刻</span>
-        <mat-form-field class="form-input">
+        <mat-form-field class="form-input form-date-input">
           <input
             matInput
             [(ngModel)]="reservation.finishAt"
