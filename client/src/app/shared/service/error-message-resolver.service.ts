@@ -38,7 +38,7 @@ export class ErrorMessageResolverService {
 
   constructor() {}
 
-  getErrorMessage(statusCode: number): string {
+  resolve(statusCode: number): string {
     if (statusCode in this.messages) {
       return this.messages[statusCode];
     } else {

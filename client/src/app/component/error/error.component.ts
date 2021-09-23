@@ -17,6 +17,6 @@ export class ErrorComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.errorMessage = this.errorMessageResolverService.getErrorMessage(this.statusCode);
+    this.errorMessage = this.errorMessageResolverService.resolve(this.statusCode);
   }
 }

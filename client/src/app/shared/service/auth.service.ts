@@ -31,7 +31,7 @@ export class AuthService {
       .pipe(
         catchError((error) => {
           this.logout();
-          throw this.errorMessageResolverService.getErrorMessage(error.error.code);
+          throw this.errorMessageResolverService.resolve(error.error.code);
         })
       );
   }
