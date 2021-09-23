@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './component/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ClusterComponent } from './component/cluster/cluster.component';
+import { ErrorComponent } from './component/error/error.component';
 
 // guards
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
@@ -26,6 +27,8 @@ const routes: Routes = [
       { path: 'cluster', component: ClusterComponent, data: { breadcrumb: 'Cluster' } },
     ],
   },
+  { path: 'error', component: ErrorComponent },
+  { path: '**', redirectTo: '/error?status_code=404', pathMatch: 'full' },
 ];
 
 @NgModule({
