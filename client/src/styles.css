@@ -87,3 +87,8 @@ h1 {
   min-height: 50px !important;
   max-width: 65vw !important;
 }
+
+.mat-card {
+  border-radius: 0px !important;
+  z-index: 2;
+}

@@ -37,11 +37,16 @@ import { ProductListContentsComponent } from './component/dashboard/product-list
 // cluster components
 import { ClusterComponent } from './component/cluster/cluster.component';
 import { ReservationsCalendarComponent } from './component/cluster/reservations-calendar/reservations-calendar.component';
+import { ReservationsComponent } from './component/cluster/reservations/reservations.component';
+import { ReservationsNewComponent } from './component/cluster/reservations-new/reservations-new.component';
+import { ReservationsContentComponent } from './component/cluster/reservations-content/reservations-content.component';
 
 // login components
 import { LoginComponent } from './component/login/login.component';
 import { LoginFormComponent } from './component/login/login-form/login-form.component';
 import { LoginCardComponent } from './component/login/login-card/login-card.component';
+
+// error components
 import { ErrorComponent } from './component/error/error.component';
 
 @NgModule({
@@ -57,11 +62,16 @@ import { ErrorComponent } from './component/error/error.component';
     // cluster components
     ClusterComponent,
     ReservationsCalendarComponent,
+    ReservationsComponent,
+    ReservationsNewComponent,
+    ReservationsContentComponent,
 
     // login components
     LoginComponent,
     LoginFormComponent,
     LoginCardComponent,
+
+    // error components
     ErrorComponent,
   ],
   imports: [

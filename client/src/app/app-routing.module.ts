@@ -5,6 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './component/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ClusterComponent } from './component/cluster/cluster.component';
+import { ReservationsComponent } from './component/cluster/reservations/reservations.component';
+import { ReservationsContentComponent } from './component/cluster/reservations-content/reservations-content.component';
+import { ReservationsNewComponent } from './component/cluster/reservations-new/reservations-new.component';
 import { ErrorComponent } from './component/error/error.component';
 
 // guards
@@ -24,7 +27,31 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent, data: { breadcrumb: 'ダッシュボード' } },
       { path: 'dashboard', component: DashboardComponent, data: { breadcrumb: 'ダッシュボード' } },
-      { path: 'cluster', component: ClusterComponent, data: { breadcrumb: 'Cluster' } },
+      {
+        path: 'cluster',
+        component: ClusterComponent,
+        data: { breadcrumb: 'Cluster' },
+        children: [
+          { path: '', redirectTo: '/cluster/reservations', pathMatch: 'full' },
+          {
+            path: 'reservations',
+            component: ReservationsComponent,
+            data: { breadcrumb: '予約一覧' },
+            children: [
+              {
+                path: '',
+                component: ReservationsContentComponent,
+                data: { breadcrumb: '' },
+              },
+              {
+                path: 'new',
+                component: ReservationsNewComponent,
+                data: { breadcrumb: '新規作成' },
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
   { path: 'error', component: ErrorComponent },
