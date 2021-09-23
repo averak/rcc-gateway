@@ -20,7 +20,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 @Injectable()
 class CustomDateFormatter extends CalendarNativeDateFormatter {
-  public weekViewHour({ date, locale }: DateFormatterParams): string {
+  public weekViewHour({ date }: DateFormatterParams): string {
     return new Intl.DateTimeFormat('ca', {
       hour: 'numeric',
       minute: 'numeric',
@@ -40,13 +40,9 @@ import { ReservationsCalendarComponent } from './component/cluster/reservations-
 
 // login components
 import { LoginComponent } from './component/login/login.component';
+import { LoginFormComponent } from './component/login/login-form/login-form.component';
 import { LoginCardComponent } from './component/login/login-card/login-card.component';
-
-// common components
-import { HeaderComponent } from './component/common/header/header.component';
-import { UserMenuComponent } from './component/common/user-menu/user-menu.component';
-import { SidenavComponent } from './component/common/sidenav/sidenav.component';
-import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.component';
+import { ErrorComponent } from './component/error/error.component';
 
 @NgModule({
   declarations: [
@@ -64,13 +60,9 @@ import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.co
 
     // login components
     LoginComponent,
+    LoginFormComponent,
     LoginCardComponent,
-
-    // common components
-    HeaderComponent,
-    UserMenuComponent,
-    SidenavComponent,
-    BreadcrumbComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
