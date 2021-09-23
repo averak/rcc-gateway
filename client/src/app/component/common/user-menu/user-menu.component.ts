@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/model/user.model';
+import { AlertService } from 'src/app/shared/service/alert.service';
 
 @Component({
   selector: 'app-user-menu',
@@ -10,7 +11,7 @@ import { UserModel } from 'src/app/model/user.model';
 export class UserMenuComponent implements OnInit {
   user!: UserModel;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private alertService: AlertService) {}
 
   ngOnInit(): void {
     this.user = {
@@ -21,5 +22,6 @@ export class UserMenuComponent implements OnInit {
 
   logout(): void {
     this.router.navigate(['/login']);
+    this.alertService.openSnackBar('ログアウトしました', 'SUCCESS');
   }
 }

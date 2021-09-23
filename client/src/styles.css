@@ -81,3 +81,9 @@ h1 {
 .menu-panel {
   border-radius: 0px !important;
 }
+
+.mat-snack-bar-container {
+  padding: 0 !important;
+  min-height: 50px !important;
+  max-width: 65vw !important;
+}

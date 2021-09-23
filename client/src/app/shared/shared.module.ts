@@ -28,11 +28,14 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
+// components
+import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
+
 // pipes
 import { UsernamePipe } from './pipe/username.pipe';
 
 @NgModule({
-  declarations: [UsernamePipe],
+  declarations: [UsernamePipe, SnackBarComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -103,6 +106,9 @@ import { UsernamePipe } from './pipe/username.pipe';
     ScrollingModule,
     FlexLayoutModule,
     NgbModalModule,
+
+    // components
+    SnackBarComponent,
 
     // pipes
     UsernamePipe,
