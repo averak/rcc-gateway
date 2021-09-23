@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { LoginRequest } from 'src/app/request/login.request';
 
 @Component({
   selector: 'app-login-card',
@@ -6,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-card.component.css'],
 })
 export class LoginCardComponent implements OnInit {
+  @Output() loginTransit = new EventEmitter<LoginRequest>();
+
+  requestBody: LoginRequest = {} as LoginRequest;
+  hidePassword = true;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSubmit(): void {
+    this.loginTransit.emit(this.requestBody);
+  }
 }
