@@ -51,4 +51,8 @@ export class AuthService {
       `${accessToken.tokenType} ${accessToken.accessToken}`
     );
   }
+
+  public checkAuthenticated(): boolean {
+    return this.cookieService.check(environment.CREDENTIALS_KEY);
+  }
 }
