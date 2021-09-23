@@ -1,1 +1,44 @@
-<p>reservations-new works!</p>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <form
+    class="form-content project-fg-black1"
+    fxLayout="column"
+    fxLayoutAlign="center"
+    (ngSubmit)="onSubmit()"
+    #loginForm="ngForm"
+  >
+    <div fxLayout="column" fxLayoutAlign="start start">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">開始時刻</span>
+        <mat-form-field class="form-input">
+          <input
+            matInput
+            [(ngModel)]="requestBody.startAt"
+            type="datetime-local"
+            name="start-at"
+            required
+          />
+          <mat-error>開始日時を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">開始時刻</span>
+        <mat-form-field class="form-input">
+          <input
+            matInput
+            [(ngModel)]="requestBody.finishAt"
+            type="datetime-local"
+            name="finish-at"
+            required
+          />
+          <mat-error>終了日時を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <button mat-flat-button class="cancel-button" (click)="onCancel()">キャンセル</button>
+      <button mat-flat-button class="submit-button">確認</button>
+    </div>
+  </form>
+</div>

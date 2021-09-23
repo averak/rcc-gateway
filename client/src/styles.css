@@ -92,3 +92,22 @@ h1 {
   border-radius: 0px !important;
   z-index: 2;
 }
+
+.mat-flat-button {
+  border-radius: 0px !important;
+}
+
+.cancel-button {
+  color: #364862;
+  border: 1px solid !important;
+  border-color: #c4c4c4 !important;
+  width: 110px;
+}
+
+.submit-button {
+  color: #ffffff;
+  border: 1px solid !important;
+  border-color: #3a7aca !important;
+  background-color: #3a7aca;
+  width: 110px;
+}
