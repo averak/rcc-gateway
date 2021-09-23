@@ -1,1 +1,8 @@
-<app-reservations-calendar (newTransit)="handleNewTransit()"></app-reservations-calendar>
+<app-reservations-calendar
+  *ngIf="reservations && loginUser"
+  [reservations]="reservations"
+  [loginUser]="loginUser"
+  (reservationEdit)="handleReservationEdit($event)"
+  (reservationDelete)="handleReservationDelete($event)"
+  (reservationNew)="handleReservationNew()"
+></app-reservations-calendar>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/model/user.model';
 import { AuthService } from 'src/app/shared/service/auth.service';
+import { UserService } from 'src/app/shared/service/user.service';
 import { AlertService } from 'src/app/shared/service/alert.service';
 
 @Component({
@@ -15,14 +16,19 @@ export class UserMenuComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
+    private userService: UserService,
     private alertService: AlertService
   ) {}
 
   ngOnInit(): void {
-    this.user = {
-      firstName: '健太朗',
-      lastName: '阿部',
-    };
+    this.userService.getLoginUser().subscribe(
+      (user) => {
+        this.user = user;
+      },
+      (error) => {
+        this.alertService.openSnackBar(error, 'ERROR');
+      }
+    );
   }
 
   logout(): void {

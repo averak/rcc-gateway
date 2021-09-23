@@ -35,6 +35,7 @@ import { UserMenuComponent } from './component/common/user-menu/user-menu.compon
 import { SidenavComponent } from './component/common/sidenav/sidenav.component';
 import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.component';
 import { TitleComponent } from './component/title/title.component';
+import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 
 // pipes
 import { UsernamePipe } from './pipe/username.pipe';
@@ -49,6 +50,7 @@ import { UsernamePipe } from './pipe/username.pipe';
     SidenavComponent,
     BreadcrumbComponent,
     TitleComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     FormsModule,
@@ -128,6 +130,7 @@ import { UsernamePipe } from './pipe/username.pipe';
     SidenavComponent,
     BreadcrumbComponent,
     TitleComponent,
+    ConfirmDialogComponent,
 
     // pipes
     UsernamePipe,
