@@ -25,8 +25,16 @@ const routes: Routes = [
     path: '',
     canActivate: [AuthGuard],
     children: [
-      { path: '', component: DashboardComponent, data: { breadcrumb: 'ダッシュボード' } },
-      { path: 'dashboard', component: DashboardComponent, data: { breadcrumb: 'ダッシュボード' } },
+      {
+        path: '',
+        component: DashboardComponent,
+        data: { breadcrumb: 'ダッシュボード', title: 'ダッシュボード' },
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        data: { breadcrumb: 'ダッシュボード', title: 'ダッシュボード' },
+      },
       {
         path: 'cluster',
         component: ClusterComponent,
@@ -36,7 +44,7 @@ const routes: Routes = [
           {
             path: 'reservations',
             component: ReservationsComponent,
-            data: { breadcrumb: '予約一覧' },
+            data: { breadcrumb: '予約一覧', title: '予約一覧' },
             children: [
               {
                 path: '',
@@ -46,7 +54,7 @@ const routes: Routes = [
               {
                 path: 'new',
                 component: ReservationsNewComponent,
-                data: { breadcrumb: '新規作成' },
+                data: { breadcrumb: '新規作成', title: '予約新規作成' },
               },
             ],
           },

@@ -58,10 +58,6 @@ body {
   min-height: calc(100vh - 60px);
 }
 
-h1 {
-  font-size: 1.6em;
-}
-
 .scroll-content {
   max-height: calc(100vh - 60px);
   overflow: auto;

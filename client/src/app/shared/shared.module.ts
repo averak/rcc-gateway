@@ -34,6 +34,7 @@ import { HeaderComponent } from './component/common/header/header.component';
 import { UserMenuComponent } from './component/common/user-menu/user-menu.component';
 import { SidenavComponent } from './component/common/sidenav/sidenav.component';
 import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.component';
+import { TitleComponent } from './component/title/title.component';
 
 // pipes
 import { UsernamePipe } from './pipe/username.pipe';
@@ -47,6 +48,7 @@ import { UsernamePipe } from './pipe/username.pipe';
     UserMenuComponent,
     SidenavComponent,
     BreadcrumbComponent,
+    TitleComponent,
   ],
   imports: [
     FormsModule,
@@ -125,6 +127,7 @@ import { UsernamePipe } from './pipe/username.pipe';
     UserMenuComponent,
     SidenavComponent,
     BreadcrumbComponent,
+    TitleComponent,
 
     // pipes
     UsernamePipe,
