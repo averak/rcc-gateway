@@ -4,17 +4,7 @@
     <div class="scroll-content">
       <app-breadcrumb></app-breadcrumb>
 
-      <div class="page-main-content" fxLayout="column" fxLayoutAlign="start start">
-        <div>
-          <h1 class="project-fg-black1">予約一覧</h1>
-        </div>
-
-        <mat-card class="mat-elevation-z1 main-contents-card">
-          <mat-card-content fxLayout="column" fxLayoutAlign="start">
-            <app-reservations-calendar></app-reservations-calendar>
-          </mat-card-content>
-        </mat-card>
-      </div>
+      <router-outlet></router-outlet>
     </div>
   </app-sidenav>
 </div>

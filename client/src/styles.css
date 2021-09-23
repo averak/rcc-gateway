@@ -58,10 +58,6 @@ body {
   min-height: calc(100vh - 60px);
 }
 
-h1 {
-  font-size: 1.6em;
-}
-
 .scroll-content {
   max-height: calc(100vh - 60px);
   overflow: auto;
@@ -73,7 +69,7 @@ h1 {
 }
 
 .main-contents-card {
-  width: calc(100% - 60px);
+  width: calc(100% - 64px);
   background-color: #ffffff;
   border-radius: 0px;
 }
@@ -86,4 +82,28 @@ h1 {
   padding: 0 !important;
   min-height: 50px !important;
   max-width: 65vw !important;
+}
+
+.mat-card {
+  border-radius: 0px !important;
+  z-index: 2;
+}
+
+.mat-flat-button {
+  border-radius: 0px !important;
+}
+
+.cancel-button {
+  color: #364862;
+  border: 1px solid !important;
+  border-color: #c4c4c4 !important;
+  width: 110px;
+}
+
+.submit-button {
+  color: #ffffff;
+  border: 1px solid !important;
+  border-color: #3a7aca !important;
+  background-color: #3a7aca;
+  width: 110px;
 }
