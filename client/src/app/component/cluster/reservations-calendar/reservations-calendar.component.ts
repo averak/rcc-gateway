@@ -6,9 +6,6 @@ import {
   OnChanges,
   SimpleChanges,
   EventEmitter,
-  ChangeDetectionStrategy,
-  ViewChild,
-  TemplateRef,
 } from '@angular/core';
 import {
   CalendarEvent,
@@ -39,12 +36,12 @@ export class CalendarEventWithReservation implements CalendarEvent {
   templateUrl: './reservations-calendar.component.html',
   styleUrls: ['./reservations-calendar.component.css'],
 })
-export class ReservationsCalendarComponent implements OnInit {
+export class ReservationsCalendarComponent implements OnInit, OnChanges {
   @Input() reservations!: ReservationModel[];
   @Input() loginUser!: UserModel;
 
-  @Output() reservationEdit: EventEmitter<any> = new EventEmitter<any>();
-  @Output() reservationDelete: EventEmitter<any> = new EventEmitter<any>();
+  @Output() reservationEdit = new EventEmitter<ReservationModel>();
+  @Output() reservationDelete = new EventEmitter<ReservationModel>();
   @Output() reservationNew = new EventEmitter<void>();
 
   view: CalendarView = CalendarView.Week;
@@ -73,7 +70,7 @@ export class ReservationsCalendarComponent implements OnInit {
   buildEvents(): void {
     this.events = [];
 
-    const pushEvent = (reservation: ReservationModel) => {
+    this.reservations.map((reservation) => {
       const editable =
         this.loginUser.id === reservation.user.id || this.userService.checkAdmin(this.loginUser);
 
@@ -93,21 +90,37 @@ export class ReservationsCalendarComponent implements OnInit {
         },
         draggable: editable,
       });
-    };
+    });
 
     // イベント一覧
-    this.reservations.map(pushEvent);
   }
 
   onClickNew(): void {
     this.reservationNew.emit();
   }
 
-  deleteEvent(eventToDelete: CalendarEventWithReservation) {}
+  eventTimesChanged(changedEvent: CalendarEventTimesChangedEvent): void {
+    this.events.map((event) => {
+      if (event === changedEvent.event) {
+        const reservation = event.reservation;
+        reservation.startAt = changedEvent.newStart as Date;
+        reservation.finishAt = changedEvent.newEnd as Date;
+        this.reservationEdit.emit(reservation);
+      }
+    });
+  }
+
+  deleteEvent(eventToDelete: CalendarEventWithReservation) {
+    this.reservationDelete.emit(eventToDelete.reservation);
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.reservations !== undefined) {
       this.reservations = changes.reservations.currentValue;
+      this.ngOnInit();
+    }
+
+    if (changes.loginUser !== undefined) {
       this.ngOnInit();
     }
   }

@@ -1,0 +1,9 @@
+<div fxLayout="column" fxLayoutAlign="space-between start" fxLayoutGap="20px">
+  <h2 mat-dialog-title class="project-fg-black1">{{ data.title }}</h2>
+  <mat-dialog-content class="project-fg-black1">{{ data.message }}</mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-flat-button (click)="onOkClick()">OK</button>
+    <button mat-flat-button mat-dialog-close="cancel">キャンセル</button>
+  </mat-dialog-actions>
+</div>
