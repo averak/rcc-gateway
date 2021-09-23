@@ -38,14 +38,15 @@ import { ProductListContentsComponent } from './component/dashboard/product-list
 import { ClusterComponent } from './component/cluster/cluster.component';
 import { ReservationsCalendarComponent } from './component/cluster/reservations-calendar/reservations-calendar.component';
 
-// common components
-import { HeaderComponent } from './component/common/header/header.component';
-import { SidenavComponent } from './component/common/sidenav/sidenav.component';
-import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.component';
-
 // login components
 import { LoginComponent } from './component/login/login.component';
 import { LoginCardComponent } from './component/login/login-card/login-card.component';
+
+// common components
+import { HeaderComponent } from './component/common/header/header.component';
+import { UserMenuComponent } from './component/common/user-menu/user-menu.component';
+import { SidenavComponent } from './component/common/sidenav/sidenav.component';
+import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -61,14 +62,15 @@ import { LoginCardComponent } from './component/login/login-card/login-card.comp
     ClusterComponent,
     ReservationsCalendarComponent,
 
-    // common components
-    HeaderComponent,
-    SidenavComponent,
-    BreadcrumbComponent,
-
     // login components
     LoginComponent,
     LoginCardComponent,
+
+    // common components
+    HeaderComponent,
+    UserMenuComponent,
+    SidenavComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,24 +4,5 @@
     <span fxFlexOffset="5px">RCC Gateway</span>
   </div>
 
-  <div fxLayout="row" fxLayoutAlign="end center">
-    <!-- ユーザ情報 -->
-    <div fxLayout="row" fxLayoutAlign="start center">
-      <button mat-button [matMenuTriggerFor]="menu" fxLayout="row">
-        <mat-icon>account_circle</mat-icon>
-        <span class="user-name">阿部 健太朗</span>
-        <mat-icon>arrow_drop_down</mat-icon>
-      </button>
-
-      <!-- ユーザメニュー -->
-      <mat-menu class="menu-panel" #menu="matMenu">
-        <button mat-menu-item>
-          <div class="project-fg-black1">
-            <mat-icon>logout</mat-icon>
-            <span>ログアウト</span>
-          </div>
-        </button>
-      </mat-menu>
-    </div>
-  </div>
+  <app-user-menu></app-user-menu>
 </div>

@@ -1,0 +1,16 @@
+<div fxLayout="row" fxLayoutAlign="end center">
+  <button mat-button [matMenuTriggerFor]="menu" fxLayout="row">
+    <mat-icon>account_circle</mat-icon>
+    <span class="user-name">{{ user | username }}</span>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-menu class="menu-panel" #menu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <div class="project-fg-black1">
+        <mat-icon>logout</mat-icon>
+        <span>ログアウト</span>
+      </div>
+    </button>
+  </mat-menu>
+</div>

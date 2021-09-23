@@ -10,8 +10,8 @@ export class ProductResolverService {
 
   constructor() {}
 
-  getProductInfo(link: string): ProductModel {
-    return this.products.filter((prod) => prod.link == link)[0];
+  getProductInfo(url: string): ProductModel {
+    return this.products.filter((prod) => prod.url == url)[0];
   }
 
   getProducts(): ProductModel[] {
