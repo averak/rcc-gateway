@@ -43,12 +43,6 @@ import { LoginComponent } from './component/login/login.component';
 import { LoginFormComponent } from './component/login/login-form/login-form.component';
 import { LoginCardComponent } from './component/login/login-card/login-card.component';
 
-// common components
-import { HeaderComponent } from './component/common/header/header.component';
-import { UserMenuComponent } from './component/common/user-menu/user-menu.component';
-import { SidenavComponent } from './component/common/sidenav/sidenav.component';
-import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,12 +61,6 @@ import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.co
     LoginComponent,
     LoginFormComponent,
     LoginCardComponent,
-
-    // common components
-    HeaderComponent,
-    UserMenuComponent,
-    SidenavComponent,
-    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,

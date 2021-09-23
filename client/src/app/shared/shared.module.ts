@@ -30,12 +30,24 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // components
 import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
+import { HeaderComponent } from './component/common/header/header.component';
+import { UserMenuComponent } from './component/common/user-menu/user-menu.component';
+import { SidenavComponent } from './component/common/sidenav/sidenav.component';
+import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.component';
 
 // pipes
 import { UsernamePipe } from './pipe/username.pipe';
 
 @NgModule({
-  declarations: [UsernamePipe, SnackBarComponent],
+  declarations: [
+    UsernamePipe,
+    SnackBarComponent,
+    SnackBarComponent,
+    HeaderComponent,
+    UserMenuComponent,
+    SidenavComponent,
+    BreadcrumbComponent,
+  ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -109,6 +121,10 @@ import { UsernamePipe } from './pipe/username.pipe';
 
     // components
     SnackBarComponent,
+    HeaderComponent,
+    UserMenuComponent,
+    SidenavComponent,
+    BreadcrumbComponent,
 
     // pipes
     UsernamePipe,
