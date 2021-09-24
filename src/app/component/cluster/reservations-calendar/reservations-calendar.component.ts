@@ -70,7 +70,9 @@ export class ReservationsCalendarComponent implements OnInit, OnChanges {
   buildEvents(): void {
     this.events = [];
 
+    // イベント一覧
     this.reservations.map((reservation) => {
+      // 作成者 & 管理者は編集可能
       const editable =
         this.loginUser.id === reservation.user.id || this.userService.checkAdmin(this.loginUser);
 
@@ -91,8 +93,6 @@ export class ReservationsCalendarComponent implements OnInit, OnChanges {
         draggable: editable,
       });
     });
-
-    // イベント一覧
   }
 
   onClickNew(): void {
@@ -100,12 +100,18 @@ export class ReservationsCalendarComponent implements OnInit, OnChanges {
   }
 
   eventTimesChanged(changedEvent: CalendarEventTimesChangedEvent): void {
-    this.events.map((event) => {
-      if (event === changedEvent.event) {
-        const reservation = event.reservation;
-        reservation.startAt = changedEvent.newStart as Date;
-        reservation.finishAt = changedEvent.newEnd as Date;
-        this.reservationEdit.emit(reservation);
+    this.events.forEach((event) => {
+      if (event === changedEvent.event && changedEvent.newStart && changedEvent.newEnd) {
+        // 時間が変更されているか
+        if (
+          event.start.getTime() !== changedEvent.newStart.getTime() ||
+          event.end.getTime() !== changedEvent.newEnd.getTime()
+        ) {
+          const reservation = event.reservation;
+          reservation.startAt = changedEvent.newStart as Date;
+          reservation.finishAt = changedEvent.newEnd as Date;
+          this.reservationEdit.emit(reservation);
+        }
       }
     });
   }
