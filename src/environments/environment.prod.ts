@@ -33,7 +33,7 @@ export const environment = {
         },
         {
           label: '予約履歴',
-          url: '/cluster/histories',
+          url: '/cluster/reservations/histories',
           icon: 'history',
         },
       ],
