@@ -2,7 +2,6 @@ export type ProductSideNav = {
   label: string;
   url: string;
   icon: string;
-  selected: boolean;
 };
 
 export type ProductModel = {
