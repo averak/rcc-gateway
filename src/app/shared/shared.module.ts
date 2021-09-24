@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -74,6 +75,7 @@ import { UsernamePipe } from './pipe/username.pipe';
     MatButtonModule,
     MatTableModule,
     MatDividerModule,
+    MatButtonToggleModule,
     MatSlideToggleModule,
     MatSelectModule,
     MatCheckboxModule,
@@ -109,6 +111,7 @@ import { UsernamePipe } from './pipe/username.pipe';
     MatButtonModule,
     MatTableModule,
     MatDividerModule,
+    MatButtonToggleModule,
     MatSlideToggleModule,
     MatSelectModule,
     MatCheckboxModule,
