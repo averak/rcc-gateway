@@ -1,67 +1,52 @@
 # RCC Gateway
 
+![build](https://github.com/averak/rcc-gateway/workflows/build/badge.svg)
+![code check](https://github.com/averak/rcc-gateway/workflows/code%20check/badge.svg)
+![deploy](https://github.com/averak/rcc-gateway/workflows/deploy/badge.svg)
+![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
 ![Version 1.0](https://img.shields.io/badge/version-1.0-yellow.svg)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
-This app is gateway of RCC services that I manage.
+This app is integrated UI of RCC services that I manage.
 
 ## Develop
 
 ### Requirements
 
-- Java OpenJDK 11
-- Spring Boot
-- MySQL
+- Node.js 14
 - Angular
 
-### Usage
-
-If you want to run on Windows, you can use `gradlew.bat` instead of of `gradlew`.
-
-#### How to bulid
+### Installation
 
 ```sh
-$ ./gradlew build -x test
+$ yarn
 ```
 
-When build successful, you can find .jar file in `app/build/libs`
-
-#### How to run
-
-First, you need to launch mysql with `docker-compose`.
+### How to build
 
 ```sh
-$ docker-compose up -d
+$ yarn build
 ```
 
-Then you can launch application.
-Default port is `8080`. If you want to change port, run with `-Dserver.port=XXXX`.
+When build successful, you can find static files in `dist`.
+
+### How to run
 
 ```sh
-# 1. run .jar file
-$ java -jar rcc-gateway-<version>.jar  # -Dspring.profiles.active=<environment>
-
-# 2. run on dev environment
-$ ./gradlew bootRun
+$ yarn start
 ```
 
-#### How to test
+### How to check code
+
+You need to do this before committing.
 
 ```sh
-# 1. all tests
-$ ./gradlew test
+# lint & type check
+$ yarn run check
 
-# 2. only unit tests
-$ ./gradlew unitTest
+# code format
+$ yarn run format
 
-# 3. only integration tests
-$ ./gradlew integrationTest
+# test
+$ yarn run test
 ```
-
-### API docs
-
-This project support Swagger UI.
-
-1. Run application
-2. Access to [Swagger UI](http://localhost:8080/swagger-ui/)
-
