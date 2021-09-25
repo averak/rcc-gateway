@@ -60,7 +60,7 @@ const routes: Routes = [
               {
                 path: 'histories',
                 component: ReservationsHistoriesComponent,
-                data: { breadcrumb: '予約履歴', title: '予約履歴' },
+                data: { breadcrumb: '履歴', title: '予約履歴' },
               },
             ],
           },

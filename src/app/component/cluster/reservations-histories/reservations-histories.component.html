@@ -4,5 +4,15 @@
       <mat-button-toggle value="everyone">全員</mat-button-toggle>
       <mat-button-toggle value="myself">自分</mat-button-toggle>
     </mat-button-toggle-group>
+
+    <button mat-flat-button class="submit-button" (click)="onClickExport()">
+      <mat-icon>download</mat-icon>
+      <span>エクスポート</span>
+    </button>
   </div>
+
+  <app-reservations-table
+    *ngIf="reservations"
+    [reservations]="reservations"
+  ></app-reservations-table>
 </div>

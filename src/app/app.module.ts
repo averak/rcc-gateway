@@ -41,6 +41,7 @@ import { ReservationsComponent } from './component/cluster/reservations/reservat
 import { ReservationsNewComponent } from './component/cluster/reservations-new/reservations-new.component';
 import { ReservationsContentComponent } from './component/cluster/reservations-content/reservations-content.component';
 import { ReservationsHistoriesComponent } from './component/cluster/reservations-histories/reservations-histories.component';
+import { ReservationsTableComponent } from './component/cluster/reservations-table/reservations-table.component';
 
 // login components
 import { LoginComponent } from './component/login/login.component';
@@ -67,6 +68,7 @@ import { ErrorComponent } from './component/error/error.component';
     ReservationsNewComponent,
     ReservationsContentComponent,
     ReservationsHistoriesComponent,
+    ReservationsTableComponent,
 
     // login components
     LoginComponent,

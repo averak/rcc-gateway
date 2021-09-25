@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ReservationModel } from 'src/app/model/reservation.model';
+import { ReservationService } from 'src/app/shared/service/reservation.service';
+import { AlertService } from 'src/app/shared/service/alert.service';
 
 @Component({
   selector: 'app-reservations-histories',
@@ -6,7 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reservations-histories.component.css'],
 })
 export class ReservationsHistoriesComponent implements OnInit {
-  constructor() {}
+  reservations!: ReservationModel[];
 
-  ngOnInit(): void {}
+  constructor(private reservationService: ReservationService, private alertService: AlertService) {}
+
+  ngOnInit(): void {
+    // 予約一覧を取得
+    this.reservationService.getReservations().subscribe(
+      (reservations) => {
+        this.reservations = reservations;
+      },
+      (error) => {
+        this.alertService.openSnackBar(error, 'ERROR');
+      }
+    );
+  }
+
+  onClickExport(): void {
+    // FIXME
+    console.log('エクスポートします');
+  }
 }

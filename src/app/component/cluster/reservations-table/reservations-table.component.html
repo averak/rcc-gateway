@@ -1,0 +1,36 @@
+<div fxLayout="column" class="reservations-table">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="username">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>名前</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let reservation">
+        {{ reservation.user | username }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>メールアドレス</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let reservation">
+        {{ reservation.user.email }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="admissionYear">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>入学年度</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let reservation">
+        {{ reservation.user.admissionYear }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="reservationTime">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>予約時間</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let reservation">
+        {{ reservation.startAt }}~{{ reservation.finishAt }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons> </mat-paginator>
+</div>
