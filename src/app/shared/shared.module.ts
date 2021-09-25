@@ -40,10 +40,10 @@ import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialo
 
 // pipes
 import { UsernamePipe } from './pipe/username.pipe';
+import { DatetimePipe } from './pipe/datetime.pipe';
 
 @NgModule({
   declarations: [
-    UsernamePipe,
     SnackBarComponent,
     SnackBarComponent,
     HeaderComponent,
@@ -52,6 +52,8 @@ import { UsernamePipe } from './pipe/username.pipe';
     BreadcrumbComponent,
     TitleComponent,
     ConfirmDialogComponent,
+    UsernamePipe,
+    DatetimePipe,
   ],
   imports: [
     FormsModule,
@@ -137,6 +139,7 @@ import { UsernamePipe } from './pipe/username.pipe';
 
     // pipes
     UsernamePipe,
+    DatetimePipe,
   ],
 })
 export class SharedModule {}

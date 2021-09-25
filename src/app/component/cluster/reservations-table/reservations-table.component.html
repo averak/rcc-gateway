@@ -22,9 +22,10 @@
     </ng-container>
 
     <ng-container matColumnDef="reservationTime">
-      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>予約時間</th>
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>予約時刻</th>
       <td class="project-fg-black1" mat-cell *matCellDef="let reservation">
-        {{ reservation.startAt }}~{{ reservation.finishAt }}
+        {{ reservation.startAt | datetime: 'YYYY/MM/DD HH:mm' }} ~
+        {{ reservation.finishAt | datetime: 'HH:mm' }}
       </td>
     </ng-container>
 
