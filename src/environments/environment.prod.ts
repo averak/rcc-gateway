@@ -45,7 +45,13 @@ export const environment = {
       url: '/rdid',
       version: '開発中',
       display: true,
-      navs: [],
+      navs: [
+        {
+          label: 'アカウント管理',
+          url: '/rdid/users',
+          icon: 'admin_panel_settings',
+        },
+      ],
     },
     {
       title: 'IAM',
