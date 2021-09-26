@@ -4,6 +4,7 @@
     fxLayout="column"
     fxLayoutAlign="center"
     (ngSubmit)="onSubmit()"
+    autocomplete="off"
   >
     <div fxLayout="column" fxLayoutAlign="start start">
       <div fxLayout="row" fxLayoutAlign="start center">
@@ -73,7 +74,7 @@
             <mat-option [value]="1">管理者</mat-option>
             <mat-option [value]="2">一般</mat-option>
           </mat-select>
-          <mat-error>名を入力してください</mat-error>
+          <mat-error>権限を入力してください</mat-error>
         </mat-form-field>
       </div>
 
