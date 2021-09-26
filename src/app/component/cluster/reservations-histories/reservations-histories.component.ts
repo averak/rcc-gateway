@@ -26,6 +26,12 @@ export class ReservationsHistoriesComponent implements OnInit {
     this.reservationService.getReservations().subscribe(
       (reservations) => {
         this.reservations = reservations;
+
+        // 新しい順にソート
+        this.reservations.sort(
+          (a, b) => new Date(b.startAt).getTime() - new Date(a.startAt).getTime()
+        );
+
         this.displayedReservations = this.reservations;
       },
       (error) => {
