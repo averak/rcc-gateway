@@ -44,6 +44,26 @@ export class ReservationsHistoriesComponent implements OnInit {
     );
   }
 
+  handleReservationDelete(reservation: ReservationModel): void {
+    this.alertService.confirmDialog(
+      '削除確認',
+      '本当に予約を削除しますか？',
+      (result: boolean): void => {
+        if (result) {
+          this.reservationService.deleteReservation(reservation.id).subscribe(
+            () => {
+              this.reservationService.fetchReservations();
+              this.alertService.openSnackBar('予約を削除しました', 'SUCCESS');
+            },
+            (error) => {
+              this.alertService.openSnackBar(error, 'ERROR');
+            }
+          );
+        }
+      }
+    );
+  }
+
   onClickExport(): void {
     // FIXME
     console.log('エクスポートします');

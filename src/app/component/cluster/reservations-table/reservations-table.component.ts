@@ -2,6 +2,8 @@ import {
   Component,
   OnInit,
   Input,
+  Output,
+  EventEmitter,
   ViewChild,
   OnChanges,
   SimpleChanges,
@@ -18,6 +20,8 @@ import { ReservationModel } from 'src/app/model/reservation.model';
 })
 export class ReservationsTableComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() reservations: ReservationModel[] = [];
+
+  @Output() reservationDelete = new EventEmitter<ReservationModel>();
 
   columns: string[] = ['username', 'email', 'admissionYear', 'reservationTime', 'control'];
   dataSource!: MatTableDataSource<ReservationModel>;
@@ -39,5 +43,9 @@ export class ReservationsTableComponent implements OnInit, AfterViewInit, OnChan
       this.reservations = changes.reservations.currentValue;
       this.ngOnInit();
     }
+  }
+
+  onClickDelete(reservation: ReservationModel): void {
+    this.reservationDelete.emit(reservation);
   }
 }
