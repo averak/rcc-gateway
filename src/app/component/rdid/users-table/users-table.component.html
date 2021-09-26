@@ -1,0 +1,56 @@
+<div fxLayout="column" class="users-table">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="username">
+      <th class="username-header project-fg-black1" mat-header-cell *matHeaderCellDef>氏名</th>
+      <td class="username-cell project-fg-black1" mat-cell *matCellDef="let user">
+        {{ user | username }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th class="email-header project-fg-black1" mat-header-cell *matHeaderCellDef>
+        メールアドレス
+      </th>
+      <td class="email-cell project-fg-black1" mat-cell *matCellDef="let user">
+        {{ user.email }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="admissionYear">
+      <th class="admission-year-header project-fg-black1" mat-header-cell *matHeaderCellDef>
+        入学年度
+      </th>
+      <td class="admission-year-cell project-fg-black1" mat-cell *matCellDef="let user">
+        {{ user.admissionYear }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="userRole">
+      <th class="user-role-header project-fg-black1" mat-header-cell *matHeaderCellDef>権限</th>
+      <td class="user-role-cell project-fg-black1" mat-cell *matCellDef="let user">
+        <div [ngSwitch]="user.roleId">
+          <span *ngSwitchCase="1"><mat-icon>admin_panel_settings</mat-icon></span>
+          <span *ngSwitchCase="2"><mat-icon>person</mat-icon></span>
+          <span *ngSwitchDefault><mat-icon>warning</mat-icon></span>
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="control">
+      <th class="control-header project-fg-black1" mat-header-cell *matHeaderCellDef>操作</th>
+      <td class="control-cell project-fg-blue1" mat-cell *matCellDef="let user">
+        <button mat-icon-button (click)="onClickEdit(user)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onClickDelete(user)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[20, 30, 40]" showFirstLastButtons> </mat-paginator>
+</div>

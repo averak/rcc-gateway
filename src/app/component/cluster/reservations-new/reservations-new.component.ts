@@ -47,6 +47,6 @@ export class ReservationsNewComponent implements OnInit {
   }
 
   onCancel(): void {
-    this.router.navigate(['cluster', 'reservations']);
+    this.router.navigate(['/cluster', 'reservations']);
   }
 }

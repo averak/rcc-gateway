@@ -9,3 +9,7 @@ export type UserModel = {
   roleId: number;
   admissionYear: number;
 };
+
+export type UsersModel = {
+  users: UserModel[];
+};

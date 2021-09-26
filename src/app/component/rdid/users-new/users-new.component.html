@@ -1,0 +1,91 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <form
+    class="form-content project-fg-black1"
+    fxLayout="column"
+    fxLayoutAlign="center"
+    (ngSubmit)="onSubmit()"
+  >
+    <div fxLayout="column" fxLayoutAlign="start start">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">姓</span>
+        <mat-form-field class="form-input">
+          <mat-label>姓</mat-label>
+          <input matInput [(ngModel)]="requestBody.lastName" name="input-last-name" required />
+          <mat-error>姓を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">名</span>
+        <mat-form-field class="form-input">
+          <mat-label>名</mat-label>
+          <input matInput [(ngModel)]="requestBody.firstName" name="input-first-name" required />
+          <mat-error>名を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">メールアドレス</span>
+        <mat-form-field class="form-input">
+          <mat-label>メールアドレス</mat-label>
+          <input matInput [(ngModel)]="requestBody.email" name="input-email" required />
+          <mat-error>メールアドレスを入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">パスワード</span>
+        <mat-form-field class="form-input">
+          <mat-label>パスワード</mat-label>
+          <input
+            matInput
+            [(ngModel)]="requestBody.password"
+            [type]="hidePassword ? 'password' : 'text'"
+            name="input-password"
+            required
+          />
+          <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{
+            hidePassword ? 'visibility' : 'visibility_off'
+          }}</mat-icon>
+
+          <mat-error>パスワードを入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">入学年度</span>
+        <mat-form-field class="form-input">
+          <mat-label>入学年度</mat-label>
+          <mat-select [(ngModel)]="requestBody.admissionYear" name="input-admission-year" required>
+            <mat-option *ngFor="let option of admissionYears" [value]="option">{{
+              option
+            }}</mat-option>
+          </mat-select>
+          <mat-error>入学年度を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">権限</span>
+        <mat-form-field class="form-input">
+          <mat-label>権限</mat-label>
+          <mat-select [(ngModel)]="requestBody.roleId" name="input-user-role" required>
+            <mat-option [value]="1">管理者</mat-option>
+            <mat-option [value]="2">一般</mat-option>
+          </mat-select>
+          <mat-error>名を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center" fxFlexOffset="20px">
+        <span class="input-label">通知設定</span>
+        <mat-slide-toggle class="form-input"></mat-slide-toggle>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <button mat-flat-button class="cancel-button" (click)="onCancel()">キャンセル</button>
+      <button mat-flat-button class="submit-button">確認</button>
+    </div>
+  </form>
+</div>

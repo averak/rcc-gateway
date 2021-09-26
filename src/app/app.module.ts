@@ -28,6 +28,14 @@ class CustomDateFormatter extends CalendarNativeDateFormatter {
   }
 }
 
+// login components
+import { LoginComponent } from './component/login/login.component';
+import { LoginFormComponent } from './component/login/login-form/login-form.component';
+import { LoginCardComponent } from './component/login/login-card/login-card.component';
+
+// error components
+import { ErrorComponent } from './component/error/error.component';
+
 // dashboard components
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ProductCardComponent } from './component/dashboard/product-card/product-card.component';
@@ -43,17 +51,24 @@ import { ReservationsContentComponent } from './component/cluster/reservations-c
 import { ReservationsHistoriesComponent } from './component/cluster/reservations-histories/reservations-histories.component';
 import { ReservationsTableComponent } from './component/cluster/reservations-table/reservations-table.component';
 
-// login components
-import { LoginComponent } from './component/login/login.component';
-import { LoginFormComponent } from './component/login/login-form/login-form.component';
-import { LoginCardComponent } from './component/login/login-card/login-card.component';
-
-// error components
-import { ErrorComponent } from './component/error/error.component';
+// RDID components
+import { RdidComponent } from './component/rdid/rdid.component';
+import { UsersComponent } from './component/rdid/users/users.component';
+import { UsersContentComponent } from './component/rdid/users-content/users-content.component';
+import { UsersTableComponent } from './component/rdid/users-table/users-table.component';
+import { UsersNewComponent } from './component/rdid/users-new/users-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    // login components
+    LoginComponent,
+    LoginFormComponent,
+    LoginCardComponent,
+
+    // error components
+    ErrorComponent,
 
     // dashboard components
     DashboardComponent,
@@ -70,13 +85,12 @@ import { ErrorComponent } from './component/error/error.component';
     ReservationsHistoriesComponent,
     ReservationsTableComponent,
 
-    // login components
-    LoginComponent,
-    LoginFormComponent,
-    LoginCardComponent,
-
-    // error components
-    ErrorComponent,
+    // RDID components
+    RdidComponent,
+    UsersComponent,
+    UsersContentComponent,
+    UsersTableComponent,
+    UsersNewComponent,
   ],
   imports: [
     BrowserModule,
