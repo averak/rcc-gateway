@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 import { ReservationModel } from 'src/app/model/reservation.model';
 import { UserModel } from 'src/app/model/user.model';
 import { ReservationService } from 'src/app/shared/service/reservation.service';
 import { UserService } from 'src/app/shared/service/user.service';
 import { AlertService } from 'src/app/shared/service/alert.service';
+import { FileDownloadService } from 'src/app/shared/service/file-download.service';
 
 @Component({
   selector: 'app-reservations-histories',
@@ -18,7 +20,8 @@ export class ReservationsHistoriesComponent implements OnInit {
   constructor(
     private reservationService: ReservationService,
     private userService: UserService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private fileDownloadService: FileDownloadService
   ) {}
 
   ngOnInit(): void {
@@ -71,8 +74,20 @@ export class ReservationsHistoriesComponent implements OnInit {
   }
 
   onClickExport(): void {
-    // FIXME
-    console.log('エクスポートします');
+    const headers = ['氏名', 'メールアドレス', '入学年度', '予約時刻'];
+    const data = this.displayedReservations.map((reservation) => {
+      return [
+        `${reservation.user.lastName} ${reservation.user.firstName}`,
+        reservation.user.email,
+        reservation.user.admissionYear,
+        `${moment(reservation.startAt).format('YYYY/MM/DD HH:mm')} - ${moment(
+          reservation.finishAt
+        ).format('HH:mm')}`,
+      ];
+    });
+
+    // CSVでエクスポート
+    this.fileDownloadService.exportAsCsv('予約履歴', data, headers);
   }
 
   onToggleClick(value: string): void {
