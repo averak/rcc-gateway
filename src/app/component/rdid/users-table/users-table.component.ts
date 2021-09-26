@@ -2,6 +2,8 @@ import {
   Component,
   OnInit,
   Input,
+  Output,
+  EventEmitter,
   ViewChild,
   OnChanges,
   SimpleChanges,
@@ -18,6 +20,9 @@ import { UserModel } from 'src/app/model/user.model';
 })
 export class UsersTableComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() users: UserModel[] = [];
+
+  @Output() userEdit = new EventEmitter<UserModel>();
+  @Output() userDelete = new EventEmitter<UserModel>();
 
   columns: string[] = ['username', 'email', 'admissionYear', 'userRole', 'control'];
   dataSource!: MatTableDataSource<UserModel>;
@@ -39,5 +44,13 @@ export class UsersTableComponent implements OnInit, AfterViewInit, OnChanges {
       this.users = changes.users.currentValue;
       this.ngOnInit();
     }
+  }
+
+  onClickEdit(user: UserModel): void {
+    this.userEdit.emit(user);
+  }
+
+  onClickDelete(user: UserModel): void {
+    this.userDelete.emit(user);
   }
 }

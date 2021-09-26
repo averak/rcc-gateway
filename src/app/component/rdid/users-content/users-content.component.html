@@ -6,5 +6,11 @@
     </button>
   </div>
 
-  <app-users-table *ngIf="users" [users]="users" fxFlexOffset="20px"></app-users-table>
+  <app-users-table
+    *ngIf="users"
+    [users]="users"
+    (userEdit)="handleUserEdit($event)"
+    (userDelete)="handleUserDelete($event)"
+    fxFlexOffset="20px"
+  ></app-users-table>
 </div>

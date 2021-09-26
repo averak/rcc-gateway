@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserModel } from 'src/app/model/user.model';
 import { UserService } from 'src/app/shared/service/user.service';
 import { AlertService } from 'src/app/shared/service/alert.service';
@@ -11,7 +12,11 @@ import { AlertService } from 'src/app/shared/service/alert.service';
 export class UsersContentComponent implements OnInit {
   users!: UserModel[];
 
-  constructor(private userService: UserService, private alertService: AlertService) {}
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private alertService: AlertService
+  ) {}
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe(
@@ -25,6 +30,30 @@ export class UsersContentComponent implements OnInit {
   }
 
   onClickNew(): void {
-    console.log('新規作成するよ');
+    this.router.navigate(['rdid', 'users', 'new']);
+  }
+
+  handleUserEdit(user: UserModel): void {
+    this.router.navigate(['/rdid', 'users', user.id, 'edit']);
+  }
+
+  handleUserDelete(user: UserModel): void {
+    this.alertService.confirmDialog(
+      '削除確認',
+      'この動作は取り消せませんが、本当に削除しますか？',
+      (result: boolean): void => {
+        if (result) {
+          this.userService.deleteUser(user.id).subscribe(
+            () => {
+              this.userService.fetchUsers();
+              this.alertService.openSnackBar('ユーザを削除しました', 'SUCCESS');
+            },
+            (error) => {
+              this.alertService.openSnackBar(error, 'ERROR');
+            }
+          );
+        }
+      }
+    );
   }
 }

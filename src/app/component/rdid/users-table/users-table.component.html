@@ -39,10 +39,10 @@
     <ng-container matColumnDef="control">
       <th class="control-header project-fg-black1" mat-header-cell *matHeaderCellDef>操作</th>
       <td class="control-cell project-fg-blue1" mat-cell *matCellDef="let user">
-        <button mat-icon-button>
+        <button mat-icon-button (click)="onClickEdit(user)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="onClickDelete(user)">
           <mat-icon>delete</mat-icon>
         </button>
       </td>
