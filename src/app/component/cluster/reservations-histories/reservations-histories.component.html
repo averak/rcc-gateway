@@ -1,6 +1,10 @@
 <div fxLayout="column" fxLayoutAlign="start">
   <div fxLayout="row" fxLayoutAlign="space-between center">
-    <mat-button-toggle-group name="history-type" value="everyone">
+    <mat-button-toggle-group
+      name="history-type"
+      value="everyone"
+      (change)="onToggleClick($event.value)"
+    >
       <mat-button-toggle value="everyone">全員</mat-button-toggle>
       <mat-button-toggle value="myself">自分</mat-button-toggle>
     </mat-button-toggle-group>
@@ -13,6 +17,7 @@
 
   <app-reservations-table
     *ngIf="reservations"
-    [reservations]="reservations"
+    [reservations]="displayedReservations"
+    fxFlexOffset="20px"
   ></app-reservations-table>
 </div>

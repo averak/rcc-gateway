@@ -1,4 +1,13 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewChild,
+  OnChanges,
+  SimpleChanges,
+  AfterViewInit,
+} from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ReservationModel } from 'src/app/model/reservation.model';
 
@@ -7,17 +16,22 @@ import { ReservationModel } from 'src/app/model/reservation.model';
   templateUrl: './reservations-table.component.html',
   styleUrls: ['./reservations-table.component.css'],
 })
-export class ReservationsTableComponent implements OnInit {
+export class ReservationsTableComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() reservations: ReservationModel[] = [];
 
-  // columns: string[] = ['username', 'email', 'admissionYear', 'startAt', 'finishAt'];
-  columns: string[] = ['username', 'email', 'admissionYear', 'reservationTime'];
+  columns: string[] = ['username', 'email', 'admissionYear', 'reservationTime', 'control'];
   dataSource!: MatTableDataSource<ReservationModel>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor() {}
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<ReservationModel>(this.reservations);
+    this.dataSource.paginator = this.paginator;
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
 
   ngOnChanges(changes: SimpleChanges) {
