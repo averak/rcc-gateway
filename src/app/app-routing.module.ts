@@ -13,6 +13,7 @@ import { ReservationsHistoriesComponent } from './component/cluster/reservations
 import { RdidComponent } from './component/rdid/rdid.component';
 import { UsersComponent } from './component/rdid/users/users.component';
 import { UsersContentComponent } from './component/rdid/users-content/users-content.component';
+import { UsersNewComponent } from './component/rdid/users-new/users-new.component';
 
 // guards
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
@@ -84,6 +85,11 @@ const routes: Routes = [
                 path: '',
                 component: UsersContentComponent,
                 data: { breadcrumb: '' },
+              },
+              {
+                path: 'new',
+                component: UsersNewComponent,
+                data: { breadcrumb: '新規作成', title: 'ユーザ新規作成' },
               },
             ],
           },

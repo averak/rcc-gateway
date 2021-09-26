@@ -22,6 +22,7 @@ export class UsersContentComponent implements OnInit {
     this.userService.getUsers().subscribe(
       (users) => {
         this.users = users;
+        this.users = this.userService.sortUsers(this.users);
       },
       (error) => {
         this.alertService.openSnackBar(error, 'ERROR');

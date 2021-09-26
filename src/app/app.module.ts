@@ -56,6 +56,7 @@ import { RdidComponent } from './component/rdid/rdid.component';
 import { UsersComponent } from './component/rdid/users/users.component';
 import { UsersContentComponent } from './component/rdid/users-content/users-content.component';
 import { UsersTableComponent } from './component/rdid/users-table/users-table.component';
+import { UsersNewComponent } from './component/rdid/users-new/users-new.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { UsersTableComponent } from './component/rdid/users-table/users-table.co
     UsersComponent,
     UsersContentComponent,
     UsersTableComponent,
+    UsersNewComponent,
   ],
   imports: [
     BrowserModule,

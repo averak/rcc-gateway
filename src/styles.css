@@ -125,3 +125,16 @@ body {
   color: #ffffff !important;
   background-color: #3a7aca !important;
 }
+
+.form-content {
+  width: 100%;
+}
+
+.form-input {
+  width: 300px;
+}
+
+.input-label {
+  margin-left: 10px;
+  width: 200px;
+}

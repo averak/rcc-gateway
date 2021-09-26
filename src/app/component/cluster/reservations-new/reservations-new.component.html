@@ -4,12 +4,11 @@
     fxLayout="column"
     fxLayoutAlign="center"
     (ngSubmit)="onSubmit()"
-    #loginForm="ngForm"
   >
     <div fxLayout="column" fxLayoutAlign="start start">
       <div fxLayout="row" fxLayoutAlign="start center">
         <span class="input-label">開始時刻</span>
-        <mat-form-field class="form-input form-date-input">
+        <mat-form-field class="form-input">
           <input
             matInput
             [(ngModel)]="reservation.startAt"
@@ -23,7 +22,7 @@
 
       <div fxLayout="row" fxLayoutAlign="start center">
         <span class="input-label">開始時刻</span>
-        <mat-form-field class="form-input form-date-input">
+        <mat-form-field class="form-input">
           <input
             matInput
             [(ngModel)]="reservation.finishAt"
@@ -35,7 +34,7 @@
         </mat-form-field>
       </div>
 
-      <div fxLayout="row" fxLayoutAlign="start center">
+      <div fxLayout="row" fxLayoutAlign="start center" fxFlexOffset="20px">
         <span class="input-label">通知設定</span>
         <mat-slide-toggle class="form-input"></mat-slide-toggle>
       </div>
