@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -39,10 +40,10 @@ import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialo
 
 // pipes
 import { UsernamePipe } from './pipe/username.pipe';
+import { DatetimePipe } from './pipe/datetime.pipe';
 
 @NgModule({
   declarations: [
-    UsernamePipe,
     SnackBarComponent,
     SnackBarComponent,
     HeaderComponent,
@@ -51,6 +52,8 @@ import { UsernamePipe } from './pipe/username.pipe';
     BreadcrumbComponent,
     TitleComponent,
     ConfirmDialogComponent,
+    UsernamePipe,
+    DatetimePipe,
   ],
   imports: [
     FormsModule,
@@ -74,6 +77,7 @@ import { UsernamePipe } from './pipe/username.pipe';
     MatButtonModule,
     MatTableModule,
     MatDividerModule,
+    MatButtonToggleModule,
     MatSlideToggleModule,
     MatSelectModule,
     MatCheckboxModule,
@@ -109,6 +113,7 @@ import { UsernamePipe } from './pipe/username.pipe';
     MatButtonModule,
     MatTableModule,
     MatDividerModule,
+    MatButtonToggleModule,
     MatSlideToggleModule,
     MatSelectModule,
     MatCheckboxModule,
@@ -134,6 +139,7 @@ import { UsernamePipe } from './pipe/username.pipe';
 
     // pipes
     UsernamePipe,
+    DatetimePipe,
   ],
 })
 export class SharedModule {}

@@ -1,0 +1,55 @@
+<div fxLayout="column" class="reservations-table">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="username">
+      <th class="username-header project-fg-black1" mat-header-cell *matHeaderCellDef>氏名</th>
+      <td class="username-cell project-fg-black1" mat-cell *matCellDef="let reservation">
+        {{ reservation.user | username }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th class="email-header project-fg-black1" mat-header-cell *matHeaderCellDef>
+        メールアドレス
+      </th>
+      <td class="email-cell project-fg-black1" mat-cell *matCellDef="let reservation">
+        {{ reservation.user.email }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="admissionYear">
+      <th class="admission-year-header project-fg-black1" mat-header-cell *matHeaderCellDef>
+        入学年度
+      </th>
+      <td class="admission-year-cell project-fg-black1" mat-cell *matCellDef="let reservation">
+        {{ reservation.user.admissionYear }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="reservationTime">
+      <th class="reservation-time-header project-fg-black1" mat-header-cell *matHeaderCellDef>
+        予約時刻
+      </th>
+      <td class="reservation-time-cell project-fg-black1" mat-cell *matCellDef="let reservation">
+        {{ reservation.startAt | datetime: 'YYYY/MM/DD HH:mm' }} -
+        {{ reservation.finishAt | datetime: 'HH:mm' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="control">
+      <th class="control-header project-fg-black1" mat-header-cell *matHeaderCellDef>操作</th>
+      <td class="control-cell project-fg-blue1" mat-cell *matCellDef="let reservation">
+        <button mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onClickDelete(reservation)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons> </mat-paginator>
+</div>
