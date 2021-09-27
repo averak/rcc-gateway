@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { UserModel } from 'src/app/model/user.model';
 import { AuthService } from 'src/app/shared/service/auth.service';
 import { UserService } from 'src/app/shared/service/user.service';
@@ -14,7 +13,6 @@ export class UserMenuComponent implements OnInit {
   user!: UserModel;
 
   constructor(
-    private router: Router,
     private authService: AuthService,
     private userService: UserService,
     private alertService: AlertService
@@ -33,7 +31,6 @@ export class UserMenuComponent implements OnInit {
 
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/login']);
     this.alertService.openSnackBar('ログアウトしました', 'SUCCESS');
   }
 }
