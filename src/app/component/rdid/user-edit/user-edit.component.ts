@@ -1,27 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { admissionYears } from 'src/app/model/user.model';
+import { Router, ActivatedRoute } from '@angular/router';
+import { UserModel, admissionYears } from 'src/app/model/user.model';
+import { UserUpdateRequest } from 'src/app/request/user.request';
 import { UserService } from 'src/app/shared/service/user.service';
 import { AlertService } from 'src/app/shared/service/alert.service';
-import { UserCreateRequest } from 'src/app/request/user.request';
 
 @Component({
-  selector: 'app-users-new',
-  templateUrl: './users-new.component.html',
-  styleUrls: ['./users-new.component.css'],
+  selector: 'app-user-edit',
+  templateUrl: './user-edit.component.html',
+  styleUrls: ['./user-edit.component.css'],
 })
-export class UsersNewComponent implements OnInit {
-  requestBody: UserCreateRequest = {} as UserCreateRequest;
+export class UserEditComponent implements OnInit {
+  user!: UserModel;
+  requestBody: UserUpdateRequest = {} as UserUpdateRequest;
   admissionYears = admissionYears;
-  hidePassword: boolean = true;
 
   constructor(
     private router: Router,
+    private userService: UserService,
     private alertService: AlertService,
-    private userService: UserService
+    private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // ユーザID
+    const userId = Number(this.route.snapshot.paramMap.get('userId'));
+
+    // 編集対象ユーザを取得
+    const user: UserModel | undefined = this.userService.selectById(userId);
+    if (user) {
+      this.user = user;
+      this.requestBody = this.user as UserUpdateRequest;
+    } else {
+      this.router.navigate(['/rdid', 'users']);
+      this.alertService.openSnackBar('編集対象ユーザが見つかりません', 'ERROR');
+    }
+  }
 
   onSubmit(): void {
     // 入力内容のバリデーション
@@ -29,7 +43,6 @@ export class UsersNewComponent implements OnInit {
       !this.requestBody.firstName ||
       !this.requestBody.lastName ||
       !this.requestBody.email ||
-      !this.requestBody.password ||
       !this.requestBody.roleId ||
       !this.requestBody.admissionYear
     ) {
@@ -42,11 +55,11 @@ export class UsersNewComponent implements OnInit {
       (result: boolean): void => {
         if (result) {
           // リクエスト送信
-          this.userService.createUser(this.requestBody).subscribe(
+          this.userService.updateUser(this.user.id, this.requestBody).subscribe(
             (res) => {
               this.userService.fetchUsers();
               this.router.navigate(['/rdid', 'users']);
-              this.alertService.openSnackBar('ユーザを新規作成しました', 'SUCCESS');
+              this.alertService.openSnackBar('ユーザを更新しました', 'SUCCESS');
             },
             (error) => {
               this.alertService.openSnackBar(error, 'ERROR');
