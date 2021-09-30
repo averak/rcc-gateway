@@ -32,10 +32,10 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // components
 import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
-import { HeaderComponent } from './component/common/header/header.component';
-import { UserMenuComponent } from './component/common/user-menu/user-menu.component';
-import { SidenavComponent } from './component/common/sidenav/sidenav.component';
-import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.component';
+import { HeaderComponent } from './component/header/header.component';
+import { UserMenuComponent } from './component/user-menu/user-menu.component';
+import { SidenavComponent } from './component/sidenav/sidenav.component';
+import { BreadcrumbComponent } from './component/breadcrumb/breadcrumb.component';
 import { TitleComponent } from './component/title/title.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 import { ProgressSpinnerComponent } from './component/progress-spinner/progress-spinner.component';
@@ -46,6 +46,7 @@ import { DatetimePipe } from './pipe/datetime.pipe';
 
 // interceptors
 import { LoadingInterceptor } from './interceptor/loading.interceptor';
+import { MainContentComponent } from './component/main-content/main-content.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { LoadingInterceptor } from './interceptor/loading.interceptor';
     ProgressSpinnerComponent,
     UsernamePipe,
     DatetimePipe,
+    MainContentComponent,
   ],
   imports: [
     FormsModule,
