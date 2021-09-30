@@ -44,7 +44,6 @@ export class UsersNewComponent implements OnInit {
           // リクエスト送信
           this.userService.createUser(this.requestBody).subscribe(
             (res) => {
-              this.userService.fetchUsers();
               this.router.navigate(['/rdid', 'users']);
               this.alertService.openSnackBar('ユーザを新規作成しました', 'SUCCESS');
             },

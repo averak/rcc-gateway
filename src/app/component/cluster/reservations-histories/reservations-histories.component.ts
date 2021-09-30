@@ -61,7 +61,6 @@ export class ReservationsHistoriesComponent implements OnInit {
         if (result) {
           this.reservationService.deleteReservation(reservation.id).subscribe(
             () => {
-              this.reservationService.fetchReservations();
               this.alertService.openSnackBar('予約を削除しました', 'SUCCESS');
             },
             (error) => {

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { HttpBaseService } from 'src/app/shared/service/http-base.service';
 import { UserModel, UsersModel } from 'src/app/model/user.model';
@@ -15,53 +16,16 @@ import {
   providedIn: 'root',
 })
 export class UserService {
-  loginUser: BehaviorSubject<UserModel> = new BehaviorSubject<UserModel>({} as UserModel);
-  users: BehaviorSubject<UserModel[]> = new BehaviorSubject<UserModel[]>([]);
-
   constructor(private httpBaseService: HttpBaseService) {}
-
-  getLoginUser(): Observable<UserModel> {
-    if (Object.keys(this.loginUser.getValue()).length === 0) {
-      this.fetchLoginUser();
-    }
-
-    return this.loginUser;
-  }
-
-  fetchLoginUser(): void {
-    this.httpBaseService
-      .getRequest<UserModel>(`${environment.API_BASE_URL}/api/users/me`)
-      .subscribe(
-        (user: UserModel) => {
-          this.loginUser.next(user);
-        },
-        (error) => this.loginUser.error(error)
-      );
-  }
 
   checkAdmin(user: UserModel): boolean {
     return user.roleId == UserRoleEnum.ADMIN;
   }
 
   getUsers(): Observable<UserModel[]> {
-    if (Object.keys(this.users.getValue()).length === 0) {
-      this.fetchUsers();
-    }
-
-    return this.users;
-  }
-
-  fetchUsers(): void {
-    this.httpBaseService.getRequest<any>(`${environment.API_BASE_URL}/api/users`).subscribe(
-      (users: UsersModel) => {
-        this.users.next(users.users);
-      },
-      (error) => this.loginUser.error(error)
-    );
-  }
-
-  selectById(userId: number): UserModel | undefined {
-    return this.users.getValue().find((user) => user.id == userId);
+    return this.httpBaseService
+      .getRequest<UsersModel>(`${environment.API_BASE_URL}/api/users`)
+      .pipe(map((users) => users.users));
   }
 
   createUser(requestBody: UserCreateRequest) {
@@ -76,6 +40,10 @@ export class UserService {
       `${environment.API_BASE_URL}/api/users/${userId}`,
       requestBody
     );
+  }
+
+  getLoginUser(): Observable<UserModel> {
+    return this.httpBaseService.getRequest<UserModel>(`${environment.API_BASE_URL}/api/users/me`);
   }
 
   updateLoginUser(requestBody: LoginUserUpdateRequest): Observable<any> {

@@ -16,7 +16,7 @@ export class UserProfileEditComponent implements OnInit {
   constructor(private alertService: AlertService, private userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.loginUser.subscribe(
+    this.userService.getLoginUser().subscribe(
       (user) => {
         this.loginUser = user;
         this.requestBody = this.loginUser as LoginUserUpdateRequest;
@@ -41,8 +41,6 @@ export class UserProfileEditComponent implements OnInit {
           // リクエスト送信
           this.userService.updateLoginUser(this.requestBody).subscribe(
             (res) => {
-              this.userService.fetchLoginUser();
-              this.userService.fetchUsers();
               this.alertService.openSnackBar('プロフィールを更新しました', 'SUCCESS');
             },
             (error) => {

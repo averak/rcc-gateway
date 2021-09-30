@@ -27,14 +27,17 @@ export class UserEditComponent implements OnInit {
     const userId = Number(this.route.snapshot.paramMap.get('userId'));
 
     // 編集対象ユーザを取得
-    const user: UserModel | undefined = this.userService.selectById(userId);
-    if (user) {
-      this.user = user;
-      this.requestBody = this.user as UserUpdateRequest;
-    } else {
-      this.router.navigate(['/rdid', 'users']);
-      this.alertService.openSnackBar('編集対象ユーザが見つかりません', 'ERROR');
-    }
+    this.userService.getUsers().subscribe((users) => {
+      const user: UserModel | undefined = users.find((user) => user.id == userId);
+
+      if (user) {
+        this.user = user;
+        this.requestBody = this.user as UserUpdateRequest;
+      } else {
+        this.router.navigate(['/rdid', 'users']);
+        this.alertService.openSnackBar('編集対象ユーザが見つかりません', 'ERROR');
+      }
+    });
   }
 
   onSubmit(): void {
@@ -57,7 +60,6 @@ export class UserEditComponent implements OnInit {
           // リクエスト送信
           this.userService.updateUser(this.user.id, this.requestBody).subscribe(
             (res) => {
-              this.userService.fetchUsers();
               this.router.navigate(['/rdid', 'users']);
               this.alertService.openSnackBar('ユーザを更新しました', 'SUCCESS');
             },

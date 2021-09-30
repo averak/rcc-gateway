@@ -36,7 +36,6 @@ export class ReservationsNewComponent implements OnInit {
 
     this.reservationService.createReservation(requestBody).subscribe(
       (res) => {
-        this.reservationService.fetchReservations();
         this.router.navigate(['/cluster', 'reservations']);
         this.alertService.openSnackBar('予約を追加しました', 'SUCCESS');
       },

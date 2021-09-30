@@ -26,19 +26,23 @@ export class ReservationsContentComponent implements OnInit {
 
   ngOnInit(): void {
     // 予約一覧を取得
-    this.reservationService.getReservations().subscribe(
-      (reservations) => {
-        this.reservations = reservations;
-      },
-      (error) => {
-        this.alertService.openSnackBar(error, 'ERROR');
-      }
-    );
+    this.getReservations();
 
     // ログインユーザを取得
     this.userService.getLoginUser().subscribe(
       (user: UserModel) => {
         this.loginUser = user;
+      },
+      (error) => {
+        this.alertService.openSnackBar(error, 'ERROR');
+      }
+    );
+  }
+
+  getReservations(): void {
+    this.reservationService.getReservations().subscribe(
+      (reservations) => {
+        this.reservations = reservations;
       },
       (error) => {
         this.alertService.openSnackBar(error, 'ERROR');
@@ -64,7 +68,7 @@ export class ReservationsContentComponent implements OnInit {
         if (result) {
           this.reservationService.updateReservation(reservation.id, requestBody).subscribe(
             () => {
-              this.reservationService.fetchReservations();
+              this.getReservations();
               this.alertService.openSnackBar('予約を編集しました', 'SUCCESS');
             },
             (error) => {
@@ -84,7 +88,7 @@ export class ReservationsContentComponent implements OnInit {
         if (result) {
           this.reservationService.deleteReservation(reservation.id).subscribe(
             () => {
-              this.reservationService.fetchReservations();
+              this.getReservations();
               this.alertService.openSnackBar('予約を削除しました', 'SUCCESS');
             },
             (error) => {
