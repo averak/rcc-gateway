@@ -5,7 +5,7 @@
   </mat-card-header>
 
   <mat-card-content class="login-card-content">
-    <form fxLayout="column" fxLayoutAlign="center" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <form fxLayout="column" fxLayoutAlign="center" #loginForm="ngForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="login-card-fullsize-input">
         <input
           matInput
@@ -36,7 +36,7 @@
         <mat-checkbox class="remember-me">REMEMBER ME</mat-checkbox>
       </div>
 
-      <button mat-flat-button class="login-button" [disabled]="loginForm.invalid">LOGIN</button>
+      <button mat-flat-button class="login-button" (click)="onSubmit()">LOGIN</button>
     </form>
   </mat-card-content>
 </mat-card>

@@ -74,6 +74,10 @@ body {
   border-radius: 0px;
 }
 
+.mat-card-title {
+  color: #364862 !important;
+}
+
 .menu-panel {
   border-radius: 0px !important;
 }
@@ -131,7 +135,7 @@ body {
 }
 
 .form-input {
-  width: 300px;
+  width: 17vw;
 }
 
 .input-label {

@@ -7,6 +7,7 @@ import { UserRoleEnum } from 'src/app/enums/user-role.enum';
 import {
   UserCreateRequest,
   UserUpdateRequest,
+  LoginUserUpdateRequest,
   LoginUserPasswordUpdateRequest,
 } from 'src/app/request/user.request';
 
@@ -77,10 +78,18 @@ export class UserService {
     );
   }
 
+  updateLoginUser(requestBody: LoginUserUpdateRequest): Observable<any> {
+    return this.httpBaseService.putRequest<any>(
+      `${environment.API_BASE_URL}/api/users/me`,
+      requestBody
+    );
+  }
+
   updateLoginUserPassword(requestBody: LoginUserPasswordUpdateRequest): Observable<any> {
     return this.httpBaseService.putRequest<any>(
       `${environment.API_BASE_URL}/api/users/me/password`,
-      requestBody
+      requestBody,
+      false
     );
   }
 

@@ -15,6 +15,12 @@ export type UserUpdateRequest = {
   admissionYear: number;
 };
 
+export type LoginUserUpdateRequest = {
+  firstName: string;
+  lastName: string;
+  email: string;
+};
+
 export type LoginUserPasswordUpdateRequest = {
   currentPassword: string;
   newPassword: string;

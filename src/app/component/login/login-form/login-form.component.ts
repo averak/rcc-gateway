@@ -19,6 +19,11 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {}
 
   handleLoginTransit(requestBody: LoginRequest): void {
+    // 入力内容のバリデーション
+    if (!requestBody.email || !requestBody.password) {
+      return;
+    }
+
     this.authService.login(requestBody).subscribe(
       (accessToken) => {
         this.authService.setCredentials(accessToken);

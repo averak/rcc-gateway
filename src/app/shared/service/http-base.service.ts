@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { AuthService } from 'src/app/shared/service/auth.service';
@@ -10,26 +9,16 @@ import { ErrorMessageResolverService } from './error-message-resolver.service';
 })
 export class HttpBaseService {
   constructor(
-    private router: Router,
     private http: HttpClient,
     private authService: AuthService,
     private errorMessageResolverService: ErrorMessageResolverService
   ) {}
 
-  getRequest<T>(url: string, redirectErrorPage: boolean = false) {
+  getRequest<T>(url: string, catchUnauthorizedError: boolean = true) {
     return this.http.get<T>(url, this.getRequestOptions()).pipe(
       catchError((error) => {
-        const errorCodes: number[] = Object.keys(this.errorMessageResolverService.messages).map(
-          Number
-        );
-
-        // エラーページ
-        if (redirectErrorPage && errorCodes.indexOf(error.status) >= 0) {
-          this.router.navigate(['/error'], { queryParams: { status_code: error.status } });
-        }
-
         // 無効なJWT
-        if (error.status == 401) {
+        if (catchUnauthorizedError && error.status == 401) {
           this.authService.logout();
         }
 
@@ -38,20 +27,11 @@ export class HttpBaseService {
     );
   }
 
-  postRequest<T>(url: string, requestBody: any, redirectErrorPage: boolean = false) {
+  postRequest<T>(url: string, requestBody: any, catchUnauthorizedError: boolean = true) {
     return this.http.post<T>(url, requestBody, this.getRequestOptions()).pipe(
       catchError((error) => {
-        const errorCodes: number[] = Object.keys(this.errorMessageResolverService.messages).map(
-          Number
-        );
-
-        // エラーページ
-        if (redirectErrorPage && errorCodes.indexOf(error.status) >= 0) {
-          this.router.navigate(['/error'], { queryParams: { status_code: error.status } });
-        }
-
         // 無効なJWT
-        if (error.status == 401) {
+        if (catchUnauthorizedError && error.status == 401) {
           this.authService.logout();
         }
 
@@ -60,20 +40,11 @@ export class HttpBaseService {
     );
   }
 
-  putRequest<T>(url: string, requestBody: any, redirectErrorPage: boolean = false) {
+  putRequest<T>(url: string, requestBody: any, catchUnauthorizedError: boolean = true) {
     return this.http.put<T>(url, requestBody, this.getRequestOptions()).pipe(
       catchError((error) => {
-        const errorCodes: number[] = Object.keys(this.errorMessageResolverService.messages).map(
-          Number
-        );
-
-        // エラーページ
-        if (redirectErrorPage && errorCodes.indexOf(error.status) >= 0) {
-          this.router.navigate(['/error'], { queryParams: { status_code: error.status } });
-        }
-
         // 無効なJWT
-        if (error.status == 401) {
+        if (catchUnauthorizedError && error.status == 401) {
           this.authService.logout();
         }
 
@@ -82,20 +53,11 @@ export class HttpBaseService {
     );
   }
 
-  deleteRequest<T>(url: string, redirectErrorPage: boolean = false) {
+  deleteRequest<T>(url: string, catchUnauthorizedError: boolean = true) {
     return this.http.delete<T>(url, this.getRequestOptions()).pipe(
       catchError((error) => {
-        const errorCodes: number[] = Object.keys(this.errorMessageResolverService.messages).map(
-          Number
-        );
-
-        // エラーページ
-        if (redirectErrorPage && errorCodes.indexOf(error.status) >= 0) {
-          this.router.navigate(['/error'], { queryParams: { status_code: error.status } });
-        }
-
         // 無効なJWT
-        if (error.status == 401) {
+        if (catchUnauthorizedError && error.status == 401) {
           this.authService.logout();
         }
 

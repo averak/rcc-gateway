@@ -57,6 +57,9 @@ import { UsersComponent } from './component/rdid/users/users.component';
 import { UsersContentComponent } from './component/rdid/users-content/users-content.component';
 import { UsersTableComponent } from './component/rdid/users-table/users-table.component';
 import { UsersNewComponent } from './component/rdid/users-new/users-new.component';
+import { MypageContentsComponent } from './component/rdid/mypage-contents/mypage-contents.component';
+import { UserProfileEditComponent } from './component/rdid/user-profile-edit/user-profile-edit.component';
+import { UserPasswordEditComponent } from './component/rdid/user-password-edit/user-password-edit.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +94,9 @@ import { UsersNewComponent } from './component/rdid/users-new/users-new.componen
     UsersContentComponent,
     UsersTableComponent,
     UsersNewComponent,
+    MypageContentsComponent,
+    UserProfileEditComponent,
+    UserPasswordEditComponent,
   ],
   imports: [
     BrowserModule,

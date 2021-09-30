@@ -1,0 +1,23 @@
+<div class="page-main-content" fxLayout="column" fxLayoutAlign="start start">
+  <div>
+    <app-title></app-title>
+  </div>
+
+  <mat-card class="mat-elevation-z1 main-contents-card">
+    <mat-card-title>プロフィール更新</mat-card-title>
+    <mat-divider></mat-divider>
+
+    <mat-card-content fxLayout="column" fxLayoutAlign="start" style="padding-top: 16px">
+      <app-user-profile-edit></app-user-profile-edit>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="mat-elevation-z1 main-contents-card" fxFlexOffset="30px">
+    <mat-card-title>パスワード更新</mat-card-title>
+    <mat-divider></mat-divider>
+
+    <mat-card-content fxLayout="column" fxLayoutAlign="start" style="padding-top: 16px">
+      <app-user-password-edit></app-user-password-edit>
+    </mat-card-content>
+  </mat-card>
+</div>
