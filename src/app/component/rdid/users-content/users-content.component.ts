@@ -19,6 +19,11 @@ export class UsersContentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // ユーザ一覧を取得
+    this.getUsers();
+  }
+
+  getUsers(): void {
     this.userService.getUsers().subscribe(
       (users) => {
         this.users = users;
@@ -46,7 +51,7 @@ export class UsersContentComponent implements OnInit {
         if (result) {
           this.userService.deleteUser(user.id).subscribe(
             () => {
-              this.userService.fetchUsers();
+              this.getUsers();
               this.alertService.openSnackBar('ユーザを削除しました', 'SUCCESS');
             },
             (error) => {

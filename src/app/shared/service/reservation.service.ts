@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { HttpBaseService } from 'src/app/shared/service/http-base.service';
 import { ReservationModel, ReservationsModel } from 'src/app/model/reservation.model';
@@ -12,27 +13,12 @@ import {
   providedIn: 'root',
 })
 export class ReservationService {
-  reservations: BehaviorSubject<ReservationModel[]> = new BehaviorSubject<ReservationModel[]>([]);
-
   constructor(private httpBaseService: HttpBaseService) {}
 
   getReservations(): Observable<ReservationModel[]> {
-    if (Object.keys(this.reservations.getValue()).length === 0) {
-      this.fetchReservations();
-    }
-
-    return this.reservations;
-  }
-
-  fetchReservations(): void {
-    this.httpBaseService
+    return this.httpBaseService
       .getRequest<ReservationsModel>(`${environment.API_BASE_URL}/api/reservations`)
-      .subscribe(
-        (reservations: ReservationsModel) => {
-          this.reservations.next(reservations.reservations);
-        },
-        (error) => this.reservations.error(error)
-      );
+      .pipe(map((reservations) => reservations.reservations));
   }
 
   createReservation(requestBody: ReservationCreateRequest): Observable<any> {
