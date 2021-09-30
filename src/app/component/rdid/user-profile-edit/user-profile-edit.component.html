@@ -1,1 +1,35 @@
-<p>user-profile-edit works!</p>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <form class="form-content project-fg-black1" fxLayout="column" fxLayoutAlign="center">
+    <div fxLayout="column" fxLayoutAlign="start start">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">氏名</span>
+
+        <mat-form-field class="form-input">
+          <mat-label>姓</mat-label>
+          <input matInput [(ngModel)]="requestBody.lastName" name="input-last-name" required />
+          <mat-error>姓を入力してください</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-input" fxFlexOffset="50px">
+          <mat-label>名</mat-label>
+          <input matInput [(ngModel)]="requestBody.firstName" name="input-first-name" required />
+          <mat-error>名を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">認証情報</span>
+        <mat-form-field class="form-input">
+          <mat-label>メールアドレス</mat-label>
+          <input matInput [(ngModel)]="requestBody.email" name="input-email" required />
+          <mat-error>メールアドレスを入力してください</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <button mat-flat-button class="cancel-button" (click)="onCancel()">キャンセル</button>
+      <button mat-flat-button class="submit-button" (click)="onSubmit()">確認</button>
+    </div>
+  </form>
+</div>
