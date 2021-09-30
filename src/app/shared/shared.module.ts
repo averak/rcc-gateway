@@ -46,6 +46,7 @@ import { DatetimePipe } from './pipe/datetime.pipe';
 
 // interceptors
 import { LoadingInterceptor } from './interceptor/loading.interceptor';
+import { MainContentComponent } from './component/main-content/main-content.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { LoadingInterceptor } from './interceptor/loading.interceptor';
     ProgressSpinnerComponent,
     UsernamePipe,
     DatetimePipe,
+    MainContentComponent,
   ],
   imports: [
     FormsModule,

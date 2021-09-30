@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 // page components
 import { LoginComponent } from './component/login/login.component';
 import { ErrorComponent } from './component/error/error.component';
+import { MainContentComponent } from './shared/component/main-content/main-content.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ClusterComponent } from './component/cluster/cluster.component';
 import { ReservationsComponent } from './component/cluster/reservations/reservations.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
   },
   {
     path: '',
+    component: MainContentComponent,
     canActivate: [AuthGuard],
     children: [
       {
