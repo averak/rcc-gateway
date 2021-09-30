@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 // UI modules
 import { MatInputModule } from '@angular/material/input';
@@ -37,10 +38,14 @@ import { SidenavComponent } from './component/common/sidenav/sidenav.component';
 import { BreadcrumbComponent } from './component/common/breadcrumb/breadcrumb.component';
 import { TitleComponent } from './component/title/title.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
+import { ProgressSpinnerComponent } from './component/progress-spinner/progress-spinner.component';
 
 // pipes
 import { UsernamePipe } from './pipe/username.pipe';
 import { DatetimePipe } from './pipe/datetime.pipe';
+
+// interceptors
+import { LoadingInterceptor } from './interceptor/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -52,6 +57,7 @@ import { DatetimePipe } from './pipe/datetime.pipe';
     BreadcrumbComponent,
     TitleComponent,
     ConfirmDialogComponent,
+    ProgressSpinnerComponent,
     UsernamePipe,
     DatetimePipe,
   ],
@@ -136,10 +142,16 @@ import { DatetimePipe } from './pipe/datetime.pipe';
     BreadcrumbComponent,
     TitleComponent,
     ConfirmDialogComponent,
+    ProgressSpinnerComponent,
 
     // pipes
     UsernamePipe,
     DatetimePipe,
+  ],
+
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
 })
 export class SharedModule {}
