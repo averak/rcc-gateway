@@ -14,6 +14,7 @@ import { RdidComponent } from './component/rdid/rdid.component';
 import { UsersComponent } from './component/rdid/users/users.component';
 import { UsersContentComponent } from './component/rdid/users-content/users-content.component';
 import { UsersNewComponent } from './component/rdid/users-new/users-new.component';
+import { UserEditComponent } from './component/rdid/user-edit/user-edit.component';
 import { MypageContentsComponent } from './component/rdid/mypage-contents/mypage-contents.component';
 
 // guards
@@ -91,6 +92,11 @@ const routes: Routes = [
                 path: 'new',
                 component: UsersNewComponent,
                 data: { breadcrumb: '新規作成', title: 'ユーザ新規作成' },
+              },
+              {
+                path: ':userId/edit',
+                component: UserEditComponent,
+                data: { breadcrumb: 'ユーザ更新', title: 'ユーザ更新' },
               },
             ],
           },

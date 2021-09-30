@@ -13,3 +13,8 @@ export type UserModel = {
 export type UsersModel = {
   users: UserModel[];
 };
+
+const currentYear: number = new Date().getFullYear();
+export const admissionYears = [...Array(8)].map(
+  (_: undefined, idx: number) => idx + currentYear - 7
+);

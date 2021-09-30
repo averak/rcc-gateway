@@ -60,6 +60,7 @@ import { UsersNewComponent } from './component/rdid/users-new/users-new.componen
 import { MypageContentsComponent } from './component/rdid/mypage-contents/mypage-contents.component';
 import { UserProfileEditComponent } from './component/rdid/user-profile-edit/user-profile-edit.component';
 import { UserPasswordEditComponent } from './component/rdid/user-password-edit/user-password-edit.component';
+import { UserEditComponent } from './component/rdid/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { UserPasswordEditComponent } from './component/rdid/user-password-edit/u
     MypageContentsComponent,
     UserProfileEditComponent,
     UserPasswordEditComponent,
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,

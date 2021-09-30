@@ -1,0 +1,67 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <form
+    class="form-content project-fg-black1"
+    fxLayout="column"
+    fxLayoutAlign="center"
+    (ngSubmit)="onSubmit()"
+  >
+    <div fxLayout="column" fxLayoutAlign="start start">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">氏名</span>
+
+        <mat-form-field class="form-input">
+          <mat-label>姓</mat-label>
+          <input matInput [(ngModel)]="requestBody.lastName" name="input-last-name" required />
+          <mat-error>姓を入力してください</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-input" fxFlexOffset="50px">
+          <mat-label>名</mat-label>
+          <input matInput [(ngModel)]="requestBody.firstName" name="input-first-name" required />
+          <mat-error>名を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">認証情報</span>
+        <mat-form-field class="form-input">
+          <mat-label>メールアドレス</mat-label>
+          <input matInput [(ngModel)]="requestBody.email" name="input-email" required />
+          <mat-error>メールアドレスを入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">入学年度</span>
+        <mat-form-field class="form-input">
+          <mat-label>入学年度</mat-label>
+          <mat-select [(ngModel)]="requestBody.admissionYear" name="input-admission-year" required>
+            <mat-option *ngFor="let option of admissionYears" [value]="option">{{
+              option
+            }}</mat-option>
+          </mat-select>
+          <mat-error>入学年度を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">権限</span>
+        <mat-form-field class="form-input">
+          <mat-label>権限</mat-label>
+          <mat-select [(ngModel)]="requestBody.roleId" name="input-user-role" required>
+            <mat-option [value]="1">管理者</mat-option>
+            <mat-option [value]="2">一般</mat-option>
+          </mat-select>
+          <mat-error>権限を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <button mat-flat-button class="cancel-button" type="button" (click)="onCancel()">
+        キャンセル
+      </button>
+      <button mat-flat-button class="submit-button" (click)="onSubmit()">確認</button>
+    </div>
+  </form>
+</div>
