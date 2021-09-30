@@ -51,6 +51,11 @@ export const environment = {
           url: '/rdid/users',
           icon: 'admin_panel_settings',
         },
+        {
+          label: '個人設定',
+          url: '/rdid/mypage',
+          icon: 'manage_accounts',
+        },
       ],
     },
     {

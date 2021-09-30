@@ -14,6 +14,7 @@ import { RdidComponent } from './component/rdid/rdid.component';
 import { UsersComponent } from './component/rdid/users/users.component';
 import { UsersContentComponent } from './component/rdid/users-content/users-content.component';
 import { UsersNewComponent } from './component/rdid/users-new/users-new.component';
+import { MypageContentsComponent } from './component/rdid/mypage-contents/mypage-contents.component';
 
 // guards
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
@@ -92,6 +93,11 @@ const routes: Routes = [
                 data: { breadcrumb: '新規作成', title: 'ユーザ新規作成' },
               },
             ],
+          },
+          {
+            path: 'mypage',
+            component: MypageContentsComponent,
+            data: { breadcrumb: '個人設定', title: '個人設定' },
           },
         ],
       },
