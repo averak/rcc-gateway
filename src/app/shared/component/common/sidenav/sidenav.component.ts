@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductModel } from 'src/app/model/product.model';
 import { ProductService } from 'src/app/shared/service/product.service';
 
@@ -8,13 +8,15 @@ import { ProductService } from 'src/app/shared/service/product.service';
   styleUrls: ['./sidenav.component.css'],
 })
 export class SidenavComponent implements OnInit {
-  @Input() product!: ProductModel;
+  product!: ProductModel;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
     this.productService.getProduct().subscribe((product) => {
-      this.product = product;
+      if (product.title !== undefined) {
+        this.product = product;
+      }
     });
   }
 }

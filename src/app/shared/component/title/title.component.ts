@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { TitleService } from 'src/app/shared/service/title.service';
 
 @Component({
@@ -8,11 +7,11 @@ import { TitleService } from 'src/app/shared/service/title.service';
   styleUrls: ['./title.component.css'],
 })
 export class TitleComponent implements OnInit {
-  title!: Observable<string>;
+  title!: string;
 
   constructor(private titleService: TitleService) {}
 
   ngOnInit(): void {
-    this.title = this.titleService.title;
+    this.titleService.getTitle().subscribe((title) => (this.title = title));
   }
 }
