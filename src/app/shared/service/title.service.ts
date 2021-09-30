@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Data, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
@@ -12,13 +12,11 @@ export class TitleService {
   readonly title = this._title.asObservable();
 
   constructor(private router: Router) {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event) => {
-        const root = this.router.routerState.snapshot.root;
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((_) => {
+      const root = this.router.routerState.snapshot.root;
 
-        this.getTitle(root, []);
-      });
+      this.getTitle(root, []);
+    });
   }
 
   private getTitle(route: ActivatedRouteSnapshot, parentUrl: string[]) {

@@ -6,6 +6,10 @@ import { UserModel } from 'src/app/model/user.model';
 })
 export class UsernamePipe implements PipeTransform {
   transform(value: UserModel, ...args: unknown[]): string {
-    return `${value.lastName} ${value.firstName}`;
+    if (value) {
+      return `${value.lastName} ${value.firstName}`;
+    } else {
+      return '';
+    }
   }
 }
