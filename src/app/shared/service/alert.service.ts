@@ -20,15 +20,16 @@ export class AlertService {
   }
 
   confirmDialog(title: string, message: string, callback: (result: boolean) => void): void {
-    const dialog = this.matDialog.open(ConfirmDialogComponent, {
-      data: {
-        title: title,
-        message: message,
-      },
-    });
-
-    dialog.afterClosed().subscribe((result: string) => {
-      callback(result === 'OK');
-    });
+    this.matDialog
+      .open(ConfirmDialogComponent, {
+        data: {
+          title: title,
+          message: message,
+        },
+      })
+      .afterClosed()
+      .subscribe((result: string) => {
+        callback(result === 'OK');
+      });
   }
 }
