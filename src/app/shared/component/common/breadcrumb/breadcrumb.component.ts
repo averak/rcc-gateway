@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { BreadcrumbModel } from 'src/app/model/breadcrumb.model';
 import { BreadcrumbService } from 'src/app/shared/service/breadcrumb.service';
 
@@ -9,11 +8,13 @@ import { BreadcrumbService } from 'src/app/shared/service/breadcrumb.service';
   styleUrls: ['./breadcrumb.component.css'],
 })
 export class BreadcrumbComponent implements OnInit {
-  breadcrumbs!: Observable<BreadcrumbModel[]>;
+  breadcrumbs!: BreadcrumbModel[];
 
   constructor(private breadcrumbService: BreadcrumbService) {}
 
   ngOnInit(): void {
-    this.breadcrumbs = this.breadcrumbService.breadcrumbs;
+    this.breadcrumbService
+      .getBreadCrumbs()
+      .subscribe((breadcrumbs) => (this.breadcrumbs = breadcrumbs));
   }
 }

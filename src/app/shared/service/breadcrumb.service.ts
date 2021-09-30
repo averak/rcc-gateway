@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Data, NavigationEnd, Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { BreadcrumbModel } from 'src/app/model/breadcrumb.model';
 
@@ -8,27 +8,20 @@ import { BreadcrumbModel } from 'src/app/model/breadcrumb.model';
   providedIn: 'root',
 })
 export class BreadcrumbService {
-  // Subject emitting the breadcrumb hierarchy
-  private readonly _breadcrumbs = new BehaviorSubject<BreadcrumbModel[]>([]);
-
-  // Observable exposing the breadcrumb hierarchy
-  readonly breadcrumbs = this._breadcrumbs.asObservable();
+  breadcrumbs = new BehaviorSubject<BreadcrumbModel[]>([]);
 
   constructor(private router: Router) {
-    this.router.events
-      .pipe(
-        // Filter the NavigationEnd events as the breadcrumb is updated only when the route reaches its end
-        filter((event) => event instanceof NavigationEnd)
-      )
-      .subscribe((event) => {
-        // Construct the breadcrumb hierarchy
-        const root = this.router.routerState.snapshot.root;
-        const breadcrumbs: BreadcrumbModel[] = [];
-        this.addBreadcrumb(root, [], breadcrumbs);
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((_) => {
+      const root = this.router.routerState.snapshot.root;
+      const breadcrumbs: BreadcrumbModel[] = [];
+      this.addBreadcrumb(root, [], breadcrumbs);
 
-        // Emit the new hierarchy
-        this._breadcrumbs.next(breadcrumbs);
-      });
+      this.breadcrumbs.next(breadcrumbs);
+    });
+  }
+
+  getBreadCrumbs(): Observable<BreadcrumbModel[]> {
+    return this.breadcrumbs.asObservable();
   }
 
   private addBreadcrumb(
@@ -37,10 +30,8 @@ export class BreadcrumbService {
     breadcrumbs: BreadcrumbModel[]
   ) {
     if (route) {
-      // Construct the route URL
       const routeUrl = parentUrl.concat(route.url.map((url) => url.path));
 
-      // Add an element for the current route part
       if (route.data.breadcrumb) {
         const breadcrumb = {
           label: this.getLabel(route.data),
@@ -49,7 +40,6 @@ export class BreadcrumbService {
         breadcrumbs.push(breadcrumb);
       }
 
-      // Add another element for the next route part
       if (route.firstChild) {
         this.addBreadcrumb(route.firstChild, routeUrl, breadcrumbs);
       }
