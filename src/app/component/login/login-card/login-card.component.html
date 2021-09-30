@@ -5,7 +5,7 @@
   </mat-card-header>
 
   <mat-card-content class="login-card-content">
-    <form fxLayout="column" fxLayoutAlign="center" #loginForm="ngForm">
+    <form fxLayout="column" fxLayoutAlign="center" #loginForm="ngForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="login-card-fullsize-input">
         <input
           matInput

@@ -88,7 +88,8 @@ export class UserService {
   updateLoginUserPassword(requestBody: LoginUserPasswordUpdateRequest): Observable<any> {
     return this.httpBaseService.putRequest<any>(
       `${environment.API_BASE_URL}/api/users/me/password`,
-      requestBody
+      requestBody,
+      false
     );
   }
 

@@ -54,7 +54,5 @@ export class UserProfileEditComponent implements OnInit {
     );
   }
 
-  onCancel(): void {
-    console.log('キャンセルするよ');
-  }
+  onCancel(): void {}
 }
