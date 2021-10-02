@@ -71,12 +71,12 @@ const routes: Routes = [
                 component: ReservationEditComponent,
                 data: { breadcrumb: '編集', title: '予約編集' },
               },
-              {
-                path: 'histories',
-                component: ReservationsHistoriesComponent,
-                data: { breadcrumb: '履歴', title: '予約履歴' },
-              },
             ],
+          },
+          {
+            path: 'histories',
+            component: ReservationsHistoriesComponent,
+            data: { breadcrumb: '履歴', title: '予約履歴' },
           },
         ],
       },

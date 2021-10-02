@@ -67,6 +67,6 @@ export class ReservationEditComponent implements OnInit {
   }
 
   onCancel(): void {
-    this.router.navigate(['/cluster', 'reservations', 'histories']);
+    this.router.navigate(['/cluster', 'reservations']);
   }
 }
