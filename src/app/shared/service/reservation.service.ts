@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { HttpBaseService } from 'src/app/shared/service/http-base.service';
 import { ReservationModel, ReservationsModel } from 'src/app/model/reservation.model';
 import {
   ReservationCreateRequest,
@@ -13,31 +13,26 @@ import {
   providedIn: 'root',
 })
 export class ReservationService {
-  constructor(private httpBaseService: HttpBaseService) {}
+  constructor(private http: HttpClient) {}
 
   getReservations(): Observable<ReservationModel[]> {
-    return this.httpBaseService
-      .getRequest<ReservationsModel>(`${environment.API_BASE_URL}/api/reservations`)
+    return this.http
+      .get<ReservationsModel>(`${environment.API_BASE_URL}/api/reservations`)
       .pipe(map((reservations) => reservations.reservations));
   }
 
   createReservation(requestBody: ReservationCreateRequest): Observable<any> {
-    return this.httpBaseService.postRequest<any>(
-      `${environment.API_BASE_URL}/api/reservations`,
-      requestBody
-    );
+    return this.http.post<any>(`${environment.API_BASE_URL}/api/reservations`, requestBody);
   }
 
   updateReservation(reservationId: number, requestBody: ReservationUpdateRequest): Observable<any> {
-    return this.httpBaseService.putRequest<any>(
+    return this.http.put<any>(
       `${environment.API_BASE_URL}/api/reservations/${reservationId}`,
       requestBody
     );
   }
 
   deleteReservation(reservationId: number): Observable<any> {
-    return this.httpBaseService.deleteRequest<any>(
-      `${environment.API_BASE_URL}/api/reservations/${reservationId}`
-    );
+    return this.http.delete<any>(`${environment.API_BASE_URL}/api/reservations/${reservationId}`);
   }
 }
