@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { ReservationModel } from 'src/app/model/reservation.model';
 import { UserModel } from 'src/app/model/user.model';
@@ -18,6 +19,7 @@ export class ReservationsHistoriesComponent implements OnInit {
   displayedReservations!: ReservationModel[];
 
   constructor(
+    private router: Router,
     private reservationService: ReservationService,
     private userService: UserService,
     private alertService: AlertService,
@@ -87,6 +89,10 @@ export class ReservationsHistoriesComponent implements OnInit {
 
     // CSVでエクスポート
     this.fileDownloadService.exportAsCsv('予約履歴', data, headers);
+  }
+
+  handleReservationEdit(reservation: ReservationModel): void {
+    this.router.navigate(['/cluster', 'reservations', reservation.id, 'edit']);
   }
 
   onToggleClick(value: string): void {

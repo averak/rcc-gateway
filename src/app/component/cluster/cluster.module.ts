@@ -4,15 +4,6 @@ import { CommonModule } from '@angular/common';
 // shared module
 import { SharedModule } from 'src/app/shared/shared.module';
 
-// components
-import { ClusterComponent } from './cluster.component';
-import { ReservationsCalendarComponent } from './reservations-calendar/reservations-calendar.component';
-import { ReservationsComponent } from './reservations/reservations.component';
-import { ReservationsNewComponent } from './reservations-new/reservations-new.component';
-import { ReservationsContentComponent } from './reservations-content/reservations-content.component';
-import { ReservationsHistoriesComponent } from './reservations-histories/reservations-histories.component';
-import { ReservationsTableComponent } from './reservations-table/reservations-table.component';
-
 // angular calendar
 import { FlatpickrModule } from 'angularx-flatpickr';
 import {
@@ -34,6 +25,16 @@ class CustomDateFormatter extends CalendarNativeDateFormatter {
   }
 }
 
+// components
+import { ClusterComponent } from './cluster.component';
+import { ReservationsCalendarComponent } from './reservations-calendar/reservations-calendar.component';
+import { ReservationsComponent } from './reservations/reservations.component';
+import { ReservationsNewComponent } from './reservations-new/reservations-new.component';
+import { ReservationsContentComponent } from './reservations-content/reservations-content.component';
+import { ReservationsHistoriesComponent } from './reservations-histories/reservations-histories.component';
+import { ReservationsTableComponent } from './reservations-table/reservations-table.component';
+import { ReservationEditComponent } from './reservation-edit/reservation-edit.component';
+
 @NgModule({
   declarations: [
     ClusterComponent,
@@ -43,6 +44,7 @@ class CustomDateFormatter extends CalendarNativeDateFormatter {
     ReservationsContentComponent,
     ReservationsHistoriesComponent,
     ReservationsTableComponent,
+    ReservationEditComponent,
   ],
   imports: [
     CommonModule,

@@ -10,6 +10,7 @@ import { ClusterComponent } from './component/cluster/cluster.component';
 import { ReservationsComponent } from './component/cluster/reservations/reservations.component';
 import { ReservationsContentComponent } from './component/cluster/reservations-content/reservations-content.component';
 import { ReservationsNewComponent } from './component/cluster/reservations-new/reservations-new.component';
+import { ReservationEditComponent } from './component/cluster/reservation-edit/reservation-edit.component';
 import { ReservationsHistoriesComponent } from './component/cluster/reservations-histories/reservations-histories.component';
 import { RdidComponent } from './component/rdid/rdid.component';
 import { UsersComponent } from './component/rdid/users/users.component';
@@ -64,6 +65,11 @@ const routes: Routes = [
                 path: 'new',
                 component: ReservationsNewComponent,
                 data: { breadcrumb: '新規作成', title: '予約新規作成' },
+              },
+              {
+                path: ':reservationId/edit',
+                component: ReservationEditComponent,
+                data: { breadcrumb: '編集', title: '予約編集' },
               },
               {
                 path: 'histories',

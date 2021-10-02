@@ -38,7 +38,7 @@
     <ng-container matColumnDef="control">
       <th class="control-header project-fg-black1" mat-header-cell *matHeaderCellDef>操作</th>
       <td class="control-cell project-fg-blue1" mat-cell *matCellDef="let reservation">
-        <button mat-icon-button>
+        <button mat-icon-button (click)="onClickEdit(reservation)">
           <mat-icon>edit</mat-icon>
         </button>
         <button mat-icon-button (click)="onClickDelete(reservation)">
