@@ -17,7 +17,6 @@ import { Subject } from 'rxjs';
 import { ReservationModel } from 'src/app/model/reservation.model';
 import { UserModel } from 'src/app/model/user.model';
 import { ReservationColorEnum } from 'src/app/enums/reservation-color.enum';
-import { ReservationService } from 'src/app/shared/service/reservation.service';
 import { UserService } from 'src/app/shared/service/user.service';
 
 export class CalendarEventWithReservation implements CalendarEvent {
@@ -51,14 +50,14 @@ export class ReservationsCalendarComponent implements OnInit, OnChanges {
 
   actions: CalendarEventAction[] = [
     {
-      label: '<i class="fas fa-fw fa-pencil-alt project-fg-blue1"></i>',
+      label: '<i class="fas fa-fw fa-pencil-alt project-fg-black1"></i>',
       a11yLabel: 'Edit',
       onClick: ({ event }: { event: any }): void => {
         this.editEvent(event);
       },
     },
     {
-      label: '<i class="fas fa-fw fa-trash-alt project-fg-blue1"></i>',
+      label: '<i class="fas fa-fw fa-trash-alt project-fg-black1"></i>',
       a11yLabel: 'Delete',
       onClick: ({ event }: { event: any }): void => {
         this.deleteEvent(event);
@@ -68,7 +67,7 @@ export class ReservationsCalendarComponent implements OnInit, OnChanges {
 
   refresh: Subject<any> = new Subject();
 
-  constructor(private reservationService: ReservationService, private userService: UserService) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     // イベントを取得

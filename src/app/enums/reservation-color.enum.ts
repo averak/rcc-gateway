@@ -1,15 +1,15 @@
 export const ReservationColorEnum: any = {
   RED: {
-    primary: '#feb4b6',
+    primary: '#df9f9f',
     secondary: '#feeae9',
   },
   BLUE: {
     primary: '#a6c5f6',
-    secondary: '#eaf4fe',
+    secondary: '#dff1fe',
   },
   YELLOW: {
-    primary: '#fef1ba',
-    secondary: '#fffceb',
+    primary: '#e3bc0a',
+    secondary: '#fdf1ba',
   },
   GREEN: {
     primary: '#c6e3c3',
