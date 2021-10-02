@@ -18,6 +18,7 @@
   <app-reservations-table
     *ngIf="reservations"
     [reservations]="displayedReservations"
+    (reservationEdit)="handleReservationEdit($event)"
     (reservationDelete)="handleReservationDelete($event)"
     fxFlexOffset="20px"
   ></app-reservations-table>
