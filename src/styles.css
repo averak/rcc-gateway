@@ -74,8 +74,15 @@ body {
   border-radius: 0px;
 }
 
+.padding-top-0 {
+  padding-top: 0px !important;
+}
+
 .mat-card-title {
   color: #364862 !important;
+  margin: 9px 0px 9px 0px !important;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .menu-panel {
