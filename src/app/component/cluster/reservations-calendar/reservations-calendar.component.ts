@@ -14,6 +14,7 @@ import {
   CalendarEventTimesChangedEvent,
 } from 'angular-calendar';
 import { Subject } from 'rxjs';
+import * as moment from 'moment';
 import { ReservationModel } from 'src/app/model/reservation.model';
 import { UserModel } from 'src/app/model/user.model';
 import { ReservationColorEnum } from 'src/app/enums/reservation-color.enum';
@@ -87,7 +88,9 @@ export class ReservationsCalendarComponent implements OnInit, OnChanges {
         reservation: reservation,
         start: new Date(reservation.startAt),
         end: new Date(reservation.finishAt),
-        title: `${reservation.user.lastName} ${reservation.user.firstName}`,
+        title: `${reservation.user.lastName} ${reservation.user.firstName}　${moment(
+          reservation.startAt
+        ).format('HH:mm')}~${moment(reservation.finishAt).format('HH:mm')}`,
         color:
           this.loginUser.id === reservation.user.id
             ? ReservationColorEnum.BLUE
