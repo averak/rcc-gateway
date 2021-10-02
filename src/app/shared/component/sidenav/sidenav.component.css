@@ -34,3 +34,14 @@
   left: 0;
   bottom: 0;
 }
+
+a.mat-list-item.active {
+  background-color: #dff1fe !important;
+}
+
+.active-list-bar {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 7px;
+}
