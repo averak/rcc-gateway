@@ -12,7 +12,7 @@ import { ReservationCreateRequest } from 'src/app/request/reservation.request';
   styleUrls: ['./reservations-new.component.css'],
 })
 export class ReservationsNewComponent implements OnInit {
-  reservation: ReservationModel = {} as ReservationModel;
+  reservation: any = {} as ReservationModel;
 
   constructor(
     private router: Router,
@@ -20,7 +20,13 @@ export class ReservationsNewComponent implements OnInit {
     private reservationService: ReservationService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // 予約時刻のデフォルト値
+    const now = new Date();
+    now.setMinutes(0);
+    this.reservation.startAt = now.toISOString().slice(0, 16);
+    this.reservation.finishAt = now.toISOString().slice(0, 16);
+  }
 
   onSubmit(): void {
     // 入力内容のバリデーション

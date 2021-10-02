@@ -40,6 +40,7 @@ export class ReservationsCalendarComponent implements OnInit, OnChanges {
   @Input() reservations!: ReservationModel[];
   @Input() loginUser!: UserModel;
 
+  @Output() reservationEditTransit = new EventEmitter<ReservationModel>();
   @Output() reservationEdit = new EventEmitter<ReservationModel>();
   @Output() reservationDelete = new EventEmitter<ReservationModel>();
   @Output() reservationNew = new EventEmitter<void>();
@@ -50,7 +51,14 @@ export class ReservationsCalendarComponent implements OnInit, OnChanges {
 
   actions: CalendarEventAction[] = [
     {
-      label: '<i class="fas fa-fw fa-trash-alt"></i>',
+      label: '<i class="fas fa-fw fa-pencil-alt project-fg-blue1"></i>',
+      a11yLabel: 'Edit',
+      onClick: ({ event }: { event: any }): void => {
+        this.editEvent(event);
+      },
+    },
+    {
+      label: '<i class="fas fa-fw fa-trash-alt project-fg-blue1"></i>',
       a11yLabel: 'Delete',
       onClick: ({ event }: { event: any }): void => {
         this.deleteEvent(event);
@@ -114,6 +122,10 @@ export class ReservationsCalendarComponent implements OnInit, OnChanges {
         }
       }
     });
+  }
+
+  editEvent(eventToEdit: CalendarEventWithReservation) {
+    this.reservationEditTransit.emit(eventToEdit.reservation);
   }
 
   deleteEvent(eventToDelete: CalendarEventWithReservation) {

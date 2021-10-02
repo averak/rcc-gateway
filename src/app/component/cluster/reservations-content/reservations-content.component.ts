@@ -54,6 +54,10 @@ export class ReservationsContentComponent implements OnInit {
     this.router.navigate(['cluster', 'reservations', 'new']);
   }
 
+  handleReservationEditTransit(reservation: ReservationModel): void {
+    this.router.navigate(['cluster', 'reservations', reservation.id, 'edit']);
+  }
+
   handleReservationEdit(reservation: ReservationModel): void {
     // 予約更新リクエストを作成
     const requestBody: ReservationUpdateRequest = {

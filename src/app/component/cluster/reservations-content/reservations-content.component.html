@@ -2,6 +2,7 @@
   *ngIf="reservations && loginUser"
   [reservations]="reservations"
   [loginUser]="loginUser"
+  (reservationEditTransit)="handleReservationEditTransit($event)"
   (reservationEdit)="handleReservationEdit($event)"
   (reservationDelete)="handleReservationDelete($event)"
   (reservationNew)="handleReservationNew()"
