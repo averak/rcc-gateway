@@ -149,3 +149,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.cal-event-title {
+  color: #364862 !important;
+}
