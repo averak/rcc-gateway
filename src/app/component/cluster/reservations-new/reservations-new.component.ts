@@ -34,13 +34,21 @@ export class ReservationsNewComponent implements OnInit {
       finishAt: moment(this.reservation.finishAt).tz('Asia/Tokyo').format(),
     };
 
-    this.reservationService.createReservation(requestBody).subscribe(
-      (res) => {
-        this.router.navigate(['/cluster', 'reservations']);
-        this.alertService.openSnackBar('予約を追加しました', 'SUCCESS');
-      },
-      (error) => {
-        this.alertService.openSnackBar(error, 'ERROR');
+    this.alertService.confirmDialog(
+      '作成確認',
+      'この内容で予約を追加しますか？',
+      (result: boolean): void => {
+        if (result) {
+          this.reservationService.createReservation(requestBody).subscribe(
+            (res) => {
+              this.router.navigate(['/cluster', 'reservations']);
+              this.alertService.openSnackBar('予約を追加しました', 'SUCCESS');
+            },
+            (error) => {
+              this.alertService.openSnackBar(error, 'ERROR');
+            }
+          );
+        }
       }
     );
   }
