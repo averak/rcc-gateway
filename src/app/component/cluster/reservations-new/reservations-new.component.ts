@@ -24,8 +24,8 @@ export class ReservationsNewComponent implements OnInit {
     // 予約時刻のデフォルト値
     const now = new Date();
     now.setMinutes(0);
-    this.reservation.startAt = now.toISOString().slice(0, 16);
-    this.reservation.finishAt = now.toISOString().slice(0, 16);
+    this.reservation.startAt = moment(now).tz('Asia/Tokyo').format().slice(0, 16);
+    this.reservation.finishAt = moment(now).tz('Asia/Tokyo').format().slice(0, 16);
   }
 
   onSubmit(): void {
