@@ -151,12 +151,12 @@ body {
 }
 
 .cal-event-title {
-  color: #4873c4 !important;
+  color: #364862 !important;
 }
 
 .cal-event {
   width: 100% !important;
   height: 100% !important;
-  margin: 0 !important;
+  margin: 0px !important;
   border-radius: 0px !important;
 }
