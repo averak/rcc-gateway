@@ -11,7 +11,15 @@
     </div>
 
     <mat-nav-list>
-      <a *ngFor="let nav of product.navs" mat-list-item [routerLink]="nav.url">
+      <a
+        *ngFor="let nav of product.navs"
+        mat-list-item
+        [routerLink]="nav.url"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        #item="routerLinkActive"
+      >
+        <div *ngIf="item.isActive" class="active-list-bar project-bg-blue4"></div>
         <mat-icon class="project-fg-black1">{{ nav.icon }}</mat-icon>
         <p class="column-text project-fg-black1">{{ nav.label }}</p>
       </a>
