@@ -36,12 +36,14 @@
 
       <div fxLayout="row" fxLayoutAlign="start center" fxFlexOffset="20px">
         <span class="input-label">通知設定</span>
-        <mat-slide-toggle class="form-input"></mat-slide-toggle>
+        <mat-slide-toggle></mat-slide-toggle>
       </div>
     </div>
 
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <button mat-flat-button class="cancel-button" (click)="onCancel()">キャンセル</button>
+      <button mat-flat-button class="cancel-button" type="button" (click)="onCancel()">
+        キャンセル
+      </button>
       <button mat-flat-button class="submit-button">確認</button>
     </div>
   </form>
