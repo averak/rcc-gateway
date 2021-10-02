@@ -48,6 +48,7 @@ import { DatetimePipe } from './pipe/datetime.pipe';
 // interceptors
 import { LoadingInterceptor } from './interceptor/loading.interceptor';
 import { HandleErrorInterceptor } from './interceptor/handle-error.interceptor';
+import { AuthorizationInterceptor } from './interceptor/authorization.interceptor';
 
 @NgModule({
   declarations: [
@@ -146,6 +147,7 @@ import { HandleErrorInterceptor } from './interceptor/handle-error.interceptor';
     { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HandleErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthorizationInterceptor, multi: true },
   ],
 })
 export class SharedModule {}
