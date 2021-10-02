@@ -39,6 +39,7 @@ import { BreadcrumbComponent } from './component/breadcrumb/breadcrumb.component
 import { TitleComponent } from './component/title/title.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 import { ProgressSpinnerComponent } from './component/progress-spinner/progress-spinner.component';
+import { MainContentComponent } from './component/main-content/main-content.component';
 
 // pipes
 import { UsernamePipe } from './pipe/username.pipe';
@@ -46,7 +47,7 @@ import { DatetimePipe } from './pipe/datetime.pipe';
 
 // interceptors
 import { LoadingInterceptor } from './interceptor/loading.interceptor';
-import { MainContentComponent } from './component/main-content/main-content.component';
+import { HandleErrorInterceptor } from './interceptor/handle-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -136,16 +137,6 @@ import { MainContentComponent } from './component/main-content/main-content.comp
     FlexLayoutModule,
     NgbModalModule,
 
-    // components
-    SnackBarComponent,
-    HeaderComponent,
-    UserMenuComponent,
-    SidenavComponent,
-    BreadcrumbComponent,
-    TitleComponent,
-    ConfirmDialogComponent,
-    ProgressSpinnerComponent,
-
     // pipes
     UsernamePipe,
     DatetimePipe,
@@ -154,6 +145,7 @@ import { MainContentComponent } from './component/main-content/main-content.comp
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'ja-JP' },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HandleErrorInterceptor, multi: true },
   ],
 })
 export class SharedModule {}

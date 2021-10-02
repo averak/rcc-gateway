@@ -15,55 +15,19 @@ export class HttpBaseService {
   ) {}
 
   getRequest<T>(url: string, catchUnauthorizedError: boolean = true) {
-    return this.http.get<T>(url, this.getRequestOptions()).pipe(
-      catchError((error) => {
-        // 無効なJWT
-        if (catchUnauthorizedError && error.status == 401) {
-          this.authService.logout();
-        }
-
-        throw this.errorMessageResolverService.resolve(error.error.code);
-      })
-    );
+    return this.http.get<T>(url, this.getRequestOptions());
   }
 
   postRequest<T>(url: string, requestBody: any, catchUnauthorizedError: boolean = true) {
-    return this.http.post<T>(url, requestBody, this.getRequestOptions()).pipe(
-      catchError((error) => {
-        // 無効なJWT
-        if (catchUnauthorizedError && error.status == 401) {
-          this.authService.logout();
-        }
-
-        throw this.errorMessageResolverService.resolve(error.error.code);
-      })
-    );
+    return this.http.post<T>(url, requestBody, this.getRequestOptions());
   }
 
   putRequest<T>(url: string, requestBody: any, catchUnauthorizedError: boolean = true) {
-    return this.http.put<T>(url, requestBody, this.getRequestOptions()).pipe(
-      catchError((error) => {
-        // 無効なJWT
-        if (catchUnauthorizedError && error.status == 401) {
-          this.authService.logout();
-        }
-
-        throw this.errorMessageResolverService.resolve(error.error.code);
-      })
-    );
+    return this.http.put<T>(url, requestBody, this.getRequestOptions());
   }
 
   deleteRequest<T>(url: string, catchUnauthorizedError: boolean = true) {
-    return this.http.delete<T>(url, this.getRequestOptions()).pipe(
-      catchError((error) => {
-        // 無効なJWT
-        if (catchUnauthorizedError && error.status == 401) {
-          this.authService.logout();
-        }
-
-        throw this.errorMessageResolverService.resolve(error.error.code);
-      })
-    );
+    return this.http.delete<T>(url, this.getRequestOptions());
   }
 
   protected getRequestOptions() {
