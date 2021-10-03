@@ -30,6 +30,15 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
+// pipes
+import { UsernamePipe } from './pipe/username.pipe';
+import { DatetimePipe } from './pipe/datetime.pipe';
+
+// interceptors
+import { LoadingInterceptor } from './interceptor/loading.interceptor';
+import { HandleErrorInterceptor } from './interceptor/handle-error.interceptor';
+import { AuthorizationInterceptor } from './interceptor/authorization.interceptor';
+
 // components
 import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -41,17 +50,13 @@ import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialo
 import { ProgressSpinnerComponent } from './component/progress-spinner/progress-spinner.component';
 import { MainContentComponent } from './component/main-content/main-content.component';
 
-// pipes
-import { UsernamePipe } from './pipe/username.pipe';
-import { DatetimePipe } from './pipe/datetime.pipe';
-
-// interceptors
-import { LoadingInterceptor } from './interceptor/loading.interceptor';
-import { HandleErrorInterceptor } from './interceptor/handle-error.interceptor';
-import { AuthorizationInterceptor } from './interceptor/authorization.interceptor';
-
 @NgModule({
   declarations: [
+    // pipes
+    UsernamePipe,
+    DatetimePipe,
+
+    // components
     SnackBarComponent,
     SnackBarComponent,
     HeaderComponent,
@@ -61,8 +66,6 @@ import { AuthorizationInterceptor } from './interceptor/authorization.intercepto
     TitleComponent,
     ConfirmDialogComponent,
     ProgressSpinnerComponent,
-    UsernamePipe,
-    DatetimePipe,
     MainContentComponent,
   ],
   imports: [
