@@ -51,14 +51,14 @@ export class ReservationsCalendarComponent implements OnInit, OnChanges {
 
   actions: CalendarEventAction[] = [
     {
-      label: '<i class="fas fa-fw fa-pencil-alt project-fg-black1"></i>',
+      label: '<i class="fas fa-fw fa-pencil-alt project-fg-blue1"></i>',
       a11yLabel: 'Edit',
       onClick: ({ event }: { event: any }): void => {
         this.editEvent(event);
       },
     },
     {
-      label: '<i class="fas fa-fw fa-trash-alt project-fg-black1"></i>',
+      label: '<i class="fas fa-fw fa-trash-alt project-fg-blue1"></i>',
       a11yLabel: 'Delete',
       onClick: ({ event }: { event: any }): void => {
         this.deleteEvent(event);
