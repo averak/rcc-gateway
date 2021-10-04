@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { UserModel, UsersModel } from 'src/app/model/user.model';
 import { UserRoleEnum } from 'src/app/enums/user-role.enum';
@@ -16,11 +16,10 @@ import {
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  // adminチェックのため
+  private loginUser: BehaviorSubject<UserModel> = new BehaviorSubject<UserModel>({} as UserModel);
 
-  checkAdmin(user: UserModel): boolean {
-    return user.roleId == UserRoleEnum.ADMIN;
-  }
+  constructor(private http: HttpClient) {}
 
   getUsers(): Observable<UserModel[]> {
     return this.http
@@ -37,7 +36,9 @@ export class UserService {
   }
 
   getLoginUser(): Observable<UserModel> {
-    return this.http.get<UserModel>(`${environment.API_BASE_URL}/api/users/me`);
+    return this.http
+      .get<UserModel>(`${environment.API_BASE_URL}/api/users/me`)
+      .pipe(tap((user) => this.loginUser.next(user)));
   }
 
   updateLoginUser(requestBody: LoginUserUpdateRequest): Observable<any> {
@@ -64,5 +65,13 @@ export class UserService {
       return a.lastName.localeCompare(b.lastName, 'ja');
     });
     return users;
+  }
+
+  checkAdmin(user: UserModel): boolean {
+    return user.roleId == UserRoleEnum.ADMIN;
+  }
+
+  isLoginUserAdmin(): Observable<boolean> {
+    return this.loginUser.pipe(map((user) => this.checkAdmin(user)));
   }
 }

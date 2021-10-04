@@ -22,6 +22,7 @@ import { MypageContentsComponent } from './component/rdid/mypage-contents/mypage
 // guards
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
 import { LoginedGuard } from 'src/app/shared/guard/logined.guard';
+import { AdminGuard } from 'src/app/shared/guard/admin.guard';
 
 const routes: Routes = [
   {
@@ -99,11 +100,13 @@ const routes: Routes = [
               {
                 path: 'new',
                 component: UsersNewComponent,
+                canActivate: [AdminGuard],
                 data: { breadcrumb: '新規作成', title: 'ユーザ新規作成' },
               },
               {
                 path: ':userId/edit',
                 component: UserEditComponent,
+                canActivate: [AdminGuard],
                 data: { breadcrumb: 'ユーザ更新', title: 'ユーザ更新' },
               },
             ],
@@ -117,6 +120,7 @@ const routes: Routes = [
       },
     ],
   },
+
   { path: 'error', component: ErrorComponent },
   { path: '**', redirectTo: '/error?status_code=404', pathMatch: 'full' },
 ];
