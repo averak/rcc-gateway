@@ -26,11 +26,7 @@ export class ReservationEditComponent implements OnInit {
     const reservationId = Number(this.route.snapshot.paramMap.get('reservationId'));
 
     // 編集対象予約を取得
-    this.reservationService.getReservations().subscribe((reservations) => {
-      const reservation: ReservationModel | undefined = reservations.find(
-        (reservation) => reservation.id === reservationId
-      );
-
+    this.reservationService.selectById(reservationId).subscribe((reservation) => {
       if (reservation) {
         this.reservation = reservation;
       } else {
