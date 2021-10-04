@@ -27,9 +27,7 @@ export class UserEditComponent implements OnInit {
     const userId = Number(this.route.snapshot.paramMap.get('userId'));
 
     // 編集対象ユーザを取得
-    this.userService.getUsers().subscribe((users) => {
-      const user: UserModel | undefined = users.find((user) => user.id == userId);
-
+    this.userService.selectById(userId).subscribe((user) => {
       if (user) {
         this.user = user;
         this.requestBody = this.user as UserUpdateRequest;

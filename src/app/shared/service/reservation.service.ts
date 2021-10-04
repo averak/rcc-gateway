@@ -35,4 +35,10 @@ export class ReservationService {
   deleteReservation(reservationId: number): Observable<any> {
     return this.http.delete<any>(`${environment.API_BASE_URL}/api/reservations/${reservationId}`);
   }
+
+  selectById(reservationId: number): Observable<ReservationModel | undefined> {
+    return this.getReservations().pipe(
+      map((reservations) => reservations.find((reservation) => reservation.id === reservationId))
+    );
+  }
 }

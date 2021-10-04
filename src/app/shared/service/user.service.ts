@@ -52,6 +52,10 @@ export class UserService {
     return this.http.delete<UserModel>(`${environment.API_BASE_URL}/api/users/${userId}`);
   }
 
+  selectById(userId: number): Observable<UserModel | undefined> {
+    return this.getUsers().pipe(map((users) => users.find((user) => user.id === userId)));
+  }
+
   sortUsers(users: UserModel[]): UserModel[] {
     // 入学年度/IDでソート
     users.sort((a, b) => {
