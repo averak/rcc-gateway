@@ -11,18 +11,22 @@ import { ErrorModule } from './component/error/error.module';
 import { LoginModule } from './component/login/login.module';
 import { ClusterModule } from './component/cluster/cluster.module';
 import { RdidModule } from './component/rdid/rdid.module';
+import { IamModule } from './component/iam/iam.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    // custom modules
     SharedModule,
     DashboardModule,
     ErrorModule,
     LoginModule,
     ClusterModule,
     RdidModule,
+    IamModule,
+
     AppRoutingModule,
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
