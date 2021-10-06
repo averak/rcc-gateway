@@ -1,0 +1,41 @@
+<div fxLayout="column">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <th class="name-header project-fg-black1" mat-header-cell *matHeaderCellDef>グループ名</th>
+      <td class="name-cell project-fg-black1" mat-cell *matCellDef="let userGroup">
+        {{ userGroup.name }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th class="description-header project-fg-black1" mat-header-cell *matHeaderCellDef>説明文</th>
+      <td class="description-cell project-fg-black1" mat-cell *matCellDef="let userGroup">
+        {{ userGroup.description }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="members">
+      <th class="member-header project-fg-black1" mat-header-cell *matHeaderCellDef>メンバー</th>
+      <td class="member-cell project-fg-black1" mat-cell *matCellDef="let userGroup">
+        ここにメンバーが表示されます
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="control">
+      <th class="control-header project-fg-black1" mat-header-cell *matHeaderCellDef>操作</th>
+      <td class="control-cell project-fg-blue1" mat-cell *matCellDef="let userGroup">
+        <button mat-icon-button (click)="onClickEdit(userGroup)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onClickDelete(userGroup)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[15, 30, 45]" showFirstLastButtons> </mat-paginator>
+</div>

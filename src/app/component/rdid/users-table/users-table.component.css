@@ -1,32 +1,3 @@
-.users-table {
-  width: 100%;
-}
-
-table {
-  border: 1px solid #d0d7e3;
-}
-
-.mat-header-cell {
-  background-color: #f4f6f8;
-}
-
-.mat-header-row {
-  height: 40px;
-}
-
-.mat-row {
-  height: auto;
-}
-
-.mat-row:nth-child(even) {
-  background-color: #f7fbfd;
-}
-
-.mat-cell {
-  padding: 2px 0px 2px 0px;
-  border-bottom-style: none;
-}
-
 .username-header,
 .username-cell {
   text-align: start;

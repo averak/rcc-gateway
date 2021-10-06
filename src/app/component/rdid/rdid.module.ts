@@ -28,6 +28,5 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     UserEditComponent,
   ],
   imports: [CommonModule, SharedModule],
-  exports: [RdidComponent],
 })
 export class RdidModule {}

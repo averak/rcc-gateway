@@ -18,6 +18,5 @@ import { ProductListContentsComponent } from './product-list-contents/product-li
     ProductListContentsComponent,
   ],
   imports: [CommonModule, SharedModule],
-  exports: [DashboardComponent],
 })
 export class DashboardModule {}

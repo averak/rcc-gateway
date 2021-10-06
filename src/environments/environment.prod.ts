@@ -65,7 +65,18 @@ export const environment = {
       url: '/iam',
       version: '開発中',
       display: true,
-      navs: [],
+      navs: [
+        {
+          label: 'ユーザグループ',
+          url: '/iam/user-groups',
+          icon: 'manage_accounts',
+        },
+        {
+          label: '権限設定',
+          url: '/iam/quotas',
+          icon: 'admin_panel_settings',
+        },
+      ],
     },
   ],
 };
