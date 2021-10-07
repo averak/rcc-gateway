@@ -26,14 +26,11 @@ export class AuthService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     };
 
-    return this.http
-      .post<AccessTokenModel>(`${environment.API_BASE_URL}/api/login`, requestBody, options)
-      .pipe(
-        catchError((error) => {
-          this.logout();
-          throw this.errorMessageResolverService.resolve(error.error.code);
-        })
-      );
+    return this.http.post<AccessTokenModel>(
+      `${environment.API_BASE_URL}/api/login`,
+      requestBody,
+      options
+    );
   }
 
   public logout(): void {
