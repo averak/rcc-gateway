@@ -10,6 +10,10 @@ import { LoginRequest } from 'src/app/request/login.request';
   styleUrls: ['./login-form.component.css'],
 })
 export class LoginFormComponent implements OnInit {
+  requestBody = {} as LoginRequest;
+  hidePassword: boolean = true;
+  rememberMe: boolean = false;
+
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -18,15 +22,15 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleLoginTransit(requestBody: LoginRequest): void {
+  onSubmit(): void {
     // 入力内容のバリデーション
-    if (!requestBody.email || !requestBody.password) {
+    if (!this.requestBody.email || !this.requestBody.password) {
       return;
     }
 
-    this.authService.login(requestBody).subscribe(
+    this.authService.login(this.requestBody).subscribe(
       (accessToken) => {
-        this.authService.setCredentials(accessToken);
+        this.authService.setCredentials(accessToken, this.rememberMe);
         this.alertService.openSnackBar('ログインに成功しました', 'SUCCESS');
         this.router.navigate(['/dashboard']);
       },

@@ -3,9 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { ErrorMessageResolverService } from 'src/app/shared/service/error-message-resolver.service';
 import { LoginRequest } from 'src/app/request/login.request';
 import { AccessTokenModel } from 'src/app/model/access-token.model';
 
@@ -16,8 +14,7 @@ export class AuthService {
   constructor(
     private router: Router,
     private http: HttpClient,
-    private cookieService: CookieService,
-    private errorMessageResolverService: ErrorMessageResolverService
+    private cookieService: CookieService
   ) {}
 
   public login(requestBody: LoginRequest): Observable<AccessTokenModel> {
@@ -42,7 +39,14 @@ export class AuthService {
     return this.cookieService.get(environment.CREDENTIALS_KEY);
   }
 
-  public setCredentials(accessToken: AccessTokenModel): void {
+  public setCredentials(accessToken: AccessTokenModel, rememberMe: boolean): void {
+    const expiredDate = new Date();
+    if (rememberMe) {
+      expiredDate.setDate(expiredDate.getDate() + 7);
+    } else {
+      expiredDate.setHours(expiredDate.getHours() + 1);
+    }
+
     this.cookieService.set(
       environment.CREDENTIALS_KEY,
       `${accessToken.tokenType} ${accessToken.accessToken}`
