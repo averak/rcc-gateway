@@ -49,7 +49,8 @@ export class AuthService {
 
     this.cookieService.set(
       environment.CREDENTIALS_KEY,
-      `${accessToken.tokenType} ${accessToken.accessToken}`
+      `${accessToken.tokenType} ${accessToken.accessToken}`,
+      expiredDate
     );
   }
 
