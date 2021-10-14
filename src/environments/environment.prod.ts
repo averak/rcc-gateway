@@ -4,7 +4,7 @@ export const environment = {
   // API
   API_BASE_URL: 'https://api.abelab.dev/crms',
 
-  // ログイン情報
+  // 資格情報を保存するキー
   CREDENTIALS_KEY: 'Authorization',
 
   // プロダクト一覧
@@ -16,6 +16,10 @@ export const environment = {
       url: '/dashboard',
       version: 'v1.0',
       display: false,
+      externalLink: {
+        reference: 'https://scrapbox.io/ritscc-private/RCC_Gateway',
+        faq: 'https://scrapbox.io/ritscc-private/FAQ_-_RCC_Gateway',
+      },
       navs: [],
     },
     {
@@ -25,6 +29,10 @@ export const environment = {
       url: '/cluster',
       version: 'v1.0',
       display: true,
+      externalLink: {
+        reference: 'https://scrapbox.io/ritscc-private/Cluster',
+        faq: 'https://scrapbox.io/ritscc-private/FAQ_-_Cluster',
+      },
       navs: [
         {
           label: '予約一覧',
@@ -45,6 +53,10 @@ export const environment = {
       url: '/rdid',
       version: '開発中',
       display: true,
+      externalLink: {
+        reference: 'https://scrapbox.io/ritscc-private/RDID',
+        faq: 'https://scrapbox.io/ritscc-private/FAQ_-_RDID',
+      },
       navs: [
         {
           label: 'アカウント管理',
@@ -65,6 +77,10 @@ export const environment = {
       url: '/iam',
       version: '開発中',
       display: true,
+      externalLink: {
+        reference: 'https://scrapbox.io/ritscc-private/IAM',
+        faq: 'https://scrapbox.io/ritscc-private/FAQ_-_IAM',
+      },
       navs: [
         {
           label: 'ユーザグループ',
