@@ -12,6 +12,7 @@ import { LoginRequest } from 'src/app/request/login.request';
 export class LoginFormComponent implements OnInit {
   requestBody = {} as LoginRequest;
   hidePassword: boolean = true;
+  rememberMe: boolean = false;
 
   constructor(
     private router: Router,
@@ -29,7 +30,7 @@ export class LoginFormComponent implements OnInit {
 
     this.authService.login(this.requestBody).subscribe(
       (accessToken) => {
-        this.authService.setCredentials(accessToken);
+        this.authService.setCredentials(accessToken, this.rememberMe);
         this.alertService.openSnackBar('ログインに成功しました', 'SUCCESS');
         this.router.navigate(['/dashboard']);
       },

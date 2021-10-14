@@ -33,7 +33,9 @@
       </mat-form-field>
 
       <div>
-        <mat-checkbox class="remember-me">REMEMBER ME</mat-checkbox>
+        <mat-checkbox [(ngModel)]="rememberMe" name="remember_me" class="remember-me"
+          >REMEMBER ME</mat-checkbox
+        >
       </div>
 
       <button mat-flat-button class="login-button" (click)="onSubmit()">LOGIN</button>
