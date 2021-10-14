@@ -10,8 +10,8 @@
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
     "check": "npm-run-all check:*",
     "check:lint": "ng lint",
-    "check:format": "ng lint --fix",
-    "format": "prettier --write src",
+    "check:format": "prettier --check src",
+    "format": "prettier --write src && ng lint --fix",
     "lint": "ng lint"
   },
   "private": true,
@@ -56,6 +56,7 @@
     "@typescript-eslint/eslint-plugin": "4.23.0",
     "@typescript-eslint/parser": "4.23.0",
     "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
     "export-to-csv": "^0.2.1",
     "jasmine-core": "~3.7.0",
     "karma": "~6.3.0",
