@@ -11,6 +11,12 @@ export type ProductModel = {
   version: string;
   display: boolean;
 
+  // 外部リンク
+  externalLink: {
+    reference: string;
+    faq: string;
+  };
+
   // サイドナビ
   navs: ProductSideNav[];
 };
