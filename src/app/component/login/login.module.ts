@@ -7,10 +7,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
 // components
 import { LoginComponent } from './login.component';
 import { LoginFormComponent } from './login-form/login-form.component';
-import { LoginCardComponent } from './login-card/login-card.component';
 
 @NgModule({
-  declarations: [LoginComponent, LoginFormComponent, LoginCardComponent],
+  declarations: [LoginComponent, LoginFormComponent],
   imports: [CommonModule, SharedModule],
   exports: [LoginComponent],
 })
