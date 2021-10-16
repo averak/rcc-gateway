@@ -36,11 +36,11 @@ export class ReservationEditComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
+  handleReservationEdit(reservation: ReservationModel): void {
     // 予約更新リクエストを作成
     const requestBody: ReservationUpdateRequest = {
-      startAt: moment(this.reservation.startAt).tz('Asia/Tokyo').format(),
-      finishAt: moment(this.reservation.finishAt).tz('Asia/Tokyo').format(),
+      startAt: moment(reservation.startAt).tz('Asia/Tokyo').format(),
+      finishAt: moment(reservation.finishAt).tz('Asia/Tokyo').format(),
     };
 
     this.alertService.confirmDialog(
