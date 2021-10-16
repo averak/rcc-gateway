@@ -1,4 +1,5 @@
 <app-reservation-input-form
+  *ngIf="reservation"
   [reservation]="reservation"
   (reservationSubmitTransit)="handleReservationSubmit($event)"
 ></app-reservation-input-form>

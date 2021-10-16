@@ -12,7 +12,7 @@ import { ReservationCreateRequest } from 'src/app/request/reservation.request';
   styleUrls: ['./reservations-new.component.css'],
 })
 export class ReservationsNewComponent implements OnInit {
-  reservation: any = {} as ReservationModel;
+  reservation!: ReservationModel;
 
   constructor(
     private router: Router,
@@ -22,10 +22,14 @@ export class ReservationsNewComponent implements OnInit {
 
   ngOnInit(): void {
     // 予約時刻のデフォルト値
-    const now = new Date();
-    now.setMinutes(0);
-    this.reservation.startAt = moment(now).tz('Asia/Tokyo').format().slice(0, 16);
-    this.reservation.finishAt = moment(now).tz('Asia/Tokyo').format().slice(0, 16);
+    this.reservation = {} as ReservationModel;
+    this.reservation.startAt = new Date();
+    this.reservation.finishAt = new Date();
+    this.reservation.startAt.setSeconds(0);
+    this.reservation.startAt.setMinutes(0);
+    this.reservation.finishAt.setSeconds(0);
+    this.reservation.finishAt.setMinutes(0);
+    this.reservation.finishAt.setHours(this.reservation.startAt.getHours() + 3);
   }
 
   handleReservationSubmit(reservation: ReservationModel): void {

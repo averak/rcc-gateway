@@ -11,7 +11,8 @@
         <mat-form-field class="form-input">
           <input
             matInput
-            [(ngModel)]="reservation.startAt"
+            [value]="getDatetimeString(reservation.startAt)"
+            (change)="onChangeStartAt($event)"
             type="datetime-local"
             name="start-at"
             required
@@ -25,7 +26,8 @@
         <mat-form-field class="form-input">
           <input
             matInput
-            [(ngModel)]="reservation.finishAt"
+            [value]="getDatetimeString(reservation.finishAt)"
+            (change)="onChangeFinishAt($event)"
             type="datetime-local"
             name="finish-at"
             required
