@@ -12,7 +12,7 @@ import { ReservationCreateRequest } from 'src/app/request/reservation.request';
   styleUrls: ['./reservations-new.component.css'],
 })
 export class ReservationsNewComponent implements OnInit {
-  reservation: any = {} as ReservationModel;
+  reservation!: ReservationModel;
 
   constructor(
     private router: Router,
@@ -22,22 +22,21 @@ export class ReservationsNewComponent implements OnInit {
 
   ngOnInit(): void {
     // 予約時刻のデフォルト値
-    const now = new Date();
-    now.setMinutes(0);
-    this.reservation.startAt = moment(now).tz('Asia/Tokyo').format().slice(0, 16);
-    this.reservation.finishAt = moment(now).tz('Asia/Tokyo').format().slice(0, 16);
+    this.reservation = {} as ReservationModel;
+    this.reservation.startAt = new Date();
+    this.reservation.finishAt = new Date();
+    this.reservation.startAt.setSeconds(0);
+    this.reservation.startAt.setMinutes(0);
+    this.reservation.finishAt.setSeconds(0);
+    this.reservation.finishAt.setMinutes(0);
+    this.reservation.finishAt.setHours(this.reservation.startAt.getHours() + 3);
   }
 
-  onSubmit(): void {
-    // 入力内容のバリデーション
-    if (!this.reservation.startAt || !this.reservation.finishAt) {
-      return;
-    }
-
+  handleReservationSubmit(reservation: ReservationModel): void {
     // 予約作成リクエストを作成
     const requestBody: ReservationCreateRequest = {
-      startAt: moment(this.reservation.startAt).tz('Asia/Tokyo').format(),
-      finishAt: moment(this.reservation.finishAt).tz('Asia/Tokyo').format(),
+      startAt: moment(reservation.startAt).tz('Asia/Tokyo').format(),
+      finishAt: moment(reservation.finishAt).tz('Asia/Tokyo').format(),
     };
 
     this.alertService.confirmDialog(
@@ -46,7 +45,7 @@ export class ReservationsNewComponent implements OnInit {
       (result: boolean): void => {
         if (result) {
           this.reservationService.createReservation(requestBody).subscribe(
-            (res) => {
+            () => {
               this.router.navigate(['/cluster', 'reservations']);
               this.alertService.openSnackBar('予約を追加しました', 'SUCCESS');
             },
@@ -57,9 +56,5 @@ export class ReservationsNewComponent implements OnInit {
         }
       }
     );
-  }
-
-  onCancel(): void {
-    this.router.navigate(['/cluster', 'reservations']);
   }
 }

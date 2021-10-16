@@ -34,6 +34,7 @@ import { ReservationsContentComponent } from './reservations-content/reservation
 import { ReservationsHistoriesComponent } from './reservations-histories/reservations-histories.component';
 import { ReservationsTableComponent } from './reservations-table/reservations-table.component';
 import { ReservationEditComponent } from './reservation-edit/reservation-edit.component';
+import { ReservationInputFormComponent } from './reservation-input-form/reservation-input-form.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ReservationEditComponent } from './reservation-edit/reservation-edit.co
     ReservationsHistoriesComponent,
     ReservationsTableComponent,
     ReservationEditComponent,
+    ReservationInputFormComponent,
   ],
   imports: [
     CommonModule,

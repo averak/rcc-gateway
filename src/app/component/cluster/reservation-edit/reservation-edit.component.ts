@@ -28,7 +28,9 @@ export class ReservationEditComponent implements OnInit {
     // 編集対象予約を取得
     this.reservationService.selectById(reservationId).subscribe((reservation) => {
       if (reservation) {
-        this.reservation = reservation;
+        this.reservation = {} as ReservationModel;
+        this.reservation.startAt = new Date(reservation.startAt);
+        this.reservation.finishAt = new Date(reservation.finishAt);
       } else {
         this.onCancel();
         this.alertService.openSnackBar('編集対象予約が見つかりません', 'ERROR');
@@ -36,11 +38,11 @@ export class ReservationEditComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
+  handleReservationEdit(reservation: ReservationModel): void {
     // 予約更新リクエストを作成
     const requestBody: ReservationUpdateRequest = {
-      startAt: moment(this.reservation.startAt).tz('Asia/Tokyo').format(),
-      finishAt: moment(this.reservation.finishAt).tz('Asia/Tokyo').format(),
+      startAt: moment(reservation.startAt).tz('Asia/Tokyo').format(),
+      finishAt: moment(reservation.finishAt).tz('Asia/Tokyo').format(),
     };
 
     this.alertService.confirmDialog(
