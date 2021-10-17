@@ -28,7 +28,7 @@ export class ReservationEditComponent implements OnInit {
     // 編集対象予約を取得
     this.reservationService.selectById(reservationId).subscribe((reservation) => {
       if (reservation) {
-        this.reservation = {} as ReservationModel;
+				this.reservation = reservation;
         this.reservation.startAt = new Date(reservation.startAt);
         this.reservation.finishAt = new Date(reservation.finishAt);
       } else {
