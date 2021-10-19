@@ -105,7 +105,13 @@ export const environment = {
         reference: '',
         faq: '',
       },
-      navs: [],
+      navs: [
+        {
+          label: '備品一覧',
+          url: '/kiri-tansu/items',
+          icon: 'menu_book',
+        },
+      ],
     },
   ],
 };
