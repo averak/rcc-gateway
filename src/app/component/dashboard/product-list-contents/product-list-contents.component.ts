@@ -12,5 +12,8 @@ export class ProductListContentsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // プロダクト名でソート
+    this.products.sort((a, b) => a.title.localeCompare(b.title, 'ja'));
+  }
 }
