@@ -12,6 +12,7 @@ import { LoginModule } from './component/login/login.module';
 import { ClusterModule } from './component/cluster/cluster.module';
 import { RdidModule } from './component/rdid/rdid.module';
 import { IamModule } from './component/iam/iam.module';
+import { KiriTansuModule } from './component/kiri-tansu/kiri-tansu.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { IamModule } from './component/iam/iam.module';
     ClusterModule,
     RdidModule,
     IamModule,
+    KiriTansuModule,
 
     AppRoutingModule,
     BrowserModule,
