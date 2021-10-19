@@ -22,6 +22,9 @@ import { IamComponent } from './component/iam/iam.component';
 import { UserGroupsComponent } from './component/iam/user-groups/user-groups.component';
 import { UserGroupsContentComponent } from './component/iam/user-groups-content/user-groups-content.component';
 import { RoleQuotasComponent } from './component/iam/role-quotas/role-quotas.component';
+import { KiriTansuComponent } from './component/kiri-tansu/kiri-tansu.component';
+import { ItemsComponent } from './component/kiri-tansu/items/items.component';
+import { ItemsContentComponent } from './component/kiri-tansu/items-content/items-content.component';
 
 // guards
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
@@ -144,6 +147,26 @@ const routes: Routes = [
             path: 'quotas',
             component: RoleQuotasComponent,
             data: { breadcrumb: '権限設定', title: '権限設定' },
+          },
+        ],
+      },
+      {
+        path: 'kiri-tansu',
+        component: KiriTansuComponent,
+        data: { breadcrumb: 'Kiri Tansu', title: 'Kiri Tansu' },
+        children: [
+          { path: '', redirectTo: '/kiri-tansu/items', pathMatch: 'full' },
+          {
+            path: 'items',
+            component: ItemsComponent,
+            data: { breadcrumb: '備品一覧', title: '備品一覧' },
+            children: [
+              {
+                path: '',
+                component: ItemsContentComponent,
+                data: { breadcrumb: '' },
+              },
+            ],
           },
         ],
       },

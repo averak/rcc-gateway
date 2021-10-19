@@ -94,5 +94,24 @@ export const environment = {
         },
       ],
     },
+    {
+      title: 'Kiri Tansu',
+      description:
+        'Kiri TansuはRCCの備品管理ツールです。会員は本サービスから備品・蔵書をレンタルすることができます。',
+      url: '/kiri-tansu',
+      version: '開発中',
+      display: true,
+      externalLink: {
+        reference: '',
+        faq: '',
+      },
+      navs: [
+        {
+          label: '備品一覧',
+          url: '/kiri-tansu/items',
+          icon: 'menu_book',
+        },
+      ],
+    },
   ],
 };
