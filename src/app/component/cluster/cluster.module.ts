@@ -1,8 +1,4 @@
 import { NgModule, Injectable } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-// shared module
-import { SharedModule } from 'src/app/shared/shared.module';
 
 // angular calendar
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -25,6 +21,10 @@ class CustomDateFormatter extends CalendarNativeDateFormatter {
   }
 }
 
+// modules
+import { SharedModule } from 'src/app/shared/shared.module';
+import { ClusterRoutingModule } from './cluster-routing.module';
+
 // components
 import { ClusterComponent } from './cluster.component';
 import { ReservationsCalendarComponent } from './reservations-calendar/reservations-calendar.component';
@@ -38,6 +38,7 @@ import { ReservationInputFormComponent } from './reservation-input-form/reservat
 
 @NgModule({
   declarations: [
+    // component
     ClusterComponent,
     ReservationsCalendarComponent,
     ReservationsComponent,
@@ -49,8 +50,8 @@ import { ReservationInputFormComponent } from './reservation-input-form/reservat
     ReservationInputFormComponent,
   ],
   imports: [
-    CommonModule,
     SharedModule,
+    ClusterRoutingModule,
 
     // angular calendar
     FlatpickrModule.forRoot(),
@@ -67,6 +68,5 @@ import { ReservationInputFormComponent } from './reservation-input-form/reservat
       }
     ),
   ],
-  exports: [ClusterComponent],
 })
 export class ClusterModule {}

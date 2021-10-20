@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
@@ -69,16 +69,15 @@ import { MainContentComponent } from './component/main-content/main-content.comp
     MainContentComponent,
   ],
   imports: [
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     RouterTestingModule,
     HttpClientModule,
 
     // UI modules
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     RouterTestingModule,
     HttpClientModule,
     MatInputModule,
@@ -106,15 +105,14 @@ import { MainContentComponent } from './component/main-content/main-content.comp
     NgbModalModule,
   ],
   exports: [
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     RouterTestingModule,
 
     // UI modules
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     RouterTestingModule,
     HttpClientModule,
     MatInputModule,
