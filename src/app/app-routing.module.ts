@@ -13,6 +13,7 @@ import { ClusterModule } from './component/cluster/cluster.module';
 import { RdidModule } from './component/rdid/rdid.module';
 import { IamModule } from './component/iam/iam.module';
 import { KiriTansuModule } from './component/kiri-tansu/kiri-tansu.module';
+import { ButlerModule } from './component/butler/butler.module';
 import { LoginModule } from './component/login/login.module';
 import { ErrorModule } from './component/error/error.module';
 
@@ -43,6 +44,10 @@ const routes: Routes = [
       {
         path: 'kiri-tansu',
         loadChildren: () => KiriTansuModule,
+      },
+      {
+        path: 'butler',
+        loadChildren: () => ButlerModule,
       },
     ],
   },

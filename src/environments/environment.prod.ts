@@ -37,7 +37,7 @@ export const environment = {
         {
           label: '予約一覧',
           url: '/cluster/reservations',
-          icon: 'date_range',
+          icon: 'event_note',
         },
         {
           label: '予約履歴',
@@ -110,6 +110,34 @@ export const environment = {
           label: '備品一覧',
           url: '/kiri-tansu/items',
           icon: 'menu_book',
+        },
+      ],
+    },
+    {
+      title: 'Butler',
+      description: 'Butlerは会計申請フォームです。備品の購入申請や立替金の返金依頼を提出できます。',
+      url: '/butler',
+      version: '開発中',
+      display: true,
+      externalLink: {
+        reference: '',
+        faq: '',
+      },
+      navs: [
+        {
+          label: '購入申請',
+          url: '/butler/purchase_requests',
+          icon: 'menu_book',
+        },
+        {
+          label: '返金依頼',
+          url: '/butler/payback_requests',
+          icon: 'credit_score',
+        },
+        {
+          label: '申請管理',
+          url: '/butler/manage',
+          icon: 'manage_search',
         },
       ],
     },
