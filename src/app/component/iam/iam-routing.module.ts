@@ -9,11 +9,11 @@ import { RoleQuotasComponent } from './role-quotas/role-quotas.component';
 
 const routes: Routes = [
   {
-    path: 'iam',
+    path: '',
     component: IamComponent,
     data: { breadcrumb: 'IAM', title: 'IAM' },
     children: [
-      { path: '', redirectTo: '/iam/user-groups', pathMatch: 'full' },
+      { path: '', redirectTo: 'user-groups', pathMatch: 'full' },
       {
         path: 'user-groups',
         component: UserGroupsComponent,

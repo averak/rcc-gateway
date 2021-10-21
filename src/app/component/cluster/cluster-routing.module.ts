@@ -11,11 +11,11 @@ import { ReservationsHistoriesComponent } from './reservations-histories/reserva
 
 const routes: Routes = [
   {
-    path: 'cluster',
+    path: '',
     component: ClusterComponent,
     data: { breadcrumb: 'Cluster' },
     children: [
-      { path: '', redirectTo: '/cluster/reservations', pathMatch: 'full' },
+      { path: '', redirectTo: 'reservations', pathMatch: 'full' },
       {
         path: 'reservations',
         component: ReservationsComponent,

@@ -8,11 +8,11 @@ import { ItemsContentComponent } from './items-content/items-content.component';
 
 const routes: Routes = [
   {
-    path: 'kiri-tansu',
+    path: '',
     component: KiriTansuComponent,
     data: { breadcrumb: 'Kiri Tansu', title: 'Kiri Tansu' },
     children: [
-      { path: '', redirectTo: '/kiri-tansu/items', pathMatch: 'full' },
+      { path: '', redirectTo: 'items', pathMatch: 'full' },
       {
         path: 'items',
         component: ItemsComponent,

@@ -3,17 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 // components
 import { MainContentComponent } from './shared/component/main-content/main-content.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 // guards
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
 
 // modules
-import { ErrorModule } from './component/error/error.module';
-import { DashboardModule } from './component/dashboard/dashboard.module';
 import { ClusterModule } from './component/cluster/cluster.module';
 import { RdidModule } from './component/rdid/rdid.module';
 import { IamModule } from './component/iam/iam.module';
 import { KiriTansuModule } from './component/kiri-tansu/kiri-tansu.module';
+import { LoginModule } from './component/login/login.module';
+import { ErrorModule } from './component/error/error.module';
 
 const routes: Routes = [
   {
@@ -21,32 +22,39 @@ const routes: Routes = [
     component: MainContentComponent,
     canActivate: [AuthGuard],
     children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {
-        path: '',
-        loadChildren: () => DashboardModule,
+        path: 'dashboard',
+        component: DashboardComponent,
+        data: { breadcrumb: 'ダッシュボード', title: 'ダッシュボード' },
       },
       {
-        path: '',
+        path: 'cluster',
         loadChildren: () => ClusterModule,
       },
       {
-        path: '',
+        path: 'rdid',
         loadChildren: () => RdidModule,
       },
       {
-        path: '',
+        path: 'iam',
         loadChildren: () => IamModule,
       },
       {
-        path: '',
+        path: 'kiri-tansu',
         loadChildren: () => KiriTansuModule,
       },
     ],
   },
   {
-    path: '',
+    path: 'login',
+    loadChildren: () => LoginModule,
+  },
+  {
+    path: 'error',
     loadChildren: () => ErrorModule,
   },
+  { path: '**', redirectTo: '/error?status_code=404', pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -54,3 +62,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
+export const AppRoutes = routes;

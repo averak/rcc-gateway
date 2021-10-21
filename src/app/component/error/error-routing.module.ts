@@ -4,10 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 // components
 import { ErrorComponent } from './error.component';
 
-const routes: Routes = [
-  { path: 'error', component: ErrorComponent },
-  { path: '**', redirectTo: '/error?status_code=404', pathMatch: 'full' },
-];
+const routes: Routes = [{ path: '', component: ErrorComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

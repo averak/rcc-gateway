@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// guards
+import { AdminGuard } from 'src/app/shared/guard/admin.guard';
+
 // components
 import { RdidComponent } from './rdid.component';
 import { UsersComponent } from './users/users.component';
@@ -9,16 +12,13 @@ import { UsersNewComponent } from './users-new/users-new.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { MypageContentsComponent } from './mypage-contents/mypage-contents.component';
 
-// guards
-import { AdminGuard } from 'src/app/shared/guard/admin.guard';
-
 const routes: Routes = [
   {
-    path: 'rdid',
+    path: '',
     component: RdidComponent,
     data: { breadcrumb: 'RDID', title: 'RDID' },
     children: [
-      { path: '', redirectTo: '/rdid/users', pathMatch: 'full' },
+      { path: '', redirectTo: 'users', pathMatch: 'full' },
       {
         path: 'users',
         component: UsersComponent,
