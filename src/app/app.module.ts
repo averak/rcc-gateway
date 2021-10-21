@@ -1,34 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// custom modules
+// modules
 import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './component/dashboard/dashboard.module';
-import { ErrorModule } from './component/error/error.module';
-import { LoginModule } from './component/login/login.module';
-import { ClusterModule } from './component/cluster/cluster.module';
-import { RdidModule } from './component/rdid/rdid.module';
-import { IamModule } from './component/iam/iam.module';
-import { KiriTansuModule } from './component/kiri-tansu/kiri-tansu.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    // custom modules
-    SharedModule,
     DashboardModule,
-    ErrorModule,
-    LoginModule,
-    ClusterModule,
-    RdidModule,
-    IamModule,
-    KiriTansuModule,
 
+    SharedModule,
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

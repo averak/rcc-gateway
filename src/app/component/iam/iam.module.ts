@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-// shared module
+// modules
 import { SharedModule } from 'src/app/shared/shared.module';
+import { IamRoutingModule } from './iam-routing.module';
 
 // components
 import { IamComponent } from './iam.component';
@@ -19,6 +19,6 @@ import { UserGroupsTableComponent } from './user-groups-table/user-groups-table.
     UserGroupsContentComponent,
     UserGroupsTableComponent,
   ],
-  imports: [CommonModule, SharedModule],
+  imports: [SharedModule, IamRoutingModule],
 })
 export class IamModule {}

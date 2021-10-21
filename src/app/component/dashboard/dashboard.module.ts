@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-// shared module
+// modules
 import { SharedModule } from 'src/app/shared/shared.module';
 
 // components
@@ -17,6 +16,6 @@ import { ProductListContentsComponent } from './product-list-contents/product-li
     ProductVersionChipComponent,
     ProductListContentsComponent,
   ],
-  imports: [CommonModule, SharedModule],
+  imports: [SharedModule],
 })
 export class DashboardModule {}

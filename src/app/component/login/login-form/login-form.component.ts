@@ -32,7 +32,7 @@ export class LoginFormComponent implements OnInit {
       (accessToken) => {
         this.authService.setCredentials(accessToken, this.rememberMe);
         this.alertService.openSnackBar('ログインに成功しました', 'SUCCESS');
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/']);
       },
       (error) => {
         this.authService.logout();
