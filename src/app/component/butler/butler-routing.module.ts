@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // components
 import { ButlerComponent } from './butler.component';
+import { PurchaseOrdersContentsComponent } from './purchase-orders-contents/purchase-orders-contents.component';
 
 const routes: Routes = [
   {
@@ -10,14 +11,14 @@ const routes: Routes = [
     component: ButlerComponent,
     data: { breadcrumb: 'Butler', title: 'Butler' },
     children: [
-      { path: '', redirectTo: 'purchase_requests', pathMatch: 'full' },
+      { path: '', redirectTo: 'purchase_orders', pathMatch: 'full' },
       {
-        path: 'purchase_requests',
-        component: ButlerComponent,
+        path: 'purchase_orders',
+        component: PurchaseOrdersContentsComponent,
         data: { breadcrumb: '購入申請', title: '購入申請' },
       },
       {
-        path: 'payback_requests',
+        path: 'payback_orders',
         component: ButlerComponent,
         data: { breadcrumb: '返金依頼', title: '返金依頼' },
       },

@@ -126,12 +126,12 @@ export const environment = {
       navs: [
         {
           label: '購入申請',
-          url: '/butler/purchase_requests',
+          url: '/butler/purchase_orders',
           icon: 'menu_book',
         },
         {
           label: '返金依頼',
-          url: '/butler/payback_requests',
+          url: '/butler/payback_orders',
           icon: 'credit_score',
         },
         {
