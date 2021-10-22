@@ -5,7 +5,6 @@ type OrderBaseModel = {
   isApproved: boolean;
   userId: string;
   createdAt: Date;
-  updatedAt: Date;
 };
 
 export interface PurchaseOrderModel extends OrderBaseModel {

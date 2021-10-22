@@ -11,14 +11,14 @@ const routes: Routes = [
     component: ButlerComponent,
     data: { breadcrumb: 'Butler', title: 'Butler' },
     children: [
-      { path: '', redirectTo: 'purchase_orders', pathMatch: 'full' },
+      { path: '', redirectTo: 'purchase-orders', pathMatch: 'full' },
       {
-        path: 'purchase_orders',
+        path: 'purchase-orders',
         component: PurchaseOrdersContentsComponent,
         data: { breadcrumb: '購入申請', title: '購入申請' },
       },
       {
-        path: 'payback_orders',
+        path: 'payback-orders',
         component: ButlerComponent,
         data: { breadcrumb: '返金依頼', title: '返金依頼' },
       },
