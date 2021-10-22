@@ -48,7 +48,7 @@ import { BreadcrumbComponent } from './component/breadcrumb/breadcrumb.component
 import { TitleComponent } from './component/title/title.component';
 import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
 import { ProgressSpinnerComponent } from './component/progress-spinner/progress-spinner.component';
-import { MainContentComponent } from './component/main-content/main-content.component';
+import { MainContainerComponent } from './component/main-container/main-container.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +66,7 @@ import { MainContentComponent } from './component/main-content/main-content.comp
     TitleComponent,
     ConfirmDialogComponent,
     ProgressSpinnerComponent,
-    MainContentComponent,
+    MainContainerComponent,
   ],
   imports: [
     CommonModule,
