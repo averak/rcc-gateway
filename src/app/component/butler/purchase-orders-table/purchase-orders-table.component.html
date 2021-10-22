@@ -1,0 +1,73 @@
+<div fxLayout="column">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="title">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>品名</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let purchaseOrder">
+        {{ purchaseOrder.title }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>説明</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let purchaseOrder">
+        {{ purchaseOrder.description }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>税込価格</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let purchaseOrder">
+        {{ purchaseOrder.price }}円
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="url">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>商品URL</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let purchaseOrder">
+        <a [href]="purchaseOrder.url">商品ページ</a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>申請者</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let purchaseOrder">
+        {{ purchaseOrder.userId }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="isApproved">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>承認済み</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let purchaseOrder">
+        <mat-icon *ngIf="purchaseOrder.isApproved" class="project-fg-black1"
+          >check_circle_outline</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="isPurchased">
+      <th class="project-fg-black1" mat-header-cell *matHeaderCellDef>購入済み</th>
+      <td class="project-fg-black1" mat-cell *matCellDef="let purchaseOrder">
+        <mat-icon *ngIf="purchaseOrder.isPurchased" class="project-fg-black1"
+          >check_circle_outline</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="control">
+      <th class="control-header project-fg-black1" mat-header-cell *matHeaderCellDef>操作</th>
+      <td class="control-cell project-fg-blue1" mat-cell *matCellDef="let purchaseOrder">
+        <button mat-icon-button (click)="onClickEdit(purchaseOrder)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onClickDelete(purchaseOrder)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[15, 30, 45]" showFirstLastButtons> </mat-paginator>
+</div>

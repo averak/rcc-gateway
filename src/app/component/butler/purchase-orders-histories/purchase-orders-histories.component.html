@@ -1,0 +1,6 @@
+<app-purchase-orders-table
+  *ngIf="purchaseOrders"
+  [purchaseOrders]="purchaseOrders"
+  (purchaseOrderEdit)="handlePurchaseOrderEdit($event)"
+  (purchaseOrderDelete)="handlePurchaseOrderDelete($event)"
+></app-purchase-orders-table>

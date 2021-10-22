@@ -1,0 +1,66 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <form
+    class="form-content project-fg-black1"
+    fxLayout="column"
+    fxLayoutAlign="center"
+    (ngSubmit)="onSubmit()"
+  >
+    <div fxLayout="column" fxLayoutAlign="start start">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">品名</span>
+        <mat-form-field class="form-input">
+          <mat-label>品名</mat-label>
+          <input
+            matInput
+            [(ngModel)]="requestBody.title"
+            name="input-purchase-order-title"
+            required
+          />
+          <mat-error>品名を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">説明</span>
+        <mat-form-field class="form-input">
+          <mat-label>説明</mat-label>
+          <textarea
+            matInput
+            [(ngModel)]="requestBody.description"
+            name="input-purchase-order-description"
+            required
+          ></textarea>
+          <mat-error>説明を入力してください</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <span class="input-label">商品情報</span>
+
+        <mat-form-field class="form-input">
+          <mat-label>税込価格</mat-label>
+          <input
+            matInput
+            [(ngModel)]="requestBody.price"
+            name="input-purchase-order-price"
+            required
+          />
+          <mat-error>金額を入力してください</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-input" fxFlexOffset="30px">
+          <mat-label>商品URL</mat-label>
+          <input matInput [(ngModel)]="requestBody.url" name="input-purchase-order-url" required />
+          <mat-error>商品URLを入力してください</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlexOffset="10px">
+      <button mat-flat-button class="cancel-button" type="button" (click)="onCancel()">
+        キャンセル
+      </button>
+      <button mat-flat-button class="submit-button">確認</button>
+    </div>
+  </form>
+</div>

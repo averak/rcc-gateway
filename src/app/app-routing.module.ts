@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // components
-import { MainContentComponent } from './shared/component/main-content/main-content.component';
+import { MainContainerComponent } from './shared/component/main-container/main-container.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 // guards
@@ -20,7 +20,7 @@ import { ErrorModule } from './component/error/error.module';
 const routes: Routes = [
   {
     path: '',
-    component: MainContentComponent,
+    component: MainContainerComponent,
     canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
