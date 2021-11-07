@@ -3,19 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 // components
 import { MainContainerComponent } from './shared/component/main-container/main-container.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 // guards
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
 
 // modules
-import { ClusterModule } from './component/cluster/cluster.module';
-import { RdidModule } from './component/rdid/rdid.module';
-import { IamModule } from './component/iam/iam.module';
-import { KiriTansuModule } from './component/kiri-tansu/kiri-tansu.module';
-import { ButlerModule } from './component/butler/butler.module';
-import { LoginModule } from './component/login/login.module';
-import { ErrorModule } from './component/error/error.module';
+import { ErrorRoutingModule } from './component/error/error-routing.module';
+import { LoginRoutingModule } from './component/login/login-routing.module';
+import { DashboardRoutingModule } from './component/dashboard/dashboard-routing.module';
+import { ButlerRoutingModule } from './component/butler/butler-routing.module';
+import { ClusterRoutingModule } from './component/cluster/cluster-routing.module';
+import { IamRoutingModule } from './component/iam/iam-routing.module';
+import { KiriTansuRoutingModule } from './component/kiri-tansu/kiri-tansu-routing.module';
+import { RdidRoutingModule } from './component/rdid/rdid-routing.module';
 
 const routes: Routes = [
   {
@@ -26,38 +26,37 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {
         path: 'dashboard',
-        component: DashboardComponent,
-        data: { breadcrumb: 'ダッシュボード', title: 'ダッシュボード' },
-      },
-      {
-        path: 'cluster',
-        loadChildren: () => ClusterModule,
-      },
-      {
-        path: 'rdid',
-        loadChildren: () => RdidModule,
-      },
-      {
-        path: 'iam',
-        loadChildren: () => IamModule,
-      },
-      {
-        path: 'kiri-tansu',
-        loadChildren: () => KiriTansuModule,
+        loadChildren: () => DashboardRoutingModule,
       },
       {
         path: 'butler',
-        loadChildren: () => ButlerModule,
+        loadChildren: () => ButlerRoutingModule,
+      },
+      {
+        path: 'cluster',
+        loadChildren: () => ClusterRoutingModule,
+      },
+      {
+        path: 'iam',
+        loadChildren: () => IamRoutingModule,
+      },
+      {
+        path: 'kiri-tansu',
+        loadChildren: () => KiriTansuRoutingModule,
+      },
+      {
+        path: 'rdid',
+        loadChildren: () => RdidRoutingModule,
       },
     ],
   },
   {
     path: 'login',
-    loadChildren: () => LoginModule,
+    loadChildren: () => LoginRoutingModule,
   },
   {
     path: 'error',
-    loadChildren: () => ErrorModule,
+    loadChildren: () => ErrorRoutingModule,
   },
   { path: '**', redirectTo: '/error?status_code=404', pathMatch: 'full' },
 ];
