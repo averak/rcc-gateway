@@ -16,6 +16,7 @@
         mat-list-item
         [routerLink]="nav.url"
         routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
         #item="routerLinkActive"
       >
         <div *ngIf="item.isActive" class="active-list-bar project-bg-blue4"></div>
