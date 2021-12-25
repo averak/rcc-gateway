@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UsersContentComponent } from './users-content.component';
+import { UsersContentComponent } from '@rdid/users-content/users-content.component';
 
 describe('UsersContentComponent', () => {
   let component: UsersContentComponent;

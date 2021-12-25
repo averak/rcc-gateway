@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MypageContentsComponent } from './mypage-contents.component';
+import { MypageContentsComponent } from '@rdid/mypage-contents/mypage-contents.component';
 
 describe('MypageContentsComponent', () => {
   let component: MypageContentsComponent;

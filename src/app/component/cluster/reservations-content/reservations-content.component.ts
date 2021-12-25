@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment-timezone';
-import { ReservationModel } from 'src/app/model/reservation.model';
-import { UserModel } from 'src/app/model/user.model';
-import { ReservationService } from 'src/app/shared/service/reservation.service';
-import { UserService } from 'src/app/shared/service/user.service';
-import { AlertService } from 'src/app/shared/service/alert.service';
-import { ReservationUpdateRequest } from 'src/app/request/reservation.request';
+import { ReservationModel } from '@model/reservation.model';
+import { UserModel } from '@model/user.model';
+import { ReservationService } from '@shared/service/reservation.service';
+import { UserService } from '@shared/service/user.service';
+import { AlertService } from '@shared/service/alert.service';
+import { ReservationUpdateRequest } from '@app/request/reservation.request';
 
 @Component({
   selector: 'app-reservations-content',

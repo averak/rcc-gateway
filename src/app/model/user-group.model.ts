@@ -1,5 +1,5 @@
-import { UserModel } from './user.model';
-import { UserRoleEnum } from '../enums/user-role.enum';
+import { UserModel } from '@model/user.model';
+import { UserRoleEnum } from '@enums/user-role.enum';
 
 export type UserGroupRole = {
   productName: string;

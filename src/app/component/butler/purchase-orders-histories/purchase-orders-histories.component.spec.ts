@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PurchaseOrdersHistoriesComponent } from './purchase-orders-histories.component';
+import { PurchaseOrdersHistoriesComponent } from '@butler/purchase-orders-histories/purchase-orders-histories.component';
 
 describe('PurchaseOrdersHistoriesComponent', () => {
   let component: PurchaseOrdersHistoriesComponent;

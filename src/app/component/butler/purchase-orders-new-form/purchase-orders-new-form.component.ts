@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PurchaseOrderRequest } from 'src/app/request/butler.request';
+import { PurchaseOrderRequest } from '@app/request/butler.request';
 
 @Component({
   selector: 'app-purchase-orders-new-form',

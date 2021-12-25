@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { admissionYears } from 'src/app/model/user.model';
-import { UserService } from 'src/app/shared/service/user.service';
-import { AlertService } from 'src/app/shared/service/alert.service';
-import { UserCreateRequest } from 'src/app/request/user.request';
+import { admissionYears } from '@model/user.model';
+import { UserService } from '@shared/service/user.service';
+import { AlertService } from '@shared/service/alert.service';
+import { UserCreateRequest } from '@app/request/user.request';
 
 @Component({
   selector: 'app-users-new',

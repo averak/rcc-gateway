@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { PurchaseOrderModel } from 'src/app/model/butler.model';
+import { PurchaseOrderModel } from '@model/butler.model';
 
 @Component({
   selector: 'app-purchase-orders-table',

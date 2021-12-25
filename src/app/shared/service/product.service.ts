@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment';
 import { ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { ProductModel } from 'src/app/model/product.model';
+import { ProductModel } from '@model/product.model';
 
 @Injectable({
   providedIn: 'root',

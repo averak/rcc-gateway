@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserGroupsTableComponent } from './user-groups-table.component';
+import { UserGroupsTableComponent } from '@iam/user-groups-table/user-groups-table.component';
 
 describe('UserGroupsTableComponent', () => {
   let component: UserGroupsTableComponent;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { ProgressSpinnerComponent } from '../component/progress-spinner/progress-spinner.component';
+import { ProgressSpinnerComponent } from '@shared/component/progress-spinner/progress-spinner.component';
 
 export interface LoadingIndicatorRef {
   close(): void;

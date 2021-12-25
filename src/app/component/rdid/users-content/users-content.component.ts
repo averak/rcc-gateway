@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserModel } from 'src/app/model/user.model';
-import { UserService } from 'src/app/shared/service/user.service';
-import { AlertService } from 'src/app/shared/service/alert.service';
+import { UserModel } from '@model/user.model';
+import { UserService } from '@shared/service/user.service';
+import { AlertService } from '@shared/service/alert.service';
 
 @Component({
   selector: 'app-users-content',

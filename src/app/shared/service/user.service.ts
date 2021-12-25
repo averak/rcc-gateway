@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { UserModel, UsersModel } from 'src/app/model/user.model';
-import { UserRoleEnum } from 'src/app/enums/user-role.enum';
+import { UserModel, UsersModel } from '@model/user.model';
+import { UserRoleEnum } from '@app/enums/user-role.enum';
 import {
   UserCreateRequest,
   UserUpdateRequest,
   LoginUserUpdateRequest,
   LoginUserPasswordUpdateRequest,
-} from 'src/app/request/user.request';
+} from '@app/request/user.request';
 
 @Injectable({
   providedIn: 'root',

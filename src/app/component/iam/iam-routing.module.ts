@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // components
-import { IamComponent } from './iam.component';
-import { UserGroupsComponent } from './user-groups/user-groups.component';
-import { UserGroupsContentComponent } from './user-groups-content/user-groups-content.component';
-import { RoleQuotasComponent } from './role-quotas/role-quotas.component';
+import { IamComponent } from '@iam/iam.component';
+import { UserGroupsComponent } from '@iam/user-groups/user-groups.component';
+import { UserGroupsContentComponent } from '@iam/user-groups-content/user-groups-content.component';
+import { RoleQuotasComponent } from '@iam/role-quotas/role-quotas.component';
 
 const routes: Routes = [
   {

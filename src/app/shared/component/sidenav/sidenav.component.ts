@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductModel } from 'src/app/model/product.model';
-import { ProductService } from 'src/app/shared/service/product.service';
+import { ProductModel } from '@model/product.model';
+import { ProductService } from '@shared/service/product.service';
 
 @Component({
   selector: 'app-sidenav',

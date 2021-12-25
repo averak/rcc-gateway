@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/shared/service/user.service';
-import { AlertService } from 'src/app/shared/service/alert.service';
-import { LoginUserUpdateRequest } from 'src/app/request/user.request';
-import { UserModel } from 'src/app/model/user.model';
+import { UserService } from '@shared/service/user.service';
+import { AlertService } from '@shared/service/alert.service';
+import { LoginUserUpdateRequest } from '@app/request/user.request';
+import { UserModel } from '@model/user.model';
 
 @Component({
   selector: 'app-user-profile-edit',

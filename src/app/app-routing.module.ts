@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // components
-import { MainContainerComponent } from './shared/component/main-container/main-container.component';
+import { MainContainerComponent } from '@shared/component/main-container/main-container.component';
 
 // guards
-import { AuthGuard } from 'src/app/shared/guard/auth.guard';
+import { AuthGuard } from '@shared/guard/auth.guard';
 
 // modules
-import { ErrorRoutingModule } from './component/error/error-routing.module';
-import { LoginRoutingModule } from './component/login/login-routing.module';
-import { DashboardRoutingModule } from './component/dashboard/dashboard-routing.module';
-import { ButlerRoutingModule } from './component/butler/butler-routing.module';
-import { ClusterRoutingModule } from './component/cluster/cluster-routing.module';
-import { IamRoutingModule } from './component/iam/iam-routing.module';
-import { KiriTansuRoutingModule } from './component/kiri-tansu/kiri-tansu-routing.module';
-import { RdidRoutingModule } from './component/rdid/rdid-routing.module';
+import { ErrorRoutingModule } from '@error/error-routing.module';
+import { LoginRoutingModule } from '@login/login-routing.module';
+import { DashboardRoutingModule } from '@dashboard/dashboard-routing.module';
+import { ButlerRoutingModule } from '@butler/butler-routing.module';
+import { ClusterRoutingModule } from '@cluster/cluster-routing.module';
+import { IamRoutingModule } from '@iam/iam-routing.module';
+import { KiriTansuRoutingModule } from '@kiri-tansu/kiri-tansu-routing.module';
+import { RdidRoutingModule } from '@rdid/rdid-routing.module';
 
 const routes: Routes = [
   {

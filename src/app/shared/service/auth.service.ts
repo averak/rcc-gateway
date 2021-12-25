@@ -4,8 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { LoginRequest } from 'src/app/request/login.request';
-import { AccessTokenModel } from 'src/app/model/access-token.model';
+import { LoginRequest } from '@app/request/login.request';
+import { AccessTokenModel } from '@model/access-token.model';
 
 @Injectable({
   providedIn: 'root',

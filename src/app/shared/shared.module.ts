@@ -31,24 +31,24 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // pipes
-import { UsernamePipe } from './pipe/username.pipe';
-import { DatetimePipe } from './pipe/datetime.pipe';
+import { UsernamePipe } from '@shared/pipe/username.pipe';
+import { DatetimePipe } from '@shared/pipe/datetime.pipe';
 
 // interceptors
-import { LoadingInterceptor } from './interceptor/loading.interceptor';
-import { HandleErrorInterceptor } from './interceptor/handle-error.interceptor';
-import { AuthorizationInterceptor } from './interceptor/authorization.interceptor';
+import { LoadingInterceptor } from '@shared/interceptor/loading.interceptor';
+import { HandleErrorInterceptor } from '@shared/interceptor/handle-error.interceptor';
+import { AuthorizationInterceptor } from '@shared/interceptor/authorization.interceptor';
 
 // components
-import { SnackBarComponent } from './component/snack-bar/snack-bar.component';
-import { HeaderComponent } from './component/header/header.component';
-import { UserMenuComponent } from './component/user-menu/user-menu.component';
-import { SidenavComponent } from './component/sidenav/sidenav.component';
-import { BreadcrumbComponent } from './component/breadcrumb/breadcrumb.component';
-import { TitleComponent } from './component/title/title.component';
-import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
-import { ProgressSpinnerComponent } from './component/progress-spinner/progress-spinner.component';
-import { MainContainerComponent } from './component/main-container/main-container.component';
+import { SnackBarComponent } from '@shared/component/snack-bar/snack-bar.component';
+import { HeaderComponent } from '@shared/component/header/header.component';
+import { UserMenuComponent } from '@shared/component/user-menu/user-menu.component';
+import { SidenavComponent } from '@shared/component/sidenav/sidenav.component';
+import { BreadcrumbComponent } from '@shared/component/breadcrumb/breadcrumb.component';
+import { TitleComponent } from '@shared/component/title/title.component';
+import { ConfirmDialogComponent } from '@shared/component/confirm-dialog/confirm-dialog.component';
+import { ProgressSpinnerComponent } from '@shared/component/progress-spinner/progress-spinner.component';
+import { MainContainerComponent } from '@shared/component/main-container/main-container.component';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/shared/service/user.service';
-import { AlertService } from 'src/app/shared/service/alert.service';
-import { LoginUserPasswordUpdateRequest } from 'src/app/request/user.request';
+import { UserService } from '@shared/service/user.service';
+import { AlertService } from '@shared/service/alert.service';
+import { LoginUserPasswordUpdateRequest } from '@app/request/user.request';
 
 @Component({
   selector: 'app-user-password-edit',

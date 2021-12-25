@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { ReservationModel } from 'src/app/model/reservation.model';
+import { ReservationModel } from '@model/reservation.model';
 
 @Component({
   selector: 'app-reservations-table',

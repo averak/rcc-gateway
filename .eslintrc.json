@@ -9,29 +9,28 @@
         "createDefaultProgram": true
       },
       "extends": [
-        "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
         "prettier"
       ],
       "rules": {
-        "@angular-eslint/directive-selector": [
+        "@typescript-eslint/no-empty-function": "off",
+        "import/no-deprecated": "off",
+        "no-restricted-imports": [
           "error",
           {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
+            "patterns": ["src/app", "../"]
           }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "app",
-            "style": "kebab-case"
-          }
-        ],
-        "@angular-eslint/no-empty-lifecycle-method": "off",
-        "@typescript-eslint/no-empty-function": "off"
+        ]
+      },
+      "settings": {
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+          "typescript": {}
+        }
       }
     },
     {

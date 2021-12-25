@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { UserModel, admissionYears } from 'src/app/model/user.model';
-import { UserUpdateRequest } from 'src/app/request/user.request';
-import { UserService } from 'src/app/shared/service/user.service';
-import { AlertService } from 'src/app/shared/service/alert.service';
+import { UserModel, admissionYears } from '@model/user.model';
+import { UserUpdateRequest } from '@app/request/user.request';
+import { UserService } from '@shared/service/user.service';
+import { AlertService } from '@shared/service/alert.service';
 
 @Component({
   selector: 'app-user-edit',

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReservationInputFormComponent } from './reservation-input-form.component';
+import { ReservationInputFormComponent } from '@cluster/reservation-input-form/reservation-input-form.component';
 
 describe('ReservationInputFormComponent', () => {
   let component: ReservationInputFormComponent;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TitleService } from 'src/app/shared/service/title.service';
+import { TitleService } from '@shared/service/title.service';
 
 @Component({
   selector: 'app-title',

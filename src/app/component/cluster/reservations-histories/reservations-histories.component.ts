@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
-import { ReservationModel } from 'src/app/model/reservation.model';
-import { UserModel } from 'src/app/model/user.model';
-import { ReservationService } from 'src/app/shared/service/reservation.service';
-import { UserService } from 'src/app/shared/service/user.service';
-import { AlertService } from 'src/app/shared/service/alert.service';
-import { FileDownloadService } from 'src/app/shared/service/file-download.service';
+import { ReservationModel } from '@model/reservation.model';
+import { UserModel } from '@model/user.model';
+import { ReservationService } from '@shared/service/reservation.service';
+import { UserService } from '@shared/service/user.service';
+import { AlertService } from '@shared/service/alert.service';
+import { FileDownloadService } from '@shared/service/file-download.service';
 
 @Component({
   selector: 'app-reservations-histories',
