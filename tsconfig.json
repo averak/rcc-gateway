@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -16,10 +15,21 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "paths": {
+      "@error/*": ["src/app/component/error/*"],
+      "@login/*": ["src/app/component/login/*"],
+      "@dashboard/*": ["src/app/component/dashboard/*"],
+      "@butler/*": ["src/app/component/butler/*"],
+      "@cluster/*": ["src/app/component/cluster/*"],
+      "@iam/*": ["src/app/component/iam/*"],
+      "@kiri-tansu/*": ["src/app/component/kiri-tansu/*"],
+      "@rdid/*": ["src/app/component/rdid/*"],
+      "@model/*": ["src/app/model/*"],
+      "@enums/*": ["src/app/enums/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@app/*": ["src/app/*"]
+    },
+    "lib": ["es2018", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
