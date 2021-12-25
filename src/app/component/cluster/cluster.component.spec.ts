@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClusterComponent } from './cluster.component';
+import { ClusterComponent } from '@cluster/cluster.component';
 
 describe('ClusterComponent', () => {
   let component: ClusterComponent;

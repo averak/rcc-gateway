@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { UserGroupModel } from 'src/app/model/user-group.model';
+import { UserGroupModel } from '@model/user-group.model';
 
 @Component({
   selector: 'app-user-groups-table',

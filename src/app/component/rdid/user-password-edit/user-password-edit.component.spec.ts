@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserPasswordEditComponent } from './user-password-edit.component';
+import { UserPasswordEditComponent } from '@rdid/user-password-edit/user-password-edit.component';
 
 describe('UserPasswordEditComponent', () => {
   let component: UserPasswordEditComponent;

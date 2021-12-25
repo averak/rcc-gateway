@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductVersionChipComponent } from './product-version-chip.component';
+import { ProductVersionChipComponent } from '@dashboard/product-version-chip/product-version-chip.component';
 
 describe('ProductVersionChipComponent', () => {
   let component: ProductVersionChipComponent;

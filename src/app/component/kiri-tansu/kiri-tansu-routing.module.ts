@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // components
-import { KiriTansuComponent } from './kiri-tansu.component';
-import { ItemsComponent } from './items/items.component';
-import { ItemsContentComponent } from './items-content/items-content.component';
+import { KiriTansuComponent } from '@kiri-tansu/kiri-tansu.component';
+import { ItemsComponent } from '@kiri-tansu/items/items.component';
+import { ItemsContentComponent } from '@kiri-tansu/items-content/items-content.component';
 
 const routes: Routes = [
   {

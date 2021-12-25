@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserModel } from 'src/app/model/user.model';
-import { AuthService } from 'src/app/shared/service/auth.service';
-import { UserService } from 'src/app/shared/service/user.service';
-import { AlertService } from 'src/app/shared/service/alert.service';
+import { UserModel } from '@model/user.model';
+import { AuthService } from '@shared/service/auth.service';
+import { UserService } from '@shared/service/user.service';
+import { AlertService } from '@shared/service/alert.service';
 
 @Component({
   selector: 'app-user-menu',

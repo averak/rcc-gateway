@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PurchaseOrderModel } from 'src/app/model/butler.model';
+import { PurchaseOrderModel } from '@model/butler.model';
 
 @Component({
   selector: 'app-purchase-orders-histories',

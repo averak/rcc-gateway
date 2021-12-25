@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment-timezone';
-import { ReservationModel } from 'src/app/model/reservation.model';
+import { ReservationModel } from '@model/reservation.model';
 
 @Component({
   selector: 'app-reservation-input-form',

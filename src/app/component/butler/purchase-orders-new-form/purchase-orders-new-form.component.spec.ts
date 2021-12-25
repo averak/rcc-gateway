@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PurchaseOrdersNewFormComponent } from './purchase-orders-new-form.component';
+import { PurchaseOrdersNewFormComponent } from '@butler/purchase-orders-new-form/purchase-orders-new-form.component';
 
 describe('PurchaseOrdersNewFormComponent', () => {
   let component: PurchaseOrdersNewFormComponent;

@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // components
-import { ClusterComponent } from './cluster.component';
-import { ReservationsComponent } from './reservations/reservations.component';
-import { ReservationsContentComponent } from './reservations-content/reservations-content.component';
-import { ReservationsNewComponent } from './reservations-new/reservations-new.component';
-import { ReservationEditComponent } from './reservation-edit/reservation-edit.component';
-import { ReservationsHistoriesComponent } from './reservations-histories/reservations-histories.component';
+import { ClusterComponent } from '@cluster/cluster.component';
+import { ReservationsComponent } from '@cluster/reservations/reservations.component';
+import { ReservationsContentComponent } from '@cluster/reservations-content/reservations-content.component';
+import { ReservationsNewComponent } from '@cluster/reservations-new/reservations-new.component';
+import { ReservationEditComponent } from '@cluster/reservation-edit/reservation-edit.component';
+import { ReservationsHistoriesComponent } from '@cluster/reservations-histories/reservations-histories.component';
 
 const routes: Routes = [
   {

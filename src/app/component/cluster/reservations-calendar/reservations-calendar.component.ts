@@ -15,10 +15,10 @@ import {
 } from 'angular-calendar';
 import { Subject } from 'rxjs';
 import * as moment from 'moment';
-import { ReservationModel } from 'src/app/model/reservation.model';
-import { UserModel } from 'src/app/model/user.model';
-import { ReservationColorEnum } from 'src/app/enums/reservation-color.enum';
-import { UserService } from 'src/app/shared/service/user.service';
+import { ReservationModel } from '@model/reservation.model';
+import { UserModel } from '@model/user.model';
+import { ReservationColorEnum } from '@app/enums/reservation-color.enum';
+import { UserService } from '@shared/service/user.service';
 
 export class CalendarEventWithReservation implements CalendarEvent {
   reservation!: ReservationModel;

@@ -22,18 +22,18 @@ class CustomDateFormatter extends CalendarNativeDateFormatter {
 }
 
 // modules
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 // components
-import { ClusterComponent } from './cluster.component';
-import { ReservationsCalendarComponent } from './reservations-calendar/reservations-calendar.component';
-import { ReservationsComponent } from './reservations/reservations.component';
-import { ReservationsNewComponent } from './reservations-new/reservations-new.component';
-import { ReservationsContentComponent } from './reservations-content/reservations-content.component';
-import { ReservationsHistoriesComponent } from './reservations-histories/reservations-histories.component';
-import { ReservationsTableComponent } from './reservations-table/reservations-table.component';
-import { ReservationEditComponent } from './reservation-edit/reservation-edit.component';
-import { ReservationInputFormComponent } from './reservation-input-form/reservation-input-form.component';
+import { ClusterComponent } from '@cluster/cluster.component';
+import { ReservationsCalendarComponent } from '@cluster/reservations-calendar/reservations-calendar.component';
+import { ReservationsComponent } from '@cluster/reservations/reservations.component';
+import { ReservationsNewComponent } from '@cluster/reservations-new/reservations-new.component';
+import { ReservationsContentComponent } from '@cluster/reservations-content/reservations-content.component';
+import { ReservationsHistoriesComponent } from '@cluster/reservations-histories/reservations-histories.component';
+import { ReservationsTableComponent } from '@cluster/reservations-table/reservations-table.component';
+import { ReservationEditComponent } from '@cluster/reservation-edit/reservation-edit.component';
+import { ReservationInputFormComponent } from '@cluster/reservation-input-form/reservation-input-form.component';
 
 @NgModule({
   declarations: [

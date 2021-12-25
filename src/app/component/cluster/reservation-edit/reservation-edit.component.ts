@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as moment from 'moment-timezone';
-import { ReservationModel } from 'src/app/model/reservation.model';
-import { ReservationUpdateRequest } from 'src/app/request/reservation.request';
-import { ReservationService } from 'src/app/shared/service/reservation.service';
-import { AlertService } from 'src/app/shared/service/alert.service';
+import { ReservationModel } from '@model/reservation.model';
+import { ReservationUpdateRequest } from '@app/request/reservation.request';
+import { ReservationService } from '@shared/service/reservation.service';
+import { AlertService } from '@shared/service/alert.service';
 
 @Component({
   selector: 'app-reservation-edit',

@@ -3,19 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // components
-import { AppComponent } from './app.component';
+import { AppComponent } from '@app/app.component';
 
 // modules
-import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared/shared.module';
-import { ErrorModule } from './component/error/error.module';
-import { LoginModule } from './component/login/login.module';
-import { DashboardModule } from './component/dashboard/dashboard.module';
-import { ButlerModule } from './component/butler/butler.module';
-import { ClusterModule } from './component/cluster/cluster.module';
-import { IamModule } from './component/iam/iam.module';
-import { KiriTansuModule } from './component/kiri-tansu/kiri-tansu.module';
-import { RdidModule } from './component/rdid/rdid.module';
+import { AppRoutingModule } from '@app/app-routing.module';
+import { SharedModule } from '@shared/shared.module';
+import { ErrorModule } from '@error/error.module';
+import { LoginModule } from '@login/login.module';
+import { DashboardModule } from '@dashboard/dashboard.module';
+import { ButlerModule } from '@butler/butler.module';
+import { ClusterModule } from '@cluster/cluster.module';
+import { IamModule } from '@iam/iam.module';
+import { KiriTansuModule } from '@kiri-tansu/kiri-tansu.module';
+import { RdidModule } from '@rdid/rdid.module';
 
 @NgModule({
   declarations: [AppComponent],

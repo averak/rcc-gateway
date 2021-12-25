@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KiriTansuComponent } from './kiri-tansu.component';
+import { KiriTansuComponent } from '@kiri-tansu/kiri-tansu.component';
 
 describe('KiriTansuComponent', () => {
   let component: KiriTansuComponent;

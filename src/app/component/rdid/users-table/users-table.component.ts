@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { UserModel } from 'src/app/model/user.model';
+import { UserModel } from '@model/user.model';
 
 @Component({
   selector: 'app-users-table',

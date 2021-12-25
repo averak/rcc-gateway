@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReservationsHistoriesComponent } from './reservations-histories.component';
+import { ReservationsHistoriesComponent } from '@cluster/reservations-histories/reservations-histories.component';
 
 describe('ReservationsHistoriesComponent', () => {
   let component: ReservationsHistoriesComponent;

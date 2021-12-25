@@ -8,8 +8,8 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { AuthService } from 'src/app/shared/service/auth.service';
-import { ErrorMessageResolverService } from '../service/error-message-resolver.service';
+import { AuthService } from '@shared/service/auth.service';
+import { ErrorMessageResolverService } from '@shared/service/error-message-resolver.service';
 
 type ErrorResponse = {
   code: number;

@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // guards
-import { LoginedGuard } from 'src/app/shared/guard/logined.guard';
+import { LoginedGuard } from '@shared/guard/logined.guard';
 
 // components
-import { LoginComponent } from './login.component';
+import { LoginComponent } from '@login/login.component';
 
 const routes: Routes = [
   {

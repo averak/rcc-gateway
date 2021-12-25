@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_SNACK_BAR_DATA, MatSnackBarRef } from '@angular/material/snack-bar';
-import { AlertModel } from 'src/app/model/alert.model';
+import { AlertModel } from '@model/alert.model';
 
 interface SnackBarData {
   message: string;

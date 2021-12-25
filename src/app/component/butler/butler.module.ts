@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 
 // modules
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 // components
-import { ButlerComponent } from './butler.component';
-import { PurchaseOrdersContentsComponent } from './purchase-orders-contents/purchase-orders-contents.component';
-import { PurchaseOrdersNewFormComponent } from './purchase-orders-new-form/purchase-orders-new-form.component';
-import { PurchaseOrdersHistoriesComponent } from './purchase-orders-histories/purchase-orders-histories.component';
-import { PurchaseOrdersTableComponent } from './purchase-orders-table/purchase-orders-table.component';
+import { ButlerComponent } from '@butler/butler.component';
+import { PurchaseOrdersContentsComponent } from '@butler/purchase-orders-contents/purchase-orders-contents.component';
+import { PurchaseOrdersNewFormComponent } from '@butler/purchase-orders-new-form/purchase-orders-new-form.component';
+import { PurchaseOrdersHistoriesComponent } from '@butler/purchase-orders-histories/purchase-orders-histories.component';
+import { PurchaseOrdersTableComponent } from '@butler/purchase-orders-table/purchase-orders-table.component';
 
 @NgModule({
   declarations: [

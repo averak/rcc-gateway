@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RdidComponent } from './rdid.component';
+import { RdidComponent } from '@rdid/rdid.component';
 
 describe('RdidComponent', () => {
   let component: RdidComponent;

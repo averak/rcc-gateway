@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/service/auth.service';
-import { AlertService } from 'src/app/shared/service/alert.service';
-import { LoginRequest } from 'src/app/request/login.request';
+import { AuthService } from '@shared/service/auth.service';
+import { AlertService } from '@shared/service/alert.service';
+import { LoginRequest } from '@app/request/login.request';
 
 @Component({
   selector: 'app-login-form',

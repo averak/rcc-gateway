@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // guards
-import { AdminGuard } from 'src/app/shared/guard/admin.guard';
+import { AdminGuard } from '@shared/guard/admin.guard';
 
 // components
-import { RdidComponent } from './rdid.component';
-import { UsersComponent } from './users/users.component';
-import { UsersContentComponent } from './users-content/users-content.component';
-import { UsersNewComponent } from './users-new/users-new.component';
-import { UserEditComponent } from './user-edit/user-edit.component';
-import { MypageContentsComponent } from './mypage-contents/mypage-contents.component';
+import { RdidComponent } from '@rdid/rdid.component';
+import { UsersComponent } from '@rdid/users/users.component';
+import { UsersContentComponent } from '@rdid/users-content/users-content.component';
+import { UsersNewComponent } from '@rdid/users-new/users-new.component';
+import { UserEditComponent } from '@rdid/user-edit/user-edit.component';
+import { MypageContentsComponent } from '@rdid/mypage-contents/mypage-contents.component';
 
 const routes: Routes = [
   {

@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // components
-import { ButlerComponent } from './butler.component';
-import { PurchaseOrdersContentsComponent } from './purchase-orders-contents/purchase-orders-contents.component';
+import { ButlerComponent } from '@butler/butler.component';
+import { PurchaseOrdersContentsComponent } from '@butler/purchase-orders-contents/purchase-orders-contents.component';
 
 const routes: Routes = [
   {

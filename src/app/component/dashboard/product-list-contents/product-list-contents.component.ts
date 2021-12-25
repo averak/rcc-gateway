@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { ProductModel } from 'src/app/model/product.model';
+import { ProductModel } from '@model/product.model';
 
 @Component({
   selector: 'app-product-list-contents',

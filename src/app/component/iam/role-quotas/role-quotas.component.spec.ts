@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RoleQuotasComponent } from './role-quotas.component';
+import { RoleQuotasComponent } from '@iam/role-quotas/role-quotas.component';
 
 describe('RoleQuotasComponent', () => {
   let component: RoleQuotasComponent;

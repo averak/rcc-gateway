@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserGroupsContentComponent } from './user-groups-content.component';
+import { UserGroupsContentComponent } from '@iam/user-groups-content/user-groups-content.component';
 
 describe('UserGroupsContentComponent', () => {
   let component: UserGroupsContentComponent;
