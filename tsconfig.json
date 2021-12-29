@@ -17,7 +17,7 @@
     "module": "es2020",
     "paths": {
       "@error/*": ["src/app/error/*"],
-      "@login/*": ["src/app/component/login/*"],
+      "@login/*": ["src/app/login/*"],
       "@dashboard/*": ["src/app/component/dashboard/*"],
       "@butler/*": ["src/app/component/butler/*"],
       "@cluster/*": ["src/app/component/cluster/*"],
