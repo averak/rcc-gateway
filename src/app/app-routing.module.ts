@@ -11,7 +11,6 @@ import { AuthGuard } from '@shared/guard/auth.guard';
 import { ErrorRoutingModule } from '@error/error-routing.module';
 import { LoginRoutingModule } from '@login/login-routing.module';
 import { DashboardRoutingModule } from '@dashboard/dashboard-routing.module';
-import { ButlerRoutingModule } from '@butler/butler-routing.module';
 import { ClusterRoutingModule } from '@cluster/cluster-routing.module';
 import { IamRoutingModule } from '@iam/iam-routing.module';
 import { KiriTansuRoutingModule } from '@kiri-tansu/kiri-tansu-routing.module';
@@ -30,7 +29,7 @@ const routes: Routes = [
       },
       {
         path: 'butler',
-        loadChildren: () => ButlerRoutingModule,
+        loadChildren: () => import('@butler/butler.module').then((m) => m.ButlerModule),
       },
       {
         path: 'cluster',
