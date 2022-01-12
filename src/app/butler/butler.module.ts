@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 // modules
 import { SharedModule } from '@shared/shared.module';
+import { ButlerRoutingModule } from '@butler/butler-routing.module';
 
 // components
 import { ButlerComponent } from '@butler/butler.component';
@@ -18,6 +19,6 @@ import { PurchaseOrdersTableComponent } from '@butler/purchase-orders-table/purc
     PurchaseOrdersHistoriesComponent,
     PurchaseOrdersTableComponent,
   ],
-  imports: [SharedModule],
+  imports: [SharedModule, ButlerRoutingModule],
 })
 export class ButlerModule {}

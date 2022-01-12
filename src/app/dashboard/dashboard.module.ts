@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 // modules
 import { SharedModule } from '@shared/shared.module';
+import { DashboardRoutingModule } from '@dashboard/dashboard-routing.module';
 
 // components
 import { DashboardComponent } from '@dashboard/dashboard.component';
@@ -16,6 +17,6 @@ import { ProductListContentsComponent } from '@dashboard/product-list-contents/p
     ProductVersionChipComponent,
     ProductListContentsComponent,
   ],
-  imports: [SharedModule],
+  imports: [SharedModule, DashboardRoutingModule],
 })
 export class DashboardModule {}

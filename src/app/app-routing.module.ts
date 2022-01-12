@@ -8,14 +8,6 @@ import { MainContainerComponent } from '@shared/component/main-container/main-co
 import { AuthGuard } from '@shared/guard/auth.guard';
 
 // modules
-import { ErrorRoutingModule } from '@error/error-routing.module';
-import { LoginRoutingModule } from '@login/login-routing.module';
-import { DashboardRoutingModule } from '@dashboard/dashboard-routing.module';
-import { ButlerRoutingModule } from '@butler/butler-routing.module';
-import { ClusterRoutingModule } from '@cluster/cluster-routing.module';
-import { IamRoutingModule } from '@iam/iam-routing.module';
-import { KiriTansuRoutingModule } from '@kiri-tansu/kiri-tansu-routing.module';
-import { RdidRoutingModule } from '@rdid/rdid-routing.module';
 
 const routes: Routes = [
   {
@@ -26,37 +18,37 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {
         path: 'dashboard',
-        loadChildren: () => DashboardRoutingModule,
+        loadChildren: () => import('@dashboard/dashboard.module').then((m) => m.DashboardModule),
       },
       {
         path: 'butler',
-        loadChildren: () => ButlerRoutingModule,
+        loadChildren: () => import('@butler/butler.module').then((m) => m.ButlerModule),
       },
       {
         path: 'cluster',
-        loadChildren: () => ClusterRoutingModule,
+        loadChildren: () => import('@cluster/cluster.module').then((m) => m.ClusterModule),
       },
       {
         path: 'iam',
-        loadChildren: () => IamRoutingModule,
+        loadChildren: () => import('@iam/iam.module').then((m) => m.IamModule),
       },
       {
         path: 'kiri-tansu',
-        loadChildren: () => KiriTansuRoutingModule,
+        loadChildren: () => import('@kiri-tansu/kiri-tansu.module').then((m) => m.KiriTansuModule),
       },
       {
         path: 'rdid',
-        loadChildren: () => RdidRoutingModule,
+        loadChildren: () => import('@rdid/rdid.module').then((m) => m.RdidModule),
       },
     ],
   },
   {
     path: 'login',
-    loadChildren: () => LoginRoutingModule,
+    loadChildren: () => import('@login/login.module').then((m) => m.LoginModule),
   },
   {
     path: 'error',
-    loadChildren: () => ErrorRoutingModule,
+    loadChildren: () => import('@error/error.module').then((m) => m.ErrorModule),
   },
   { path: '**', redirectTo: '/error?status_code=404', pathMatch: 'full' },
 ];
