@@ -23,6 +23,7 @@ class CustomDateFormatter extends CalendarNativeDateFormatter {
 
 // modules
 import { SharedModule } from '@shared/shared.module';
+import { ClusterRoutingModule } from '@cluster/cluster-routing.module';
 
 // components
 import { ClusterComponent } from '@cluster/cluster.component';
@@ -50,6 +51,7 @@ import { ReservationInputFormComponent } from '@cluster/reservation-input-form/r
   ],
   imports: [
     SharedModule,
+    ClusterRoutingModule,
 
     // angular calendar
     FlatpickrModule.forRoot(),

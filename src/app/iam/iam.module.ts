@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 // modules
 import { SharedModule } from '@shared/shared.module';
+import { IamRoutingModule } from '@iam/iam-routing.module';
 
 // components
 import { IamComponent } from '@iam/iam.component';
@@ -18,6 +19,6 @@ import { UserGroupsTableComponent } from '@iam/user-groups-table/user-groups-tab
     UserGroupsContentComponent,
     UserGroupsTableComponent,
   ],
-  imports: [SharedModule],
+  imports: [SharedModule, IamRoutingModule],
 })
 export class IamModule {}

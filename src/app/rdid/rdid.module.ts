@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 // modules
 import { SharedModule } from '@shared/shared.module';
+import { RdidRoutingModule } from '@rdid/rdid-routing.module';
 
 // components
 import { RdidComponent } from '@rdid/rdid.component';
@@ -26,6 +27,6 @@ import { UserEditComponent } from '@rdid/user-edit/user-edit.component';
     UserPasswordEditComponent,
     UserEditComponent,
   ],
-  imports: [SharedModule],
+  imports: [SharedModule, RdidRoutingModule],
 })
 export class RdidModule {}
